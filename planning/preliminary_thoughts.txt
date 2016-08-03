@@ -1,0 +1,24 @@
+What papers have you written or contributed to?
+
+    1. Co-translational assembly of protein complexes
+    2. Operon gene order is optimized for ordered protein complex assembly
+    3. Global quantification of cellular protein degradation kinetics
+    4. Hawk proteins point to the last eukaryotic ancestor of Smc-kleisins
+
+What am I currently working on or likely to look at in the next year?
+
+    1. Another co-translational assembly review
+    2. Aneuploidy and how it relates to protein complexes
+    3. Transcription factor binding and regulation of protein complexes
+    4. Distribution of proteins on chromosomes
+
+What are the key points you would like to get across?
+
+    1. Proteins animate life. There are many genes, but not nearly enough to
+       account for the complexity we see in life. Some back of the envelope
+       calculations demonstrate the number of possible binary interactions.
+       This alone is an oversimplification - proteins form complexes.
+    2. We work on what's tractable - until very recently the state of proteomics
+       was not sufficiently advanced to be able to make good quality
+       measurements. Similarly structural data was also lacking. We now have the
+       ability to work with lots of data and make progress.
