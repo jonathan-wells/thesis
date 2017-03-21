@@ -31,3 +31,6 @@
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+
+## Output files
+*.pdf
