@@ -32,5 +32,6 @@
 *.synctex.gz(busy)
 *.pdfsync
 
-## Output files
+## Project specific
+planning/
 *.pdf
