@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt,twoside,openright]{book}
+
+% Arsclassica package with fix for long chapter titles.
+\usepackage{arsclassica}
+\renewcommand\formatchapter[1]{%
+    \setbox0=\hbox{\chapterNumber\thechapter\hspace{10pt}\vline\ }%
+    \begin{minipage}[t]{\dimexpr\linewidth-\wd0\relax}%
+    \raggedright\spacedallcaps{#1}%
+    \end{minipage}%
+}
+
+% Margins and spacing for university regulations
+\usepackage[top=20mm,bottom=40mm,left=40mm,right=25mm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{blindtext}
+\usepackage{standalone}
+\standalonetrue
+
+% Bibliography
+\usepackage[backend=bibtex,style=nature]{biblatex}
+\bibliography{/Users/jonwells/Documents/bibtex/Thesis-Introduction}
+
+% Inline comments
+% \newcommand{\nb}[2]{\hspace{0in}#2}
+
+\begin{document}
+
+\chapter{Introduction: Current methods for the characterisation of protein complexes}
+
+\section{Introduction}
+A universal feature of cellular life is the formation of protein complexes, both through self-self (homomeric) and self-other (heteromeric) interactions. This ability has been understood essentially since the first proteins were characterised, and indeed, by 1955 the Tobacco mosaic virus capsid was known to be a self-assembling homomer comprised of several thousand identical subunits \supercite{Fraenkel-Conrat1955}. % NOTE: Needs more citations.
+As an aside: it is noteworthy that the understanding of protein complexes predates the discovery of DNA by several years. It is a testament to the brilliance of Rosalind Franklin that she was involved in not just this discovery, but also in pioneering work on cryo-electron microscopy of protein-nucleic acid complexes. This eventually led to Aaron Klug - Franklin's proteg - winning the Nobel prize for Chemistry in 1982.
+
+Since then, technology has moved in leaps and bounds, and it is no exaggeration to say that over this period the field of structural biology has been one of the most succesful in all of science.
+
+\section{Structural methods}
+
+\subsection{X-ray crystallography}
+\subsection{Nuclear magentic resonance imaging}
+\subsection{Cryo-electron microscopy}
+
+\section{Non-structural methods}
+\subsection{Yeast-two-hybrid and related methodologies}
+\subsection{Affinity purification mass spectrometry}
+
+\printbibliography
+
+\end{document}
