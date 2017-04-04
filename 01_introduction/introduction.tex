@@ -1,49 +1,105 @@
 \documentclass[a4paper,11pt,twoside,openright]{book}
 
 % Arsclassica package with fix for long chapter titles.
-\usepackage{arsclassica}
-\renewcommand\formatchapter[1]{%
-    \setbox0=\hbox{\chapterNumber\thechapter\hspace{10pt}\vline\ }%
-    \begin{minipage}[t]{\dimexpr\linewidth-\wd0\relax}%
-    \raggedright\spacedallcaps{#1}%
-    \end{minipage}%
-}
+\usepackage{scrextend}
+\usepackage{../arsclassicamod}
+\usepackage[libertine]{newtxmath}
 
 % Margins and spacing for university regulations
 \usepackage[top=20mm,bottom=40mm,left=40mm,right=25mm]{geometry}
 \usepackage{setspace}
 \onehalfspacing
+\setlength{\parskip}{0em}
 
+\usepackage{amsmath}
 \usepackage{blindtext}
 \usepackage{standalone}
 \standalonetrue
 
 % Bibliography
-\usepackage[backend=bibtex,style=nature]{biblatex}
+\usepackage[backend=biber,style=nature]{biblatex}
 \bibliography{/Users/jonwells/Documents/bibtex/Thesis-Introduction}
+\let\cite\supercite
+\renewcommand{\thefootnote}{\roman{footnote}}
 
-% Inline comments
-% \newcommand{\nb}[2]{\hspace{0in}#2}
 
 \begin{document}
 
-\chapter{Introduction: Current methods for the characterisation of protein complexes}
 
-\section{Introduction}
-A universal feature of cellular life is the formation of protein complexes, both through self-self (homomeric) and self-other (heteromeric) interactions. This ability has been understood essentially since the first proteins were characterised, and indeed, by 1955 the Tobacco mosaic virus capsid was known to be a self-assembling homomer comprised of several thousand identical subunits \supercite{Fraenkel-Conrat1955}. % NOTE: Needs more citations.
-As an aside: it is noteworthy that the understanding of protein complexes predates the discovery of DNA by several years. It is a testament to the brilliance of Rosalind Franklin that she was involved in not just this discovery, but also in pioneering work on cryo-electron microscopy of protein-nucleic acid complexes. This eventually led to Aaron Klug - Franklin's proteg - winning the Nobel prize for Chemistry in 1982.
+\chapter{Introduction}
 
-Since then, technology has moved in leaps and bounds, and it is no exaggeration to say that over this period the field of structural biology has been one of the most succesful in all of science.
+\section{What are protein complexes?}
+Perhaps the most convincing and useful description of the Earth's biosphere is the one given by Smith and Morowitz in their deeply impressive book, "The Origin and Nature of Life on Earth". In this work, they define the biosphere as the global ... This energy flux is driven by a core metabolic network shared by all known extant organisms, with the individual reactions catalysed by a small set of incredibly ancient proteins. As to whether this core metabolic network was always catalysed by proteins, or whether they were a later addition that perhaps replaced clays and simple RNAs is an open question; regardless, they are now a integral and irreplacable part of all known life.
 
-\section{Structural methods}
+% NOTE: Alternate first paragraph
+% All cellular life on Earth is built on a foundation consisting of four core groups of biological macromolecules, namely: carbohyrdates, lipids, nucleic acids, and proteins. At the lowest level of abstraction, these groups can be differentiated by their chemical formulas, but for the sake of simplicity it is generally more convenient to separate them on the basis of their cellular function. Broadly speaking, carbohydrates and lipids act as stores of chemical energy, with the latter having additional important roles in signalling and membrane formation. Nucleic acids, which comprise DNA and RNA, are principally involved in information storage and transfer. Proteins - the subject of this thesis - are involved in essentially everything else.
+
+% TODO Include a section here discussing the information content and complexity of protein vs the rest. Something about the fact that DNA is a store of information, but in proteins information is also stored in their three-dimensional structure, which can take on an essentially infinite complexity.
+% NOTE please work up the nerve to put the bit about atoms in the universe in footnotes.
+A protein is a biological macromolecule comprised of tens to thousands of amino acids, linked by covalent peptide bonds between their terminal amino and carboxyl groups. There are 21 biologically relevant amino acids, meaning that a 200 residue sequence can be composed in \(21^{200}\)  \((2.7\times10^{264})\) different ways (there are approximately \(4\times10^{80}\) atoms in the observable universe). To all indications, this level of complexity does not seem to be limited by biological constraints, and the Shannon entropy of the currently known sequence space does not differ markedly from shuffled sequences, particularly if you include viral proteins. However, unlike nucleic acid, which functions primarily as information storage, proteins are not defined by their sequence so much as their structure in three-dimensional space. When we consider the precise bond angles between each residue the total possible sequence-conformational space rapidly becomes incalculable. Fortunately, we can usually ignore much of this detail, instead thinking of proteins as simple biological units, described in terms of their form and function.
+
+Functionally, all proteins are defined by their interaction with other molecules in the cell. In the case of enzymes, these are typically small metabolites; however, most proteins are not enzymes, and subsequently the largest class of interactors is simply other proteins. These interactions can be self-self (homomeric) and self-other (heteromeric) interactions. The majority of these interactions are fleeting and non-functional, arising from simple proximity in a crowded environment, but many are stable and integral to the function of the proteins involved. The ability of many proteins to form stable complexes enables an additional level of complexity and emergent behaviour in cells
+Collectively, the set of proteins encoded by an organism and the levels at which they are expressed is known as the proteome.
+
+The tendency of proteins to form complexes and the functional importance of this ability has been understood since before the first proteins were characterised structurally. Certainly by 1955 the Tobacco mosaic virus capsid was known to be a self-assembling homomer comprised of several thousand identical subunits \cite{Fraenkel-Conrat1955}. In the years following this % NOTE Needs more citations.
+As an aside: it is noteworthy that the understanding of protein complexes predates the discovery of DNA by several years. Given her brilliance, it is unsurprising that Rosalind Franklin was involved in not just discovering the structure of DNA, but also in pioneering work on cryo-electron microscopy of protein-nucleic acid complexes. Sadly, Franklin died in 1958 at the age of 37, before achieving the recognition she deserved, but her work eventually led to her proteg\'{e},  Aaron Klug, winning the 1982 Nobel prize for Chemistry. % NOTE Should this be a footnote?
+
+Since the first post-war forays into the characterisation of protein complexes, technology has improved exponentially, and it is fair to say that over this period the field of structural biology has been one of the most fruitful in all of science. X-ray crystallography in particular has been a wild success, leading to no fewer than 14 Nobel Prizes since 1914. Of these, solving the structure of the ribosome, a huge complex containing dozens of protein and rRNA subunits, is perhaps the crowning achievement. Whilst x-ray crystallography of individual soluble proteins is now routine, there are still intractable difficulties for membrane proteins and large complexes, which are challenging to produce high-quality crystals for.
+
+More recently, cryo-EM has seen a resurgence, led by combined improvements in electron detectors and image processing approaches. Cryo-EM is particularly well-suited to looking at protein complexes as it does not rely on being able to crystallise the biological sample, and
+
+Beyond structural methods, developments in mass spectrometry have led to a different, more nuanced understanding of the behaviour of proteins complexes and the wider proteome as a whole.
+
+% Broad introduction to proteins, protein complexes, the complexity of the interactome and implications for biological complexity in general. Why do they matter from a medical perspective, and why do we need to think of them in more nuanced way than just really big protein machines.
+%
+% Brief historical account of the first forays into characterisation of complexes - TMV probably, and how it was understood that it was a self-assembling homomer, with assembly driven by energetic principles. Rosalind Franklin involved in early structural work, not just DNA but also TMV. etc. Great success of structural biology over the years, where does it stand now?
+
+
+\section{Structural methods for characterising protein complexes}
 
 \subsection{X-ray crystallography}
-\subsection{Nuclear magentic resonance imaging}
-\subsection{Cryo-electron microscopy}
+Introduce with a brief historical summary, in particular the early '00s when macromolecular complexes began appearing. What were the methodological advances that made this possible? Where does state of the art lie now?
+\subsubsection{Protein expression and crystalisation}
+Discuss the degree to whichthe use of eukaryotic recombinant expressions systems facilitates assembly of eukaryotic complexes. Perhaps touch briefly on some of the more obscure ways in which thinking about assembly order can help for prokaryotic organisms? Systematic screening of crystallisation space is almost always recommended apparently, will try and find some specific advice pertinent to complexes.
+\subsubsection{Lasers, Electron and X-rays}
+Synchotrons now widely used, enable higher intensity beams making sample collection much faster, enabling high-throughput crystallography. More recently hard X-ray free electron lasers have started being used, are about 10-13 orders of magnitude more intense than current synchotrons! The future of x-ray crystallography.
 
-\section{Non-structural methods}
+\subsubsection{Figure, phase problem or something}
+
+\subsubsection{Structure determination}
+Software, the impact of CCP4, solving the phase problem etc. (Might be a nice place for a figure?) Use of polynuclear metal clusters for phasing large complexes \cite{Dauter2005}. There's a lot of different computational methods for phasing, is there any one that's best for complexes? Segue into cryoEM with some excited comments from leading crystallographers.
+% NB concluding remarks in \cite{Shi2014}
+
+\subsection{Cryo-electron microscopy}
+A resurgence for an old technique in structural biology, now approaching crystallographic resolution, even for small, asymmetric proteins, e.g. \(\gamma\)-secretase. Will try and cover the recent advances that have made this possible.
+\subsubsection{Electron detectors}
+Important measure is "detective quantum efficiency", a measure of how signal to noise ratio is degraded by errors in imaging. Monolithic active pixel sensors are currently the most useful "direct electron detectors."
+\subsubsection{Image processing and structure determination}
+Loads of progress here and continuing all the time. Most widely used software is RELION, which makes use of a regularized likelihood (Bayesian) approach to image classification. That is, separating images of proteins/complexes into different classes based on rotational state and subunit heterogeneity etc.
+\subsubsection{Figure, explain image classification problem?}
+\subsubsection{room for improvement? Next steps?}
+
+
+\section{Non-structural methods for characterising protein complexes}
+Don't need structural methods to look at complexes, can instead sometimes be characterised biochemically, and more useful, inferred from high-throughput proteomics data
+
 \subsection{Yeast-two-hybrid and related methodologies}
+mostly-very old methods, reimagined for 21st century. Most of their utility comes from simplicity and high-throughput modifications, won't spend too long on this.
+
 \subsection{Affinity purification mass spectrometry}
+Currently most powerful method for characterising interactomes, use some nice case-studies, in particular the way in which that 3D interactome paper \cite{Hein2015} combined AP-MS with quantitative mass spec (iBAQ) to get detailed stoichiometric information.
+
+\subsubsection{Figure, AP-MS}
+
+\section{Computational analysis of protein complexes}
+\subsection{Inferring protein complexes from interaction networks}
+spoke and matrix models, socio-affinity scoring. Read panorama paper. \cite{Wan2015}
+\subsection{}
+
+What can you do with the data, e.g. assembly order etc. Will probably spend some time discussing sequence-based methods, e.g. EVcouplings. Not especially well-suited to complexes due to size and corresponding computational requirements, but has been some interesting stuff looking at interfaces etc.
+
+\section{Conclusion}
+Wrap it up, try and find a nice way to lead into the main body of the thesis.
 
 \printbibliography
 
