@@ -1,20 +1,20 @@
-\documentclass[a4paper,11pt,twoside,openright]{book}
+\documentclass[a4paper,11pt,twoside,openright]{scrbook}
 
-% Arsclassica package with fix for long chapter titles.
-\usepackage{scrextend}
-\usepackage{../arsclassicamod}
+\usepackage{arsclassica}
+\usepackage{amsmath}
 \usepackage[libertine]{newtxmath}
+\usepackage{lipsum}
+\usepackage{standalone}
+\standalonetrue
 
 % Margins and spacing for university regulations
-\usepackage[top=20mm,bottom=40mm,left=40mm,right=25mm]{geometry}
+% \usepackage[top=20mm,bottom=40mm,left=40mm,right=25mm]{geometry}
+% Margins and spacing for screen reading
+\usepackage[top=20mm,bottom=40mm,left=25mm,right=25mm]{geometry}
+
 \usepackage{setspace}
 \onehalfspacing
 \setlength{\parskip}{0em}
-
-\usepackage{amsmath}
-\usepackage{blindtext}
-\usepackage{standalone}
-\standalonetrue
 
 % Bibliography
 \usepackage[backend=biber,style=nature]{biblatex}
@@ -29,16 +29,15 @@
 \chapter{Introduction}
 
 \section{What are protein complexes?}
-Perhaps the most convincing and useful description of the Earth's biosphere is the one given by Smith and Morowitz in their deeply impressive book, "The Origin and Nature of Life on Earth". In this work, they define the biosphere as the global ... This energy flux is driven by a core metabolic network shared by all known extant organisms, with the individual reactions catalysed by a small set of incredibly ancient proteins. As to whether this core metabolic network was always catalysed by proteins, or whether they were a later addition that perhaps replaced clays and simple RNAs is an open question; regardless, they are now a integral and irreplacable part of all known life.
+Perhaps the most convincing and useful description of the Earth's biosphere is the one given by Smith and Morowitz in their deeply impressive book, ``The Origin and Nature of Life on Earth'' \cite{Smith2016}. In this work, they define the biosphere as the global ... This energy flux is driven by a core metabolic network shared by all known extant organisms, with the individual reactions catalysed by a small set of incredibly ancient proteins. As to whether this core metabolic network was always catalysed by proteins, or whether they were a later addition that perhaps replaced clays and simple RNAs is an open question; regardless, they are now a integral and irreplacable part of all known life.
 
 % NOTE: Alternate first paragraph
 % All cellular life on Earth is built on a foundation consisting of four core groups of biological macromolecules, namely: carbohyrdates, lipids, nucleic acids, and proteins. At the lowest level of abstraction, these groups can be differentiated by their chemical formulas, but for the sake of simplicity it is generally more convenient to separate them on the basis of their cellular function. Broadly speaking, carbohydrates and lipids act as stores of chemical energy, with the latter having additional important roles in signalling and membrane formation. Nucleic acids, which comprise DNA and RNA, are principally involved in information storage and transfer. Proteins - the subject of this thesis - are involved in essentially everything else.
 
-% TODO Include a section here discussing the information content and complexity of protein vs the rest. Something about the fact that DNA is a store of information, but in proteins information is also stored in their three-dimensional structure, which can take on an essentially infinite complexity.
-% NOTE please work up the nerve to put the bit about atoms in the universe in footnotes.
-A protein is a biological macromolecule comprised of tens to thousands of amino acids, linked by covalent peptide bonds between their terminal amino and carboxyl groups. There are 21 biologically relevant amino acids, meaning that a 200 residue sequence can be composed in \(21^{200}\)  \((2.7\times10^{264})\) different ways (there are approximately \(4\times10^{80}\) atoms in the observable universe). To all indications, this level of complexity does not seem to be limited by biological constraints, and the Shannon entropy of the currently known sequence space does not differ markedly from shuffled sequences, particularly if you include viral proteins. However, unlike nucleic acid, which functions primarily as information storage, proteins are not defined by their sequence so much as their structure in three-dimensional space. When we consider the precise bond angles between each residue the total possible sequence-conformational space rapidly becomes incalculable. Fortunately, we can usually ignore much of this detail, instead thinking of proteins as simple biological units, described in terms of their form and function.
+% TODO Improve and tighten up section about complexity
+A protein is a biological macromolecule comprised of tens to thousands of amino acids, linked by covalent peptide bonds between their terminal amino and carboxyl groups. There are 21 biologically relevant amino acids, meaning that a 200 residue sequence can be composed in \(21^{200}\) different ways.\footnote{Or in base 10: \(2.7\times10^{264}\). By way of comparison there are approximately \(4\times10^{80}\) atoms in the observable universe.} To all indications, this level of complexity does not seem to be limited by biological constraints, and the Shannon entropy of the currently known sequence space does not differ markedly from shuffled sequences, particularly if you include viral proteins. However, unlike nucleic acid, which functions primarily as information storage, proteins are not defined by their sequence so much as their structure in three-dimensional space. When we factor in bond angles between residues the total possible sequence-conformational space rapidly becomes incalculable. Fortunately, we can usually ignore much of this detail, instead thinking of proteins as simple biological units, described in terms of their form and function.
 
-Functionally, all proteins are defined by their interaction with other molecules in the cell. In the case of enzymes, these are typically small metabolites; however, most proteins are not enzymes, and subsequently the largest class of interactors is simply other proteins. These interactions can be self-self (homomeric) and self-other (heteromeric) interactions. The majority of these interactions are fleeting and non-functional, arising from simple proximity in a crowded environment, but many are stable and integral to the function of the proteins involved. The ability of many proteins to form stable complexes enables an additional level of complexity and emergent behaviour in cells
+Functionally, all proteins are defined by their interaction with other molecules in the cell. In the case of enzymes, these are typically small metabolites; however, since most proteins are not enzymes, the largest class of interactors is simply other proteins. The majority of these protein-protein interactions are fleeting, arising as a result of the crowded intracellular environment. Many however are more long-lived, and lead to the formation of stable protein complexes, which are essential to the correct function of the protein subunits involved. In the case where interactions are between multiple identical copies of a single protein species, the resulting complex is a \textit{homomer}, alternatively, \textit{heteromers} form when consitituent subunits are different, non-identical proteins. The ability of many proteins to form stable complexes enables an additional level of complexity and emergent behaviour in cells
 Collectively, the set of proteins encoded by an organism and the levels at which they are expressed is known as the proteome.
 
 The tendency of proteins to form complexes and the functional importance of this ability has been understood since before the first proteins were characterised structurally. Certainly by 1955 the Tobacco mosaic virus capsid was known to be a self-assembling homomer comprised of several thousand identical subunits \cite{Fraenkel-Conrat1955}. In the years following this % NOTE Needs more citations.
@@ -55,7 +54,7 @@ Beyond structural methods, developments in mass spectrometry have led to a diffe
 % Brief historical account of the first forays into characterisation of complexes - TMV probably, and how it was understood that it was a self-assembling homomer, with assembly driven by energetic principles. Rosalind Franklin involved in early structural work, not just DNA but also TMV. etc. Great success of structural biology over the years, where does it stand now?
 
 
-\section{Structural methods for characterising protein complexes}
+\section{Structural characterisation of protein complexes}
 
 \subsection{X-ray crystallography}
 Introduce with a brief historical summary, in particular the early '00s when macromolecular complexes began appearing. What were the methodological advances that made this possible? Where does state of the art lie now?
@@ -80,7 +79,7 @@ Loads of progress here and continuing all the time. Most widely used software is
 \subsubsection{room for improvement? Next steps?}
 
 
-\section{Non-structural methods for characterising protein complexes}
+\section{Non-structural characterisation of protein complexes}
 Don't need structural methods to look at complexes, can instead sometimes be characterised biochemically, and more useful, inferred from high-throughput proteomics data
 
 \subsection{Yeast-two-hybrid and related methodologies}
@@ -95,7 +94,6 @@ Currently most powerful method for characterising interactomes, use some nice ca
 \subsection{Inferring protein complexes from interaction networks}
 spoke and matrix models, socio-affinity scoring. Read panorama paper. \cite{Wan2015}
 \subsection{}
-
 What can you do with the data, e.g. assembly order etc. Will probably spend some time discussing sequence-based methods, e.g. EVcouplings. Not especially well-suited to complexes due to size and corresponding computational requirements, but has been some interesting stuff looking at interfaces etc.
 
 \section{Conclusion}
