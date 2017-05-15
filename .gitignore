@@ -38,3 +38,5 @@
 planning/
 examples/
 *.pdf
+*.txt
+*.md
