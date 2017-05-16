@@ -116,22 +116,33 @@ Perutz's breakthrough came when he realised that a technique previously used for
 % NOTE: Have you cited PDB yet? And will you discuss homology modelling?
 As a consequence of the ever-expanding number of structures in the Protein Data Bank and the widespread availability of sequence data, it is usually possible nowadays to avoid \textit{de novo} phasing altogether. Molecular replacement makes use of the fact that closely related sequences generally have very similar folds, and therefore can be used as a template to guide brute-force solution of the phase problem. There are currently many programs that automate this process - for example, Phaser, which is available within the widely used CCP4 software suite \cite{McCoy2007, Winn2011a}.
 
+% NOTE: Need to find the right place to discuss the difficulty of distinguishing crystal contacts from biological ones.
+
 \subsection{Cryo-electron microscopy}
 
 X-ray crystallography has been, and will continue to be, an enormously useful too for investigating proteins and protein complexes. However, in recent years, a resurgence in an old technique has had an major impact on structural biology, and in particular on our ability to solve the structures of large protein complexes above 300 kDa in size (approximately 3000 residues). It's TK for larger structures is particularly useful since these often prove prohibitively difficult to crystallise, in large part due to compositional heterogeneity of the purified samples, which cryo-EM can more easily handle. The two methods are therefore highly complementary, and indeed many structures are solved to high resolution by a combination of the two - cryo-EM for the coarse grained strucutre, and X-ray crystallography for atomic resolution of individual subunits.
 
-However, as interest in cryo-EM increases (in March 2017 the Wellcome Trust announced a £20M grant for cryo-EM equipment in several UK laboratories), there are signs that the field is gaining ground on X-ray crystallography. In June 2016 two important barriers were broken, with a paper in Cell simultaneously describing the structures of two homomeric complexes: isocitrate dehydrogenase and glutamate dehydrogenase. The former weighs in at just 93 kDa, and is the first single-particle cryo-EM structure of a <100 kDa complex, while the latter was resolved to 1.8Å, breaking the <2Å barrier \cite{Merk2016}. As we shall see, the remarkable technological achievements displayed in this paper and several others from the last few years have been made possible by parallel improvements in two distinct areas \cite{Bai2015}.
+However, as interest in cryo-EM increases (in March 2017 the Wellcome Trust announced a £20M grant for cryo-EM equipment in several UK laboratories), there are signs that the field is gaining ground on X-ray crystallography. In June 2016 two important barriers were broken, with a paper in Cell simultaneously describing the structures of two homomeric complexes: isocitrate dehydrogenase and glutamate dehydrogenase. The former weighs in at just 93 kDa, and is the first single-particle cryo-EM structure of a <100 kDa complex, while the latter was resolved to 1.8Å, breaking the <2Å barrier \cite{Merk2016}. As we shall see, the remarkable technological achievements displayed in this paper and several others from the last few years have been been driven by dramatic improvements in two areas\cite{Bai2015}. Even with this rapid progress however, there is good reason to believe that further reductions in the limits of resolution are possible.
+
+% NOTE: Find a way to point out that the structures lauded above are symmetrical, and that this is a lot easier than asymmetrical.
+
+
+% NOTE: The contrast problem. The worse the contrast is, the harder it is to align images, so ideally you need high contrast. However, the way in which contrast is generated is by deliberate defocusing. This reduces the resolution? Phase plates in theory allow in focus modulation of phase contrast, and thus reduce the physical limits on resolution.
 
 \subsubsection{Electron detectors}
-Important measure is "detective quantum efficiency", a measure of how signal to noise ratio is degraded by errors in imaging. Monolithic active pixel sensors are currently the most useful "direct electron detectors."
+A major development in cryo-EM came with the replacement of photographic film by digital direct electron detectors, in particular monolithic active pixel sensors (MAPS). Surprisingly, it was not until relatively recently that digital detectors became a viable alternative to film, and for a long time they had unfavourably low detective quantum efficiencies (a measure of the signal to noise ratio that can be achieved relative to an ideal detector) \cite{McMullan2009}. However, now that this problem has been solved, they offer some compelling advantages over film. From a practical standpoint, they are significantly faster to use, since images can be viewed immediately after collection and their acquistion can be automated. Additionally, by counting rather than integrating the signal from electron impacts, they can be used to generate very high frame-rate videos.
+
 \subsubsection{Image processing and structure determination}
 Loads of progress here and continuing all the time. Most widely used software is RELION, which makes use of a regularized likelihood (Bayesian) approach to image classification. That is, separating images of proteins/complexes into different classes based on rotational state and subunit heterogeneity etc.
-\subsubsection{Figure, explain image classification problem?}
-\subsubsection{room for improvement? Next steps?}
 
+\subsubsection{Figure, explain image classification problem?}
+
+% NOTE: I think there's still some pretty substantial innacuracy here - go through it and tighten up
+\subsubsection{room for improvement? Next steps?}
+One area which has the potential to produce further gains in resolution is phase contrast modulation. In order to be able to align images it is important to have good contrast in the images. Unfortunately, the method by which contrast is currently changed relies on defocussing the image: the greater the contrast required, the worse the loss of focus. Phase-plates circumvent this problem by modulating the phase directly without affecting the focus of the resulting image \cite{Danev2016}.
 
 \section{Non-structural characterisation of protein complexes}
-Don't need structural methods to look at complexes, can instead sometimes be characterised biochemically, and more useful, inferred from high-throughput proteomics data
+Thus far, I have only discussed some of the structural methods that can be used to describe protein complexes. However, there is a great deal of useful information that cannot be determined solely from the molecular structure of a protein complex; for example, the cellular abundance of that complex and its constituent subunits. Mass-spectrometry in particular has proven to be very versatile, and has been used for a number of different purposes, including elucidation of protein complex assembly pathways \cite{Levy2008a,Marsh2013}, investigations into the evolutionary history of complexes \cite{Wan2015}, and generation of richly detailed interactome datasets \cite{Hein2015}.
 
 \subsection{Yeast-two-hybrid and related methodologies}
 mostly-very old methods, reimagined for 21st century. Most of their utility comes from simplicity and high-throughput modifications, won't spend too long on this.
@@ -139,7 +150,7 @@ mostly-very old methods, reimagined for 21st century. Most of their utility come
 \subsection{Affinity purification mass spectrometry}
 Currently most powerful method for characterising interactomes, use some nice case-studies, in particular the way in which that 3D interactome paper \cite{Hein2015} combined AP-MS with quantitative mass spec (iBAQ) to get detailed stoichiometric information.
 
-% NOTE Cross-linking
+% NOTE Cross-linking?
 
 \subsubsection{Figure, AP-MS}
 
@@ -150,7 +161,7 @@ spoke and matrix models, socio-affinity scoring. Read panorama paper. \cite{Wan2
 What can you do with the data, e.g. assembly order etc. Will probably spend some time discussing sequence-based methods, e.g. EVcouplings. Not especially well-suited to complexes due to size and corresponding computational requirements, but has been some interesting stuff looking at interfaces etc.
 
 \section{Conclusion}
-Wrap it up, try and find a nice way to lead into the main body of the thesis. In the chapter that follows, we will see a
+Wrap it up, try and find a nice way to lead into the main body of the thesis. Methods in the pipeline, anything that could be possible in theory? Assembly intermediates from cryo-EM data, use of NMR for assembly order, etc.
 
 These methods, particular structural ones, have enabled us to build an enormous reservoir of information about protein complexes, but it is now time to
 
