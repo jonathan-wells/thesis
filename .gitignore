@@ -37,6 +37,9 @@
 ## Project specific
 planning/
 examples/
+figs/
+appendices/
+.DS_Store
 *.pdf
 *.txt
 *.md
