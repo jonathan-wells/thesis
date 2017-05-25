@@ -11,6 +11,9 @@
 \bibliography{/Users/jonwells/Documents/bibtex/Thesis-Introduction}
 \let\cite\supercite
 
+% Figures
+\usepackage{graphicx}
+\graphicspath{ {../figs/wip/} }
 
 \begin{document}
 
@@ -52,9 +55,6 @@ A particularly widespread phenomena arising from the formation of protein comple
 Thus far we have discussed protein complexes as fully formed entities. However, as we shall see over the course of this work, the assembly process itself has great biological importance, and many phenomena can be better understood by taking it into account - the attenuation of protein levels observed in aneuploid cells (chapter 5) being a notable example. A central fact that underlies most of the work in this thesis is that the process by which protein complexes assemble is stochastic. However, whilst the binding of any two subunits is random - a product of Brownian motion and binding affinity - in aggregate, the assembly of protein complexes proceeds via non-random, TK pathways \cite{Levy2008a, Marsh2013, Macek2017}. This fact has profound implications for the behaviour of the cell.
 
 \section{A brief overview of research on protein complexes}
-
-% Timeline figure, or too clichéd?
-
 % NOTE: does Molecular biology need capitalisation?
 The tendency of proteins to form complexes and the functional implications of this have been understood since the early days of molecular biology. Though it is not clear who was the first to explicitly note the existence of protein complexes, it seems likely that the realisation arose in tandem with investigations into the nature of viruses. In 1935, W. M. Stanley reported the isolation of `a crystalline material which has the properties of tobacco-mosaic virus', and demonstrated that this was predominantly composed of protein \cite{Stanley1935}. It is not obvious that he understood this material to be a protein complex in the sense that we would think of it, but certainly by 1955 the Tobacco mosaic virus capsid had been clearly described as a self-assembling homomer comprised of several thousand identical subunits \cite{Fraenkel-Conrat1955}.
 
@@ -104,8 +104,10 @@ Once suitable crystals have been obtained, the main hurdle has been hurdled and 
 % NOTE: Peak "beam" energies sounds kinda silly since its a pulse, not a beam. Depending on space, it might be nice to mention how you don't have to worry about cryocooling either - Ada Yonath was one of the first to see the benefit of this in solving the structure of the ribosome. Also, it might be possible to use this for non-crystalline imaging? Is it OK to use a colon in "this becomes a non-issue:?"
 More recently, X-ray free electron lasers (XFELs, fig. 1) have also begun to make an appearance in structural biology. It is hard to overstate the impact that this technology will have on the field, since XFELs are capable of producing peak beam energies approximately ten orders of magnitude greater than 3rd generation synchotrons \cite{Shi2014}, and in doing so enable a radically different approach to crystallography. The principle benefit of this additional power is that the time needed to generate a diffraction pattern is drastically reduced: from hours to femtoseconds. A crystal in the path of such high-energy photons will be vaporised, but since the diffraction pattern will be obtained faster than the sample is destroyed, this is a non-issue: a fact first noted by Neutze et al.\cite{Neutze2000}, giving rise to the term `diffraction before destruction'. However, this generates a need for a great many crystals, but in practice this too turns out not to be a problem either, since these crystals need only be a few nanometres in size. In fact, since nanoscale crystals are far easier to grow, the method also circumvents the tedious trial and error process of producing mesoscale crystals.
 
+\includegraphics{c1_fig1_xfel}
 \subsubsection{Figure 1, X-ray free-electron lasers}
 % NOTE: This will be a single large panel, displaying the hardware - an electron gun shoots an electron through a modulator, which causes photoons to be excited from the electron. The electron is then bent by a magnet into a trap, and the resulting veruy high energy x-ray packets are fired at a stream of crystals.
+
 
 \subsubsection{Structure determination}
 % NOTE: The structure of a protein in a crystal can be determined from its electron density function. This is a function of both the phases and amplitude of the x-ray diffraction maxima.
@@ -141,26 +143,30 @@ One new technology which is begining to make an appearance is the phase-plate, w
 \subsubsection{Image processing and structure determination}
 A second important factor in cryo-EM's recent success has been the appearance of better image processing software, which has enabled researchers to get the most out of the concurrent improvements taking place on the hardware side. In addition to improving resolution, the emergence of electron detectors capable of producing high frame-rate videos in counting mode also had a secondary benefit, in that it enabled beam-induced motion blurring in the images to be corrected computationally, a feat that was first achieved by two groups almost simultaneuously in 2013 \cite{Bai2013, Li2013}. Since the reduction in signal quality incurred by beam-induced movement is around five-fold if uncorrected \cite{Henderson1985}, this was a highly significant breakthrough, and is now a standard procedure that can be performed using the widely used RELION software \cite{Scheres2012,Scheres2014}.
 
-% NOTE: reduce the dimensionality of the classification prob - is this correct? Still needs improving and references.
-A second area in which computational improvements have occurred is in image classification. In 3D single-particle cryo-EM, individual protein complexes are fixed in the flash-frozen sample in random positions and orientations - in order to determine the structure, each particle captured in the imaging process must first be categorised according to its orientation. However, this is made difficult by compositional heterogeneity in purified protein complexes, and also by asymmetry in the structures. For symmetrical structures, such as the two highlighted at the start of this section, the number of particles required in the image is usually considerably lower, since multiple axes of symmetry reduce the dimensionality of the orientation classification problem. Interestingly, for samples that are 2D crystals, the different orientations of particles are still needed, but are introduced artificially by tilting the sample. This approach has been largely phased out now, but may still be useful for investigating membrane proteins?
-
-Dealing with compositional heterogeneity is a separate, harder problem, but has been effectively dealt with, first by max likelihood methods, and more recently within the bayesian framework of the RELION program mentioned previously. It is worth noting that this open-source software was initially written almost entirely by Sjors Scheres, who has played an essential role in bringing the cryo-EM field to where it is today.
+% NOTE: reduce the dimensionality of the classification prob - is this correct? Still needs improving and references. Citations available from main scheres cryo-em review.
+A second area in which computational improvements have occurred is in image classification (fig. 2). In 3D single-particle cryo-EM, individual protein complexes are fixed in random positions and orientations in the flash-frozen sample - to determine the structure, each particle captured in the imaging process must first be categorised according to its orientation. However, this is made difficult by compositional heterogeneity in imperfectly purified protein complexes, and also by asymmetry in structures. For symmetrical structures, such as the two highlighted at the begining of this section, the number of particles required in the image is usually considerably lower, since multiple axes of symmetry reduce the dimensionality of the different orientations that must be distinguished between. Interestingly, when dealing with samples that are 2D crystals (electron crystallography, rather than microscopy), it is still necessary to get images of particles in different orientations, but these are acquired tilting the sample itself.
 
 \subsubsection{Figure 2. Classification of 3D particle images}
 % NOTE: 2 Panels, one showing how individual proteins can be grouped into different orientations, a second panel showing how compositional heterogeneity can cause issues?
 
+% TODO
+Dealing with compositional heterogeneity is a separate, harder problem, but has been effectively dealt with, first by max likelihood methods, and more recently within the bayesian framework of the RELION program mentioned previously. It is worth noting that this open-source software was initially written almost entirely by Sjors Scheres, who has played an essential role in bringing the cryo-EM field to where it is today.
+
 \section{Non-structural characterisation of protein complexes}
 Thus far, I have only discussed some of the structural methods that can be used to describe protein complexes. However, there is a great deal of useful information that cannot be determined solely from the molecular structure of a protein complex; for example, the cellular abundance of that complex and its constituent subunits. Mass-spectrometry in particular has proven to be very versatile, and has been used for a number of different purposes, including elucidation of protein complex assembly pathways \cite{Levy2008a,Marsh2013}, investigations into the evolutionary history of complexes \cite{Wan2015}, and generation of richly detailed interactome datasets \cite{Hein2015}.
 
-\subsection{Yeast-two-hybrid and related methodologies}
-mostly-very old methods, reimagined for 21st century. Most of their utility comes from simplicity and high-throughput modifications, won't spend too long on this.
+\subsection{Cross-linking mass spectrometry}
+The first application of mass spectrometry that I will discuss is one that can be thought of as a hybrid between structural and non-structural technologies. Cross-linking mass spectrometry (XL-MS)
 
-\subsection{Affinity purification mass spectrometry}
+\subsubsection{}
+
+\subsection{Affinity-purification mass spectrometry}
 Currently most powerful method for characterising interactomes, use some nice case-studies, in particular the way in which that 3D interactome paper \cite{Hein2015} combined AP-MS with quantitative mass spec (iBAQ) to get detailed stoichiometric information.
 
-% NOTE Cross-linking?
-
 \subsubsection{Figure, AP-MS}
+
+\subsubsection{Two mass spectrometry case studies}
+
 
 \section{Computational analysis of protein complexes}
 \subsection{Inferring protein complexes from interaction networks}
