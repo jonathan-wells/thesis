@@ -1,30 +1,90 @@
-\documentclass[a4paper,11pt,twoside,openright]{book}
+\documentclass[a4paper,11pt,twoside,openright]{scrbook}
 
-% Arsclassica package with fix for long chapter titles.
-\usepackage{scrextend}
-\usepackage{../arsclassicamod}
-
-% Margins and spacing for university regulations
-\usepackage[top=20mm,bottom=40mm,left=40mm,right=25mm]{geometry}
-\usepackage{setspace}
-\onehalfspacing
-\setlength{\parskip}{0em}
-
-\usepackage{blindtext}
+\usepackage{../jnwthesis}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{acronym}
 \usepackage{standalone}
 \standalonetrue
 
+\usepackage[backend=biber,style=nature,backref=true]{biblatex}
+\bibliography{/Users/jonwells/Documents/bibtex/Thesis}
+\let\cite\supercite
+\usepackage{bibentry}
 
 \begin{document}
 
+% \frontmatter
 
-% Declaration
+\chapter*{Declaration}
+
 % Dedication
-% Acknowledgements
-% Abstract, 1 page max?
-% Lay Summary, ditto
-% Contents
-% List of figures
-% List of abbreviations
+\chapter*{}
+
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+FROM SMC PAPER: We wish to thank Alex Schleiffer, Andrew Wood, Chris Ponting, Wendy Bickmore and David Sherratt for insightful discussions. We would also like to thank Hongtao Yu for kindly allowing us to discuss his unpublished Scc2 data. Research in J.A.M. lab is supported by an MRC Career Development Award (MR/M02122X/1).
+
+% 1 page max
+\chapter*{Abstract}
+
+\clearpage
+\tableofcontents
+\addcontentsline{toc}{chapter}{Contents}
+
+\clearpage
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\clearpage
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\clearpage
+
+%
+% \chapter*{List of Figures}
+%
+% \begin{enumerate}
+%     \item Figure 1.1 - X-ray free-electron lasers
+%     \item Figure 1.2 - Image classification in cryo-electron microscopy
+% \end{enumerate}
+
+
+\chapter*{List of Acronyms}
+\addcontentsline{toc}{chapter}{List of Acronyms}
+
+\begin{acronym}[proteins]
+    \acro{AP-MS}{Affinity-purification mass spectrometry}
+    \acro{EM}{Electron microscopy}
+    \acro{MAPS}{Monolithic active pixel sensors}
+    \acro{SMC}{Structural maintenance of chromosomes}
+    \acro{XL-MS}{Cross-linking mass spectrometry}
+\end{acronym}
+
+\chapter*{Published Material}
+\addcontentsline{toc}{chapter}{Published Material}
+This thesis is largely based on work that has already been published. For the sake of transparency, I present here a brief description of how each chapter relates to these published articles, and the extent of my involvement in each case. In all cases, chapters were re-written and shortened or extended to varying degrees, using the published articles as guides to structure where applicable. Where figures have been re-used directly from published material, notes indicating this have been made in the legends. Any papers on which I am listed as an author that were released during the duration of this PhD can be found in appendix I.
+\\~\\
+Chapter 2 is an extended version of the following article:
+\begin{quote}
+    \fullcite{Wells2017}
+\end{quote}
+This project was initially suggested by T. Gligoris, experiments were designed by myself and J.A.M. and analyses were carried out by myself. Interpretation of the data was predominantly my own, with contributions from all other authors, and all authors contributed to writing of the manuscript.
+\\~\\
+Chapter 3 is derived from:
+\begin{quote}
+    \fullcite{Wells2016}
+\end{quote}
+
+
+Chapter 4 is based on and heavily adapted from:
+\begin{quote}
+    \fullcite{McShane2016}
+\end{quote}
+This was a large collaboration lead primarily by E.M. and M.S.; a detailed description of author contributions can be found in the paper. My own contribution (with J.A.M.) was in the design, implementation and interpretation of experiments investigating the relationship between protein complex assembly and the observed patterns of protein degradation. This work is highlighted in figures 5A-5D of the published paper. However, additional unpublished analyses are presented and discussed in chapter 4 of this thesis.
+
+Chapter 5 is partly based on a reanalysis of data from the paper below, whilst a second manuscript on which I am an author is currently in preparation.
+
+
 
 \end{document}
