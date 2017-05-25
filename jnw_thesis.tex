@@ -1,28 +1,37 @@
 \documentclass[a4paper,11pt,twoside,openright]{scrbook}
 
+% Packages
 \usepackage{jnwthesis}
 \usepackage{amsmath}
 \usepackage{lipsum}
+\usepackage{acronym}
 \usepackage{standalone}
 
-\usepackage[backend=biber,style=nature]{biblatex}
+% Bibliography
+\usepackage[backend=biber,style=nature,backref=true,maxcitenames=99]{biblatex}
 \bibliography{/Users/jonwells/Documents/bibtex/Thesis}
 \let\cite\supercite
 
+% Figures
+\usepackage{graphicx}
+\graphicspath{ {figs/wip/} }
 
 \begin{document}
 
 % title setup
-\title{\sffamily \allcaps{The regulatory mechanisms and biological implications of protein complex assembly} \\~\\
+\title{\sffamily \allcaps{The regulatory mechanisms and biological implications of protein complex assembly} \\~\\~\\
 \normalsize
-Jonathan N. Wells \\~\\
+Jonathan N. Wells \\~\\~\\
 Doctor of Philosophy \\
 The University of Edinburgh \\
 2017}
 \date{}
 \maketitle
 
+\frontmatter
 \input{00_front_matter/frontmatter}
+
+\mainmatter
 \input{01_introduction/introduction}
 \input{02_hawks/hawk_proteins.tex}
 

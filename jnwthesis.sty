@@ -6,6 +6,7 @@
 \PassOptionsToPackage{automark}{scrlayer-scrpage}
     \RequirePackage{scrlayer-scrpage}
 \RequirePackage{titlesec}
+\RequirePackage{tocloft}
 \RequirePackage[hyperfootnotes=false]{hyperref}
 \RequirePackage[dvipsnames,hyperref]{xcolor}
 
@@ -66,7 +67,7 @@
     \raggedright\allcaps{#1}%
     \end{minipage}}
     \titleformat{\chapter}[block]
-       {\normalfont\Large\sffamily}
+       {\normalfont\LARGE\sffamily}
        {\textcolor{halfgrey}{\chapterNumber\thechapter}
        \hspace{10pt}\vline\ }{10pt}
     {\formatchapter}
@@ -83,24 +84,27 @@
     {\normalfont\sffamily\itshape\color{black}}
     {\thesubsubsection}{1em}{\itshape}
 
+
+%************************************************************
+% Table of contents
+%************************************************************
+
+\renewcommand{\cfttoctitlefont}{\sffamily\LARGE\allcaps}
+\renewcommand{\cftloftitlefont}{\sffamily\LARGE\allcaps}
+\renewcommand{\cftlottitlefont}{\sffamily\LARGE\allcaps}
+%
+\renewcommand{\cftchapfont}{\scshape}
+% \renewcommand{\cftsubsecfont}{\itshape}
+% \renewcommand{\cftfigfont}{Figure }
+% \renewcommand{\cfttabfont}{Table }
+
+
 %************************************************************
 % Headlines
 %************************************************************
 
-% \RequirePackage{titleps}
+% Perhaps would look better to take off the weird page page numbers at the top and do them on the bottom instead?
 
-% \newpagestyle{main}{
-%     \sethead
-%     [\sffamily\small\thepage%
-%     \headline{\hspace{5pt}\vline\hspace{5pt}\chaptertitle}]
-%     []
-%     [] % even
-%     {}
-%     {}
-%     {\sffamily\small\headline{\thesection\hspace{5pt}%
-%     \sectiontitle\hspace{5pt}\vline\hspace{5pt}}\thepage}} % odd
-% \pagestyle{main}
-%
 \clearscrheadfoot
 \renewcommand{\sectionmark}[1]{\markright{
 {\headline{\thesection}} \headline{#1}}}
