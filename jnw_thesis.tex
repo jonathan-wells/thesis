@@ -4,17 +4,12 @@
 \usepackage{jnwthesis}
 \usepackage{amsmath}
 \usepackage{lipsum}
-\usepackage{acronym}
 \usepackage{standalone}
+\usepackage{acronym}
 
-% Bibliography
-\usepackage[backend=biber,style=nature,backref=true,maxcitenames=99]{biblatex}
 \bibliography{/Users/jonwells/Documents/bibtex/Thesis}
-\let\cite\supercite
+\graphicspath{{figs/}}
 
-% Figures
-\usepackage{graphicx}
-\graphicspath{ {figs/wip/} }
 
 \begin{document}
 
@@ -33,7 +28,7 @@ The University of Edinburgh \\
 
 \mainmatter
 \input{01_introduction/introduction}
-\input{02_hawks/hawk_proteins.tex}
+\input{02_hawks/hawk_proteins}
 
 \printbibliography
 
