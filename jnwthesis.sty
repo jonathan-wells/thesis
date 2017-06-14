@@ -1,19 +1,33 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{jnwthesis}
+
+% Page layout and typography
 \RequirePackage{geometry}
 \RequirePackage{setspace}
 \RequirePackage{fontspec}
 \PassOptionsToPackage{automark}{scrlayer-scrpage}
     \RequirePackage{scrlayer-scrpage}
 \RequirePackage{titlesec}
+
+% Contents, figures, tables and acronyms
 \RequirePackage{tocloft}
+\RequirePackage{acronym}
+
+% Hyperlinks
 \RequirePackage[hyperfootnotes=false]{hyperref}
 \RequirePackage[dvipsnames,hyperref]{xcolor}
 
+% Figures
+\RequirePackage{graphicx}
+\RequirePackage{floatrow}
+\RequirePackage{caption}
 
-%*******************************************************************************
+% Bibliography
+\RequirePackage[backend=biber,style=nature]{biblatex}
+
+%************************************************************
 % Paper dimensions and generic formatting
-%*******************************************************************************
+%************************************************************
 
 \geometry{
     a4paper,
@@ -28,9 +42,9 @@
 \definecolor{halfgrey}{gray}{0.55}
 
 
-%*******************************************************************************
+%************************************************************
 % Fonts
-%*******************************************************************************
+%************************************************************
 
 \setmainfont{AGaramondPro-Regular}[
     Ligatures=TeX,
@@ -54,9 +68,9 @@
 \renewcommand\thefootnote{\roman{footnote}}
 
 
-%*******************************************************************************
+%************************************************************
 % Chapter and section titles
-%*******************************************************************************
+%************************************************************
 
 \titleformat{\chapter}[block]
     {\chapterNumber\Huge\color{halfgrey}}
@@ -86,24 +100,20 @@
 
 
 %************************************************************
-% Table of contents
+% Contents, figures, tables, abbreviations
 %************************************************************
 
 \renewcommand{\cfttoctitlefont}{\sffamily\LARGE\allcaps}
 \renewcommand{\cftloftitlefont}{\sffamily\LARGE\allcaps}
 \renewcommand{\cftlottitlefont}{\sffamily\LARGE\allcaps}
-%
 \renewcommand{\cftchapfont}{\scshape}
-% \renewcommand{\cftsubsecfont}{\itshape}
-% \renewcommand{\cftfigfont}{Figure }
-% \renewcommand{\cfttabfont}{Table }
 
 
 %************************************************************
 % Headlines
 %************************************************************
 
-% Perhaps would look better to take off the weird page page numbers at the top and do them on the bottom instead?
+% Perhaps would look better to take off the weird page numbers at the top and do them on the bottom instead?
 
 \clearscrheadfoot
 \renewcommand{\sectionmark}[1]{\markright{
@@ -137,3 +147,27 @@
     pdfcreator={XeLaTeX},
     pdfproducer={LaTeX with jnwthesis}
 }
+
+
+%************************************************************
+% Figures and captions
+%************************************************************
+
+\captionsetup{format=plain,labelfont={sf,bf,small},font={small}}
+
+\newfloatcommand{fcapsideright}{figure}[{\capbeside
+    \captionsetup[capbesidefigure]{format=plain,labelsep=columnsep}
+        \thisfloatsetup{capbesideposition={top,right}}}]
+    [\FBwidth]
+
+\newfloatcommand{fcapsideleft}{figure}[{\capbeside
+    \captionsetup[capbesidefigure]{format=plain,labelsep=columnsep}
+        \thisfloatsetup{capbesideposition={top,left}}}]
+    [\FBwidth]
+
+
+%************************************************************
+% Miscellaneous
+%************************************************************
+
+\let\cite\supercite  % Use superscript citations
