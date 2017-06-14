@@ -3,14 +3,12 @@
 \usepackage{../jnwthesis}
 \usepackage{amsmath}
 \usepackage{lipsum}
-\usepackage{acronym}
 \usepackage{standalone}
+\usepackage{epigraph}  % For dedication and quote
+\usepackage{bibentry}  % Allow full citations in text
 \standalonetrue
 
-\usepackage[backend=biber,style=nature,backref=true]{biblatex}
 \bibliography{/Users/jonwells/Documents/bibtex/Thesis}
-\let\cite\supercite
-\usepackage{bibentry}
 
 \begin{document}
 
@@ -20,6 +18,9 @@
 
 % Dedication
 \chapter*{}
+\setlength{\epigraphwidth}{.45\textwidth}
+\setlength{\epigraphrule}{0pt}
+\epigraph{\textsc{All this is a dream}. Still examine it by a few experiments. Nothing is too wonderful to be true, if it be consistent with the laws of nature; and in such things as these, experiment is the best test of such consistency.}{\textit{-- Michael Faraday}}
 
 \chapter*{Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgements}
@@ -41,28 +42,28 @@ FROM SMC PAPER: We wish to thank Alex Schleiffer, Andrew Wood, Chris Ponting, We
 \addcontentsline{toc}{chapter}{List of Tables}
 \clearpage
 
-%
-% \chapter*{List of Figures}
-%
-% \begin{enumerate}
-%     \item Figure 1.1 - X-ray free-electron lasers
-%     \item Figure 1.2 - Image classification in cryo-electron microscopy
-% \end{enumerate}
-
-
 \chapter*{List of Acronyms}
 \addcontentsline{toc}{chapter}{List of Acronyms}
 
+% NOTE: Could it be an idea to indent closely related acronyms
 \begin{acronym}[proteins]
+    \acro{MS}{Mass spectrometry}
     \acro{AP-MS}{Affinity-purification mass spectrometry}
+    \acro{AE-MS}{Affinity-enrichment mass spectrometry}
+    \acro{DQE}{Detective quantum efficiency}
     \acro{EM}{Electron microscopy}
+    \acro{HEAT}{\underline{H}untingtin, elongation factor 3 (\underline{E}F3), protein phosphatase 2A (PP2\underline{A}), target of rapamycin (\underline{T}OR1)}
+    \acro{LFQ}{Label-free quantification}
     \acro{MAPS}{Monolithic active pixel sensors}
     \acro{SMC}{Structural maintenance of chromosomes}
+    \acro{TEV}{Tobacco etch virus}
+    \acro{Y2H}{Yeast-2-Hybrid}
     \acro{XL-MS}{Cross-linking mass spectrometry}
+    %\acro{IP}{Immunoprecipitation}
 \end{acronym}
 
-\chapter*{Published Material}
-\addcontentsline{toc}{chapter}{Published Material}
+\chapter*{Use of Published Material}
+\addcontentsline{toc}{chapter}{Use of Published Material}
 This thesis is largely based on work that has already been published. For the sake of transparency, I present here a brief description of how each chapter relates to these published articles, and the extent of my involvement in each case. In all cases, chapters were re-written and shortened or extended to varying degrees, using the published articles as guides to structure where applicable. Where figures have been re-used directly from published material, notes indicating this have been made in the legends. Any papers on which I am listed as an author that were released during the duration of this PhD can be found in appendix I.
 \\~\\
 Chapter 2 is an extended version of the following article:
@@ -75,16 +76,11 @@ Chapter 3 is derived from:
 \begin{quote}
     \fullcite{Wells2016}
 \end{quote}
-
-
 Chapter 4 is based on and heavily adapted from:
 \begin{quote}
     \fullcite{McShane2016}
 \end{quote}
 This was a large collaboration lead primarily by E.M. and M.S.; a detailed description of author contributions can be found in the paper. My own contribution (with J.A.M.) was in the design, implementation and interpretation of experiments investigating the relationship between protein complex assembly and the observed patterns of protein degradation. This work is highlighted in figures 5A-5D of the published paper. However, additional unpublished analyses are presented and discussed in chapter 4 of this thesis.
-
 Chapter 5 is partly based on a reanalysis of data from the paper below, whilst a second manuscript on which I am an author is currently in preparation.
-
-
 
 \end{document}
