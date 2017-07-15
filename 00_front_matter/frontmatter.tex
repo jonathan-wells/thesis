@@ -12,15 +12,12 @@
 
 \begin{document}
 
-% \frontmatter
-
 \chapter*{Declaration}
+This thesis presents my own work, and has not been submitted for any other degree or professional qualification. Wherever results were obtained in collaboration with others, I have clearly stated it in the text. Any information derived from the published work of others has been cited in the text, and a complete list of references can be found in the bibliography. Finally, published papers directly arising from the work described in this thesis can be found in the appendices.
 
 % Dedication
 \chapter*{}
-\setlength{\epigraphwidth}{.45\textwidth}
-\setlength{\epigraphrule}{0pt}
-\epigraph{\textsc{All this is a dream}. Still examine it by a few experiments. Nothing is too wonderful to be true, if it be consistent with the laws of nature; and in such things as these, experiment is the best test of such consistency.}{\textit{-- Michael Faraday}}
+To my parents, Jane and Nick
 
 \chapter*{Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgements}
@@ -28,6 +25,27 @@ FROM SMC PAPER: We wish to thank Alex Schleiffer, Andrew Wood, Chris Ponting, We
 
 % 1 page max
 \chapter*{Abstract}
+Every living organism possesses a genome that contains within it a unique set of genes, a substantial number of which encode proteins. Over the last 20 years, it has become apparent that organismal complexity arises not from the specific complement of genes per se, but rather from interactions between the gene products - in particular, interactions between proteins. As an inevitable consequence of the crowded cellular interior, most protein-protein interactions are fleeting. However, many are significantly more long-lived and result in stable protein complexes, in which the constituent subunits are obligately dependent on their binding partners. Despite the abundance of protein complexes and their critical importance to the cell, we currently have an incomplete understanding of the mechanisms by which the cell ensures their correct assembly.
+
+In the chapters that follow, I have attempted to improve our understanding of the regulatory systems underlying assembly of protein complexes, and the way in which assembly as a whole affects the behaviour of the cell. The thesis opens with an extended literature review covering the currently available methods for characterising protein complexes. This is followed by a case study concerning an important, universally conserved family of protein complexes, namely the SMC-kleisins. Two members of this family, condensin and cohesin, are responsible for two hallmarks of eukaryotic chromatin organisation: the formation of condensed, linear chromosomes, and sister chromatid cohesion during cell division. Unlike other SMC-kleisins, condensin and cohesin possess a number of regulators containing HEAT repeats. By developing a computational pipeline for searching and clustering paralogous repeat proteins, I was able to demonstrate that these regulators form a distinct sub-family within the larger class of HEAT repeat proteins. Furthermore, these regulators arose very early in eukaryotic history, hinting at a possible role in the origin of modern condensins and cohesins.
+
+Moving from the specific to the general, the remaining three chapters are concerned with regulatory mechanisms and biological implications common to the assembly of all protein complexes. Chapter three describes a study of prokaryotic genomes. Bacterial and archaeal genomes contain far less non-coding DNA than eukaryotes, and coding genes are often packaged into discrete units known as operons. The proteins encoded within operons are usually functionally related, either through participation in metabolic pathways or as subunits of heteromeric protein complexes. Since protein complexes assemble via ordered pathways, we reasoned that there might be a signature of assembly order present in operons, the genes of which are translated in sequential order. By comparing computationally predicted assembly pathways with gene order in operons, we demonstrated this to be the case for the large majority of operon-encoded complexes. Within operons, gene order follows assembly order, and adjacent genes are substantially more likely to share a physical interface than those further apart. This work demonstrates that efficient assembly of complexes is of sufficient importance as to have placed major constraints on the evolution of operon gene order.
+
+Finally, I present work investigating how eukaryotic patterns of protein degradation are strongly influenced by the formation of protein complexes. In collaboration with others, we showed that, whilst most proteins display exponential degradation kinetics, a sizeable minority deviate considerably from this pattern, instead being more consistent with a two-step degradation process. These proteins are predominantly members of heteromeric complexes, and their two-step decay profiles can be explained using a model under which bound and unbound subunits are degraded at different rates. Within individual complexes, we find that non-exponentially decaying proteins tend to form larger interfaces, assemble earlier, and show a higher degree of coexpression, consistent with the idea that bound subunits are degraded at a slower rate than unbound or peripheral subunits.
+
+This model also explains the behaviour of proteins in aneuploid cells where one or more chromosomes have been duplicated. In general, protein abundance scales with gene copy number, so that the immediate effect of duplicating a chromosome is to double the abundance of the proteins encoded on it. However, previous analyses of mass spectrometry data, as well as my own, have shown that the abundance of many proteins on duplicated chromosomes is significantly attenuated compared to what one would expect. These proteins, like those with non-exponential degradation patterns, are very often members of larger complexes. Since the overall concentration of a protein complex is constrained by that of its least abundant members, duplicating a single subunit will predominantly increase the unbound, unstable fraction of that subunit. The results from this work strongly suggest that the apparent attenuation of many proteins observed in aneuploid cells is indeed a consequence of the failure of these proteins to assemble into complexes.
+
+\chapter*{Lay Summary}
+All cells are made up of a complex mixture of biological macromolecules, including carbohydrates, lipids, and proteins. Proteins, the subject of this thesis, are tiny, vibrating strings of amino acids with a strictly defined sequence and three-dimensional structure. Every cell in your body, of which there are some 50 trillion, contains further trillions of proteins that, collectively, are responsible for carrying out virtually every biological process you can imagine, from the moment you are born, to the moment you die.
+
+However, although each protein is present in many copies in the cell, the full set of unique protein species is comparatively small. What is more, the number of protein-coding genes that an organism has bears almost no relationship to the perceived complexity of that organism. For a humbling illustration of this, consider the fact that your genome - that of a human - contains approximately 20,000 genes, whereas the pufferfish contains closer to 50,000 and even the lowly banana has more than 36,000. What is it then about this collection of genes that allows us to contemplate the difference between our selves and a banana, whilst the banana just lies there, fruitily?
+
+Part of the explanation stems from the fact that proteins interact extensively with one another. Across the entire proteome (the collection of all proteins present in a cell), a substantial fraction of proteins form stable complexes. Haemoglobin, for example, is made up of two alpha and two beta globin subunits. Without this tendency of proteins to interact, the level of complexity that we see across the spectrum of life - even in the simplest microorganisms - would never be possible. However, we know very much less about these protein complexes than we do about their constituent subunits. In particular, we only have a basic understanding of how the cell regulates their assembly, ensuring that proteins are produced at the right time and in the right place.
+
+In this work, I have attempted to explain why protein complexes matter, looking at some of the ways in which the cell enables complexes to assemble, and what the biological implications of this process are. For example, from studying the organisation of bacterial genes, it is clear that the order in which their genes are encoded closely matches the order in which the resulting protein complexes assemble. This implies that these creatures must be under strong evolutionary pressure to assemble protein complexes quickly and efficiently.
+
+Concerning human biology, the later chapters describe a model of protein complex behaviour that explains some of the features that we see in aneuploid cells - that is, cells which have an abnormal number of chromosomes. This is a state familiar to many of us as Down's syndrome, in which people affected have an extra copy of chromosome 21. In closing, the work presented here, supported by that of many others, demonstrates the fundamental importance of protein complexes to life, and I hope goes some way to deepening our understanding of their behaviour within cells.
+
 
 \clearpage
 \tableofcontents
@@ -50,16 +68,19 @@ FROM SMC PAPER: We wish to thank Alex Schleiffer, Andrew Wood, Chris Ponting, We
     \acro{MS}{Mass spectrometry}
     \acro{AP-MS}{Affinity-purification mass spectrometry}
     \acro{AE-MS}{Affinity-enrichment mass spectrometry}
-    \acro{CAPRI}{}
-    \acro{CASP}{}
+    \acro{CAPRI}{Critical Assessment of PRediction of Interactions}
+    \acro{CASP}{Critical Assessment of protein Structure Prediction}
     \acro{DQE}{Detective quantum efficiency}
     \acro{EM}{Electron microscopy}
     \acro{HEAT}{\underline{H}untingtin, elongation factor 3 (\underline{E}F3), protein phosphatase 2A (PP2\underline{A}), target of rapamycin (\underline{T}OR1)}
+    \acro{LECA}{Last eukaryotic common ancestor}
     \acro{LFQ}{Label-free quantification}
     \acro{MAPS}{Monolithic active pixel sensors}
+    \acro{MD}{Molecular dynamics}
     \acro{SMC}{Structural maintenance of chromosomes}
-    \acro{TEV}{Tobacco etch virus}
     \acro{TBM}{Template-based modelling}
+    \acro{TEV}{Tobacco etch virus}
+    \acro{TMV}{Tobacco mosaic virus}
     \acro{Y2H}{Yeast-2-Hybrid}
     \acro{XL-MS}{Cross-linking mass spectrometry}
     %\acro{IP}{Immunoprecipitation}
@@ -85,5 +106,10 @@ Chapter 4 is based on and heavily adapted from:
 \end{quote}
 This was a large collaboration lead primarily by E.M. and M.S.; a detailed description of author contributions can be found in the paper. My own contribution (with J.A.M.) was in the design, implementation and interpretation of experiments investigating the relationship between protein complex assembly and the observed patterns of protein degradation. This work is highlighted in figures 5A-5D of the published paper. However, additional unpublished analyses are presented and discussed in chapter 4 of this thesis.
 Chapter 5 is partly based on a reanalysis of data from the paper below, whilst a second manuscript on which I am an author is currently in preparation.
+
+\chapter*{}
+\setlength{\epigraphwidth}{.45\textwidth}
+\setlength{\epigraphrule}{0pt}
+\epigraph{\textsc{All this is a dream}. Still examine it by a few experiments. Nothing is too wonderful to be true, if it be consistent with the laws of nature; and in such things as these, experiment is the best test of such consistency.}{\textit{-- Michael Faraday}}
 
 \end{document}
