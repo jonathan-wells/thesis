@@ -39,7 +39,10 @@ planning/
 examples/
 figs/
 appendices/
+testing/
 .DS_Store
 *.pdf
 *.txt
 *.md
+*.zip
+*.docx
