@@ -1,0 +1,88 @@
+\documentclass[a4paper,11pt,twoside,openright]{scrbook}
+
+\usepackage{../jnwthesis}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{standalone}
+\standalonetrue
+
+\bibliography{/Users/jonwells/Documents/bibtex/Thesis}
+\graphicspath{{../figs/wip/}}
+
+
+\begin{document}
+
+\chapter{Autosomal dosage compensation in aneuploid cells}
+
+\section{Introduction}
+
+Colon cancer cells are renowned for their unusual, sometimes bizarre karyotypes. This state, in which a cell has an abnormal number of chromosomes, is known as aneuploidy, and occurs to varying degrees in all known cancers. However, it is common in most eukaryotes, regardless of whether they are capable of developing cancer. Isolates of wild yeast strains for example have been found to harbour a variety of different karyotypes, \cite{Hose2015}. In humans, approximately 0.1\% of the population carry an extra copy of chromosome 21 \cite{Presson2013}, which results in Down's syndrome. In most cases however, aneuploidies that have been acquired through the germ-line or early in development are lethal. A recent study of spontaneous miscarriages found that approximately 45\% were the result of aneuploidies \cite{Jia2015}, and the true figure is probably higher still, since studies in mice suggest that mosaic aneuploid embryos fail to develop much beyond gastrulation, and thus would often pass clinically undetected \cite{Lightfoot2006}.
+
+% NOTE: in both yeast an mammalian cells.
+Mechanistically, aneuploidy is the result of failure of chromosomes to separate properly during cell division, either through non-disjunction of sister chromatids or delays in the movement of chromosomes to opposite poles of the cell during anaphase. For a cell that gains a chromosome, the immediate effect is a doubling of the copy number of all the genes residing on it, thus leading to a significant increase in mRNA and protein production. However, a common feature noted in several studies is that a considerable fraction of proteins are attenuated compared to their expected abundances. \cite{Stingele2012,Dephoure2014,Goncalves2017}. This is generally thought to caused by degradation of excess protein complex subunits, since attenuated proteins are highly enriched in protein complexes, and their transcript abundances scale correctly with copy number. More conclusively, as we saw in the previous chapter, the model explaining non-exponential degradation of proteins also correctly predicts the attenuation of proteins in aneuploid cells.
+
+Despite this, some questions remain unanswered before we can be confident about accepting this model. For example, which proteins within a complex are likely to be attenuated? Could protein aggregation be accounting for some of the observed attenuation? What determines whether a protein degrades or is aggregated? How do these findings fit into the framework provided by the dosage balance hypothesis \cite{Papp2003}? Using analyses of structural data in combination with proteomics data showing changes in protein content in aggregates, I answer some of these questions. Urgh.
+
+\section{Results}
+
+% NOTE: Is it <= 0.6 or < 0.6?
+\subsection{Attenuation of protein complex subunits is unique to heteromers}
+To confirm that attenuation of protein complex subunits is a feature unique to heteromers, we used data from Dephoure et al. \cite{Dephoure2014} which describes the relative fold change in the abundance of 2,581 genes from disomic \textit{S. cerevisiae} strains. In this dataset, attenuated proteins are defined as those satisfying:
+\begin{displaymath}
+    \log_{2} \left( \frac{disomic}{wildtype} \right) \leq 0.6
+\end{displaymath}
+such that the observed SILAC ratio is at least three standard deviations away from the expected mean value of 1.0 (equivalent to doubling abundance). Mapping this dataset onto structural data from the PDB, we confirmed earlier observations that attenuation of expression is more common for members of multi-subunit protein complexes (figure \ref{c5f1}).
+
+\begin{figure}[h]
+    \makebox[\textwidth]{\includegraphics[width=\textwidth]{c5_fig1_qsdsratio}}
+    \caption[Attenuation of protein complexes is unique to heteromers]{\sffamily \textbf{Attenuation of protein complexes is unique to heteromers} \\ \small Members of protein complexes are significantly more likely to be attenuated upon doubling of gene copy number. However, this effect is almost entirely driven by heteromeric complexes, with disomic ratios that differ significantly from that seen in monomers (median log2 disomic ratios of 0.623 and 0.948 respectively, Wilcoxon rank sum test p-value = 4.315e-22). In contrast, homomers (median 0.942) behave much the same as monomers and the difference between them is not at all significant.}
+    \label{c5f1}
+\end{figure}
+
+This observation is consistent with the model presented in chapter 4, in which unbound subunits are degraded faster than bound subunits. Under this model, disomic ratio reflects the ratio of bound to unbound subunits. Duplicating a single subunit in a heteromer increases the unbound (and unstable) fraction of that protein, leading to its observed attenuation. In contrast, proteins that are predominantly monomeric should not experience any systematic attenuation, since their degradation rate will not be affected by binding partners and should therefore remain roughly constant. Likewise, subunits of homomeric complexes will not be attenuated since they comprise a single protein species and as a result changes in copy number will not cause stoichiometric imbalances.
+
+\subsection{Degree of attenuation is dependent on structural context}
+
+Many of the features we see in ED and NED proteins are replicated here, suggesting that they are different manifestations of the same underlying biological phenomena. For example, protein complex size.
+
+\begin{figure}[h]
+    \makebox[\textwidth]{
+        \includegraphics[width=\textwidth]{c5_fig2_usubsdsratio}
+        }
+    \caption[Degree of attenuation increases with increasing complex size]{\sffamily \textbf{Degree of attenuation increases with increasing complex size} \\ \small The abundance of monomers and homomeric subunits is largely determined by gene copy number, with log\textsubscript{2} disomic ratios being approximately normally distributed about 1. Heteromeric subunits however become increasingly likely to be attenuated as the increasing number of unique subunits. “Significant” attenuation is defined here by a threshold value of < 0.6, highlighted by the dashed red line. Structural and non-structural datasets have been combined here.}
+    \label{c5f2}
+\end{figure}
+
+Also, assembly order...
+
+\begin{figure}[h]
+    \makebox[\textwidth]{\includegraphics[width=\textwidth]{c5_fig3_assembly}}
+    \caption[Subunits that bind late to the complex are less likely to be attenuated]{\sffamily \textbf{Subunits that bind late to the complex are less likely to be attenuated} \\ \small Red line indicates “attenuated” threshold. P-values are Wilcoxon rank sum tests indicating the difference in disomic ratio between the first and last subunits to assemble. “Mid” subunits are all those that are neither first nor last to assemble. The non-significant values are probably mostly due to the fact that the “first” and “last” subunit numbers are highly limited by the number of available PDB structures, which is relatively low for the larger complexes.}
+    \label{c5f3}
+\end{figure}
+
+\subsection{Differences between wild-type subunit degradation and aneuploid attenuation}
+
+\begin{figure}[h]
+\fcapsideright
+    {\caption[Log2 fold-change in subunit abundance vs. median subunit abundance]{\sffamily\textbf{Log2 fold-change in subunit abundance vs. median subunit abundance}\newline \small When calculating the fold change of subunit abundance relative to the median subunit abundance within a complex, there is no significant difference between attenuated and non-attenuated proteins. This is in contrast to NED vs. ED, in which the former tend to be relatively more abundant. Fold change was calculated as log2 (subunit abundance/median abundance).}\label{c5f4}}
+    {\includegraphics[width=0.5\textwidth]{c5_fig4_abundance}}
+\end{figure}
+
+
+
+\section{Discussion}
+
+\clearpage
+
+\section{Supplementary information}
+\vspace{60mm}
+
+\begin{figure}[hb]
+    \makebox[\textwidth]{\includegraphics[width=\textwidth]{c5_fig1_pucomplexes}}
+    \caption[Attenuation of protein complexes is unique to heteromers]{\sffamily \textbf{Attenuation of protein complexes is unique to heteromers} \\ \small Reproduction of finding that attenuated proteins are members of protein complexes shown in Dephoure et al.}
+    \label{c5fs1}
+\end{figure}
+
+
+\end{document}
