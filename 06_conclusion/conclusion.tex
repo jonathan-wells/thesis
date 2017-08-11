@@ -1,0 +1,41 @@
+\documentclass[a4paper,11pt,twoside,openright]{scrbook}
+
+\usepackage{../jnwthesis}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{standalone}
+\standalonetrue
+
+\bibliography{/Users/jonwells/Documents/bibtex/Thesis}
+\graphicspath{{../figs/wip/}}
+
+
+\begin{document}
+
+\chapter{Conclusion}
+\section{Insights into the nature of protein complexes}
+In this work I have attempted to develop our understanding of the mechanisms by which the cell regulates protein complex assembly, and of the implications this process has for the proteome as a whole. After a literature review covering the currently available methods that can be used to study protein complexes, I began by describing the Hawk proteins - an important family of condensin and cohesin regulators descended from an ancestral HEAT repeat protein. This was followed by a study of gene order in prokaryotic operons, then a study of protein degradation kinetics, which revealed insights into the nature of protein complex assembly in eukaryotes. Finally, I demonstrated how a simple model developed in the penultimate chapter can be used to explain the phenomenon of protein attenuation in aneuploid cells.
+
+The characterisation of the Hawk family of condensin and cohesin regulators does not directly relate to the assembly of protein complexes, but it does shed light on the evolution of a fascinating group of protein complexes - the SMC-kleisins. The fact that the hawks appear to originate very early in eukaryotic history suggests that they played an important role in the evolution of condensin and cohesin's present-day functions, and highlights more broadly the importance of subunit gain and loss in the evolution of protein complexes \cite{Seidl2009,Wan2015}. Enticingly, the relationship between the hawks and the clathrin adaptor proteins hints at a link with the proto-coatomer hypothesis \cite{Devos2006,Field2011}, and raises questions about how closely intertwined the emergence of linear chromosome condensation was with the evolution of the nucleus.
+
+Aside from this excursion into evolution, the primary focus of this thesis has been on regulatory mechanisms governing the assembly of protein complexes, both in prokaryotes and eukaryotes. In chapter \ref{chapter:operons} I presented an analysis of prokaryotic operons, showing that gene order in bacteria is under evolutionary selection pressure to match the assembly order of heteromeric protein complexes. This demonstrates that ordered assembly pathways are not limited to in vitro experiments, but are biologically important, and that fitness benefits can be achieved via mechanisms that guide assembly down these pathways. It also strongly implies that assembly in bacteria takes place co-translationally, since otherwise the benefit of gene ordering would be lost once proteins diffused away from the site of translation.
+
+Eukaryotic protein complexes do not benefit from being encoded in operons, and therefore other mechanisms must have evolved that allow robust assembly of complexes. An important distinction between the prokaryotes and eukaryotes is that the latter typically have smaller effective population sizes - this places constraints on the ability of selection to leverage small fitness benefits \cite{Kimura1962,Lynch2011}. However, protein complexes are such a fundamental part of the cell that the process of assembly is certainly not left entirely to chance. One such mechanism with the power to facilitate assembly of eukaryotic complexes is pointed to in chapter \ref{chapter:degradation} - a study of protein degradation kinetics. This study revealed that many proteins are degraded non-exponentially, and this appears to be a result of rapid degradation of excess protein complex subunits. This finding suggests a model of eukaryotic protein complex assembly in which core subunits are overexpressed relative to their stoichiometric requirements, with excess protein being rapidly degraded.
+
+\section{Questions arising from this work}
+Many new (and old) questions are suggested by this work. As an obvious starting point, whilst coexpression of protein complex subunits is ubiquitous, it is still not at all clear how this is achieved in eukaryotes. Although eukaryotic gene order is non-random (see review \cite{Hurst2004}), there is very little clustering of genes in the manner of operons, and it is rare for protein complexes to be co-regulated by single transcription factors \cite{Tan2007}. The failure of simple mechanisms to explain coexpression in most cases suggests that it is an emergent property of the transcription factor network, involving multiple transcription factors operating at different regulatory levels \cite{Tsai2007,Muhammad2017}.
+
+With respect to the work on protein degradation kinetics, there are several points that would be interesting to follow up on. The fact that both NED character and attenuation in aneuploid cells are reduced by repressing the proteasome motivates one to ask what role ubiquitination plays in the regulation of protein complex assembly and degradation? There is evidence that both ubiquitination and acetylation sites are enriched in heteromeric protein complexes \cite{Chen2014,Choudhary2009}, which hints at considerable complexity in the regulation of protein complex degradation \cite{Caron2005}. An interesting project would be to ask whether or not such modifications affect the ability of protein complexes to assemble - one way of investigating this might be to look at whether there is any enrichment or depletion of modified lysine residues in the interface regions of protein subunits.
+
+Also, whilst it seems likely that rapid degradation of excess subunits is of benefit partly because it reduces the likelihood of off-target interactions  - the need for which is an important constraint on protein evolution \cite{Yang2012} - there are more subtle mechanisms of controlling expression that could also be facilitated by this system. Under the model described in chapter \ref{degradation}, the simplest interpretation of a protein complex containing both ED and NED proteins is that the NED proteins appear as such because they are present in excess, and thus have both bound and unbound subunits, whereas the ED proteins are fully bound, hence the single degradation rate.
+
+This implies that the ED subunits are limiting for the overall abundance of the complex, and therefore by controlling the expression of a small number of ED subunits, overall levels of the protein complex could be modulated relatively simply. Testing this hypothesis would be challenging, though not impossible, and would require changes in subunit expression to be monitored over extended time periods or in response to cell perturbations. Interestingly, some circumstantial evidence for this idea exists in a nice paper showing that many protein complexes involved in the yeast cell-cycle consist of a mixture of constitutively and periodically expressed subunits \cite{Lichtenberg2005}.
+
+Finally, there is still scope for further investigation into the attenuation of proteins in aneuploid cells. For example, although there seems to be a strong connection between NED and attenuation, the latter is a phenomena caused by fairly drastic changes to the karyotype of a cell. Duplicating a chromosome could reasonably be expected to increase protein aggregation in the cell, and from preliminary (unpublished) work this certainly seems to be the case, with members of protein complexes being particularly affected - the question now is to try and understand what dictates why some proteins aggregate whilst others are degraded.
+
+\section{Closing remarks}
+Over the preceding pages I have presented work relating to numerous aspects of protein complexes and the mechanisms by which they assemble. Beyond these contributions, there is still an enormous amount to be discovered, and it is my hope that some of the value of this work will lie in the new research it motivates. With the wealth of new biological data that becomes available each year, there is plenty of opportunity to learn more, and if the many excellent papers I have read over the last three years are anything to go by, then protein complexes will continue to be a fascinating area of study for many years to come.
+
+
+
+\end{document}
