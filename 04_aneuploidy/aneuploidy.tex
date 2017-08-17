@@ -36,7 +36,7 @@ First, to confirm that attenuation of protein complex subunits is a feature uniq
 where $disomic$ and $wildtype$ refer to the abundance of individual proteins in the two different cell populations. This value ensures that the observed SILAC ratio is at least three standard deviations away from the expected mean value of 1.0 (equivalent to doubling abundance). One of the key findings from this paper was that attenuated proteins were enriched in a set of multi-subunit complexes obtained from a dataset of yeast complexes compiled from the experimental literature \cite{Pu2009}. After replicating this finding using the same dataset (figure \ref{suppfigure:aneuploidy_qstype}), I mapped this aneuploidy dataset onto structures from the PDB. This structural dataset confirmed these earlier observations that attenuation of expression is more common for members of multi-subunit protein complexes, and demonstrated that attenuation was restricted to heteromeric subunits (figure \ref{figure:aneuploidy_qstype}).
 
 \begin{figure}[h]
-    \makebox[\textwidth]{\includegraphics[width=\textwidth]{c5_fig_qsdsratio}}
+    \makebox[\textwidth]{\includegraphics[width=\textwidth]{c4_fig_qsdsratio}}
     \caption[Attenuation of protein complexes is unique to heteromers]{\sffamily \textbf{Attenuation of protein complexes is unique to heteromers} \\ \small Members of protein complexes are significantly more likely to be attenuated upon doubling of gene copy number. However, this effect is almost entirely driven by heteromeric complexes, with disomic ratios that differ significantly from that seen in monomers (median log2 disomic ratios of 0.623 and 0.948 respectively, Wilcoxon rank sum test p-value = 4.315e-22). In contrast, homomers (median 0.942) behave much the same as monomers and the difference between them is not at all significant.}
     \label{figure:aneuploidy_qstype}
 \end{figure}
@@ -49,7 +49,7 @@ Many of the features we see in ED and NED proteins reappear here, suggesting tha
 
 \begin{figure}[h]
     \makebox[\textwidth]{
-        \includegraphics[width=\textwidth]{c5_fig_usubsdsratio}
+        \includegraphics[width=\textwidth]{c4_fig_usubsdsratio}
         }
     \caption[Degree of attenuation increases with increasing complex size]{\sffamily \textbf{Degree of attenuation increases with increasing complex size} \\ \small The abundance of monomers and homomeric subunits is largely determined by gene copy number, with log\textsubscript{2} disomic ratios being approximately normally distributed about 1. Heteromeric subunits however become increasingly likely to be attenuated as the increasing number of unique subunits. “Significant” attenuation is defined here by a threshold value of < 0.6, highlighted by the dashed red line. Structural and non-structural datasets have been combined here.}
     \label{figure:aneuploidusubs}
@@ -62,7 +62,7 @@ In contrast, if one imagines a typical heterodimer, the observed attenuation for
 One observation raised in Dephoure et al. is that almost all complexes have at least one non-attenuated subunit. An interesting idea mooted to explain this is the possibility that complexes require at least some stable subunits to act as a scaffold for the rest of the complex. If this were the case, then we would expect to see non-attenuated proteins being amongst the first to assemble. However, if we compare the disomic ratio of those subunits that assemble first against those that assemble last (figure \ref{figure:aneuploidy_assembly}), we find a clear (albeit weakly significant when controlling for number of unique subunits) tendency for early-assembling subunits to be attenuated. This finding matches the observations showing that NED subunits tend to assemble earlier than ED subunits, and is incompatible with the idea of stable proteins acting as scaffolds for protein complex assembly. Consistent with this, attenuated proteins also tend to form larger interfaces.
 
 \begin{figure}[h]
-    \makebox[\textwidth]{\includegraphics[width=\textwidth]{c5_fig_assembly}}
+    \makebox[\textwidth]{\includegraphics[width=\textwidth]{c4_fig_assembly}}
     \caption[Subunits that bind late to the complex are less likely to be attenuated]{\sffamily \textbf{Subunits that bind late to the complex are less likely to be attenuated} \\ \small Red line indicates “attenuated” threshold. P-values are Wilcoxon rank sum tests indicating the difference in disomic ratio between the first and last subunits to assemble. “Mid” subunits are all those that are neither first nor last to assemble. The non-significant values are probably mostly due to the fact that the “first” and “last” subunit numbers are highly limited by the number of available PDB structures, which is relatively low for the larger complexes.}
     \label{figure:aneuploidy_assembly}
 \end{figure}
@@ -75,7 +75,7 @@ Less easy to explain however is the fact that attenuated proteins appear to show
 \begin{figure}[h]
 \fcapsideright
     {\caption[Attenuated proteins show increased disorder]{\sffamily\textbf{Attenuated proteins show increased disorder}\newline \small A single disorder score for each protein in a set of protein complexes was produced by taking the median value from all residues, where per-residue disorder scores were predicted using IUPred \cite{Dosztanyi2005}. Proteins were taken from a set of complexes produced by combining structural data with that from the Pu et al. dataset \cite{Pu2009}. P-value calculated with Wilcoxon rank-sum test.}\label{figure:aneuploidy_disorder}}
-    {\includegraphics[width=0.5\textwidth]{c5_fig_disorder}}
+    {\includegraphics[width=0.5\textwidth]{c4_fig_disorder}}
 \end{figure}
 
 \subsection{Aneuploidy leads to increased heteromeric protein aggregation}
@@ -91,13 +91,13 @@ I then compared those proteins which were found to be highly aggregating with th
 \begin{figure}[h]
 \fcapsideright
     {\caption[Comparison of attenuation and aggregation propensity]{\sffamily\textbf{Comparison of attenuation and aggregation propensity}\newline \small Separating proteins into groups according to whether they are attenuated or highly-aggregating demonstrates that for proteins to be both heavily attenuated and highly aggregated is unusual.}\label{figure:aneuploidy_comparison}}
-    {\includegraphics[width=0.6\textwidth]{c5_fig_comparison}}
+    {\includegraphics[width=0.6\textwidth]{c4_fig_comparison}}
 \end{figure}
 
 Intriguingly, there are no obvious features that suggest why some proteins are rapidly degraded whilst others are prone to excessive aggregation. Like attenuated proteins, highly-aggregating proteins share features with NED proteins and show indications of being core protein complex subunits, as indicated by attributes such large interfaces and being highly coexpressed within complexes (figure \ref{figure:aneuploidy_aggattrs}).
 
 \begin{figure}[h]
-    \includegraphics{c5_fig_aggattrs}
+    \includegraphics{c4_fig_aggattrs}
     \caption[Features of aggregating proteins]{\sffamily \textbf{Features of aggregating proteins} \\ \small (A) Highly aggregation prone proteins form larger interfaces. (B) And are more highly coexpressed with other subunits within complexes. In both cases NA stands for not available, but this does not necessarily mean non-aggregating, since it could include proteins which only form aggregates in either wild-type or aneuploid states.}
     \label{figure:aneuploidy_aggattrs}
 \end{figure}
