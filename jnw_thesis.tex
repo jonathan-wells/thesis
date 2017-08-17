@@ -8,11 +8,13 @@
 \usepackage{acronym}
 \usepackage{epigraph}  % For dedication and quote
 \usepackage{mhchem}
+\usepackage{pdfpages}
+\includepdfset{offset=1cm 0cm}
 
 
 
 \bibliography{/Users/jonwells/Documents/bibtex/Thesis}
-\graphicspath{{figs/wip/}}
+\graphicspath{{figs/}}
 
 
 \begin{document}
@@ -32,13 +34,14 @@ The University of Edinburgh \\
 
 \mainmatter
 \input{01_introduction/introduction}
-\input{02_hawks/hawk_proteins}
 \input{03_operons/operon_order}
 \input{04_degradation/degradation}
 \input{05_aneuploidy/aneuploidy}
+\input{02_hawks/hawk_proteins}
 \input{06_conclusion/conclusion}
 \input{07_methods/methods}
 
-\printbibliography
+\input{appendices/appendices}
+\printbibliography[heading=bibintoc]
 
 \end{document}
