@@ -55,7 +55,14 @@ complexes to life, and I hope goes some way to deepening our understanding of
 their behaviour within cells.
 
 ## Notes
+
 ~35,000 words
+
 ~45 figures
+
+The tex files supplied here won't compile, at least not without errors, since I
+haven't provided the raw figure files. If you would like them then get in touch
+and I'll send them your way. You would also need to fix the paths to the .bib
+file referred to in the headers of each .tex file.
 
 
