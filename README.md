@@ -1,8 +1,9 @@
-# The Regulatory Mechanisms and Biological Implications of Protein Complex
-Assembly
+# The Regulatory Mechanisms and Biological Implications of Protein Complex Assembly
 
 PhD Thesis
+
 Jonathan Wells
+
 University of Edinburgh, 2017
 
 ## Lay Summary
