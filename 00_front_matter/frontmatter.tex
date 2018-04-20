@@ -16,7 +16,13 @@
 \addcontentsline{toc}{chapter}{Declaration}
 \setlength{\epigraphrule}{0pt}
 \setlength{\epigraphwidth}{\textwidth}
-\epigraph{\normalsize This thesis presents my own work, and has not been submitted for any other degree or professional qualification. Wherever results were obtained in collaboration with others, I have clearly stated it in the text. Any information derived from the published work of others has been cited in the text, and a complete list of references can be found in the bibliography. Published papers arising from the work described in this thesis can be found in the appendices.}%
+\epigraph{\normalsize This thesis presents my own work, and has not been
+submitted for any other degree or professional qualification. Wherever results
+were obtained in collaboration with others, I have clearly stated it in the
+text. Any information derived from the published work of others has been cited
+in the text, and a complete list of references can be found in the bibliography.
+Published papers arising from the work described in this thesis can be found in
+the appendices.}%
 {\normalsize \vspace{0.8cm} -- Jonathan Wells, 2017}
 
 % Dedication
@@ -26,37 +32,151 @@
 
 \chapter*{Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgements}
-First and foremost, I would like to thank my PhD supervisor, Joe Marsh. Joe has been a fantastic mentor, providing me with invaluable research opportunities, sound advice and the freedom to pursue my own ideas, all the while with patience and good humour. I must also thank my colleagues in the Marsh lab: Therese, György and Marcin, for numerous useful and enjoyable discussions. Beyond Edinburgh, I have had the good fortune of being able to collaborate with other scientists from around the world, and whilst there are too many to name individually, it goes without saying that this thesis would not have been possible without them.
+First and foremost, I would like to thank my PhD supervisor, Joe Marsh. Joe has
+been a fantastic mentor, providing me with invaluable research opportunities,
+sound advice and the freedom to pursue my own ideas, all the while with patience
+and good humour. I must also thank my colleagues in the Marsh lab: Therese,
+György and Marcin, for numerous useful and enjoyable discussions. Beyond
+Edinburgh, I have had the good fortune of being able to collaborate with other
+scientists from around the world, and whilst there are too many to name
+individually, it goes without saying that this thesis would not have been
+possible without them.
 
-Even jobs as good as doing science for a living get tiresome sometimes, and in these moments I am very grateful to have the friends I do; no problem is so great that it can't be lessened by laughter and good company, both of which they provide in abundance. Finally, I would like to thank my parents for all their support over the last few years, and my brothers for being such great brothers.
+Even jobs as good as doing science for a living get tiresome sometimes, and in
+these moments I am very grateful to have the friends I do; no problem is so
+great that it can't be lessened by laughter and good company, both of which they
+provide in abundance. Finally, I would like to thank my parents for all their
+support over the last few years, and my brothers for being such great brothers.
 
 % 1 page max
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
-Every living organism possesses a genome that contains within it a unique set of genes, a substantial number of which encode proteins. Over the last 20 years, it has become apparent that organismal complexity arises not from the specific complement of genes per se, but rather from interactions between the gene products - in particular, interactions between proteins. As an inevitable consequence of the crowded cellular interior, most protein-protein interactions are fleeting. However, many are significantly more long-lived and result in stable protein complexes, in which the constituent subunits are obligately dependent on their binding partners. Despite the abundance of protein complexes and their critical importance to the cell, we currently have an incomplete understanding of the mechanisms by which the cell ensures their correct assembly.
+Every living organism possesses a genome that contains within it a unique set of
+genes, a substantial number of which encode proteins. Over the last 20 years, it
+has become apparent that organismal complexity arises not from the specific
+complement of genes per se, but rather from interactions between the gene
+products - in particular, interactions between proteins. As an inevitable
+consequence of the crowded cellular interior, most protein-protein interactions
+are fleeting. However, many are significantly more long-lived and result in
+stable protein complexes, in which the constituent subunits are obligately
+dependent on their binding partners. Despite the abundance of protein complexes
+and their critical importance to the cell, we currently have an incomplete
+understanding of the mechanisms by which the cell ensures their correct
+assembly.
 
-In the chapters that follow, I have attempted to improve our understanding of the regulatory systems underlying assembly of protein complexes, and the way in which assembly as a whole affects the behaviour of the cell. The thesis opens with an extended literature review covering the currently available methods for characterising protein complexes. After this introduction, chapters \ref*{chapter:operons}-\ref*{chapter:aneuploidy} are concerned with regulatory mechanisms and biological implications common to the assembly of all protein complexes. Chapter \ref{chapter:hawks} diverges from this work, and describes a family of evolutionarily related proteins that regulate the behaviour of condensins and cohesins.
+In the chapters that follow, I have attempted to improve our understanding of
+the regulatory systems underlying assembly of protein complexes, and the way in
+which assembly as a whole affects the behaviour of the cell. The thesis opens
+with an extended literature review covering the currently available methods for
+characterising protein complexes. After this introduction, chapters
+\ref*{chapter:operons}-\ref*{chapter:aneuploidy} are concerned with regulatory
+mechanisms and biological implications common to the assembly of all protein
+complexes. Chapter \ref{chapter:hawks} diverges from this work, and describes a
+family of evolutionarily related proteins that regulate the behaviour of
+condensins and cohesins.
 
-Bacterial and archaeal genomes contain far less non-coding DNA than eukaryotes, and coding genes are often packaged into discrete units known as operons. The proteins encoded within operons are usually functionally related, either through participation in metabolic pathways or as subunits of heteromeric protein complexes. Since protein complexes assemble via ordered pathways, we reasoned that there might be a signature of assembly order present in operons, the genes of which are translated in sequential order. By comparing computationally predicted assembly pathways with gene order in operons, we demonstrated this to be the case for the large majority of operon-encoded complexes. Within operons, gene order follows assembly order, and adjacent genes are substantially more likely to share a physical interface than those further apart. This work demonstrates that efficient assembly of complexes is of sufficient importance as to have placed major constraints on the evolution of operon gene order.
+Bacterial and archaeal genomes contain far less non-coding DNA than eukaryotes,
+and coding genes are often packaged into discrete units known as operons. The
+proteins encoded within operons are usually functionally related, either through
+participation in metabolic pathways or as subunits of heteromeric protein
+complexes. Since protein complexes assemble via ordered pathways, we reasoned
+that there might be a signature of assembly order present in operons, the genes
+of which are translated in sequential order. By comparing computationally
+predicted assembly pathways with gene order in operons, we demonstrated this to
+be the case for the large majority of operon-encoded complexes. Within operons,
+gene order follows assembly order, and adjacent genes are substantially more
+likely to share a physical interface than those further apart. This work
+demonstrates that efficient assembly of complexes is of sufficient importance as
+to have placed major constraints on the evolution of operon gene order.
 
-Following this study of bacterial operons, I present results from research investigating how patterns of protein degradation in eukaryotes are influenced by the formation of protein complexes. This showed that, whilst most proteins display exponential degradation kinetics, a sizeable minority deviate considerably from this pattern, instead being more consistent with a two-step degradation process. These proteins are predominantly members of heteromeric complexes, and their two-step decay profiles can be explained using a model under which bound and unbound subunits are degraded at different rates. Within individual complexes, we find that non-exponentially decaying proteins tend to form larger interfaces, assemble earlier, and show a higher degree of coexpression, consistent with the idea that bound subunits are degraded at a slower rate than unbound or peripheral subunits.
+Following this study of bacterial operons, I present results from research
+investigating how patterns of protein degradation in eukaryotes are influenced
+by the formation of protein complexes. This showed that, whilst most proteins
+display exponential degradation kinetics, a sizeable minority deviate
+considerably from this pattern, instead being more consistent with a two-step
+degradation process. These proteins are predominantly members of heteromeric
+complexes, and their two-step decay profiles can be explained using a model
+under which bound and unbound subunits are degraded at different rates. Within
+individual complexes, we find that non-exponentially decaying proteins tend to
+form larger interfaces, assemble earlier, and show a higher degree of
+coexpression, consistent with the idea that bound subunits are degraded at a
+slower rate than unbound or peripheral subunits.
 
-This model also explains the behaviour of proteins in aneuploid cells where one or more chromosomes have been duplicated. In general, protein abundance scales with gene copy number, so that the immediate effect of duplicating a chromosome is to double the abundance of the proteins encoded on it. However, previous analyses of mass spectrometry data, as well as my own, have shown that the abundance of many proteins on duplicated chromosomes is significantly attenuated compared to what one would expect. These proteins, like those with non-exponential degradation patterns, are very often members of larger complexes. Since the overall concentration of a protein complex is constrained by that of its least abundant members, duplicating a single subunit will predominantly increase the unbound, unstable fraction of that subunit. The results from this work strongly suggest that the apparent attenuation of many proteins observed in aneuploid cells is indeed a consequence of the failure of these proteins to assemble into complexes.
+This model also explains the behaviour of proteins in aneuploid cells where one
+or more chromosomes have been duplicated. In general, protein abundance scales
+with gene copy number, so that the immediate effect of duplicating a chromosome
+is to double the abundance of the proteins encoded on it. However, previous
+analyses of mass spectrometry data, as well as my own, have shown that the
+abundance of many proteins on duplicated chromosomes is significantly attenuated
+compared to what one would expect. These proteins, like those with
+non-exponential degradation patterns, are very often members of larger
+complexes. Since the overall concentration of a protein complex is constrained
+by that of its least abundant members, duplicating a single subunit will
+predominantly increase the unbound, unstable fraction of that subunit. The
+results from this work strongly suggest that the apparent attenuation of many
+proteins observed in aneuploid cells is indeed a consequence of the failure of
+these proteins to assemble into complexes.
 
-Finally, I present a study concerning an important, universally conserved family of protein complexes, namely the SMC-kleisins. Two members of this family, condensin and cohesin, are responsible for two hallmarks of eukaryotic chromatin organisation: the formation of condensed, linear chromosomes, and sister chromatid cohesion during cell division. Unlike other SMC-kleisins, condensin and cohesin possess a number of regulators containing HEAT repeats. By developing a computational pipeline for searching and clustering paralogous repeat proteins, I was able to demonstrate that these regulators form a distinct sub-family within the larger class of HEAT repeat proteins. Furthermore, these regulators arose very early in eukaryotic history, hinting at a possible role in the origin of modern condensins and cohesins.
+Finally, I present a study concerning an important, universally conserved family
+of protein complexes, namely the SMC-kleisins. Two members of this family,
+condensin and cohesin, are responsible for two hallmarks of eukaryotic chromatin
+organisation: the formation of condensed, linear chromosomes, and sister
+chromatid cohesion during cell division. Unlike other SMC-kleisins, condensin
+and cohesin possess a number of regulators containing HEAT repeats.  By
+developing a computational pipeline for searching and clustering paralogous
+repeat proteins, I was able to demonstrate that these regulators form a distinct
+sub-family within the larger class of HEAT repeat proteins.  Furthermore, these
+regulators arose very early in eukaryotic history, hinting at a possible role in
+the origin of modern condensins and cohesins.
 
 \chapter*{Lay Summary}
 \addcontentsline{toc}{chapter}{Lay summary}
-All cells are made up of a complex mixture of biological macromolecules, including carbohydrates, lipids, and proteins. Proteins, the subject of this thesis, are tiny, vibrating strings of amino acids with a strictly defined sequence and three-dimensional structure. Every cell in your body, of which there are some 50 trillion, contains further trillions of proteins that, collectively, are responsible for carrying out virtually every biological process you can imagine, from the moment you are born, to the moment you die.
+All cells are made up of a complex mixture of biological macromolecules,
+including carbohydrates, lipids, and proteins. Proteins, the subject of this
+thesis, are tiny, vibrating strings of amino acids with a strictly defined
+sequence and three-dimensional structure. Every cell in your body, of which
+there are some 50 trillion, contains further trillions of proteins that,
+collectively, are responsible for carrying out virtually every biological
+process you can imagine, from the moment you are born, to the moment you die.
 
-However, although each protein is present in many copies in the cell, the full set of unique protein species is comparatively small. What is more, the number of protein-coding genes that an organism has bears almost no relationship to the perceived complexity of that organism. For a humbling illustration of this, consider the fact that your genome - that of a human - contains approximately 20,000 genes, whereas the pufferfish contains closer to 50,000 and even the lowly banana has more than 36,000. What is it then about this collection of genes that allows us to contemplate the difference between our selves and a banana, whilst the banana just lies there, fruitily?
+However, although each protein is present in many copies in the cell, the full
+set of unique protein species is comparatively small. What is more, the number
+of protein-coding genes that an organism has bears almost no relationship to the
+perceived complexity of that organism. For a humbling illustration of this,
+consider the fact that your genome - that of a human - contains approximately
+20,000 genes, whereas the pufferfish contains closer to 50,000 and even the
+lowly banana has more than 36,000. What is it then about this collection of
+genes that allows us to contemplate the difference between our selves and a
+banana, whilst the banana just lies there, fruitily?
 
-Part of the explanation stems from the fact that proteins interact extensively with one another. Across the entire proteome (the collection of all proteins present in a cell), a substantial fraction of proteins form stable complexes. Haemoglobin, for example, is made up of two alpha and two beta globin subunits. Without the tendency of proteins such as the globins to interact, the level of complexity that we see across the spectrum of life - even in the simplest microorganisms - would never be possible. However, we know very much less about these protein complexes than we do about their constituent subunits. In particular, we only have a basic understanding of how the cell regulates their assembly, ensuring that proteins are produced at the right time and in the right place.
+Part of the explanation stems from the fact that proteins interact extensively
+with one another. Across the entire proteome (the collection of all proteins
+present in a cell), a substantial fraction of proteins form stable complexes.
+Haemoglobin, for example, is made up of two alpha and two beta globin subunits.
+Without the tendency of proteins such as the globins to interact, the level of
+complexity that we see across the spectrum of life - even in the simplest
+microorganisms - would never be possible. However, we know very much less about
+these protein complexes than we do about their constituent subunits. In
+particular, we only have a basic understanding of how the cell regulates their
+assembly, ensuring that proteins are produced at the right time and in the right
+place.
 
-In this work, I have attempted to explain why protein complexes matter, looking at some of the ways in which the cell enables complexes to assemble, and what the biological implications of this process are. For example, from studying the organisation of bacterial genes, it is clear that the order in which their genes are encoded closely matches the order in which the resulting protein complexes assemble. This implies that these creatures must be under strong evolutionary pressure to assemble protein complexes quickly and efficiently.
+In this work, I have attempted to explain why protein complexes matter, looking
+at some of the ways in which the cell enables complexes to assemble, and what
+the biological implications of this process are. For example, from studying the
+organisation of bacterial genes, it is clear that the order in which their genes
+are encoded closely matches the order in which the resulting protein complexes
+assemble. This implies that these creatures must be under strong evolutionary
+pressure to assemble protein complexes quickly and efficiently.
 
-Concerning human biology, the later chapters describe a model of protein complex behaviour that explains some of the features that we see in aneuploid cells - that is, cells which have an abnormal number of chromosomes. This is a state familiar to many of us as Down's syndrome, in which people affected have an extra copy of chromosome 21. In closing, the work presented here, supported by that of many others, demonstrates the fundamental importance of protein complexes to life, and I hope goes some way to deepening our understanding of their behaviour within cells.
-
+Concerning human biology, the later chapters describe a model of protein complex
+behaviour that explains some of the features that we see in aneuploid cells -
+that is, cells which have an abnormal number of chromosomes. This is a state
+familiar to many of us as Down's syndrome, in which people affected have an
+extra copy of chromosome 21. In closing, the work presented here, supported by
+that of many others, demonstrates the fundamental importance of protein
+complexes to life, and I hope goes some way to deepening our understanding of
+their behaviour within cells.
 
 \clearpage
 \tableofcontents
@@ -93,7 +213,8 @@ Concerning human biology, the later chapters describe a model of protein complex
     \acro{eQTL}{Expression quantitative trait loci}
     \acro{GO}{Gene ontology}
     \acro{GTEx}{Genotype-tissue expression}
-    \acro{HEAT}{Huntingtin, elongation factor 3 (EF3), protein phosphatase 2A (PP2A), target of rapamycin (TOR1)}
+    \acro{HEAT}{Huntingtin, elongation factor 3 (EF3), protein phosphatase 2A
+    (PP2A), target of rapamycin (TOR1)}
     \acro{iBAQ}{Intensity based absolute quantification}
     \acro{IR}{Isomorphous replacement}
     \acro{iTRAQ}{Isobaric tag for relative and absolute quantitation}
@@ -128,29 +249,51 @@ Concerning human biology, the later chapters describe a model of protein complex
 
 \chapter*{Notes on the use of published material}
 \addcontentsline{toc}{chapter}{Notes on the use of published material}
-This thesis is predominantly based on work that has already been published. I present here a brief description of how each chapter relates to these published articles, and the extent of my involvement in each case. In all cases, chapters were rewritten and modified to varying degrees, using the published articles as guides to structure where applicable. To make my contribution to each project explicit, throughout this thesis I have used `I' to refer to analyses carried out solely by myself, and `we' for those that were carried out in close collaboration with others. Where figures have been adapted from published material, notes indicating this have been made in the legends. Any papers for which I am listed as an author that were released whilst working towards this thesis can be found in appendix \ref{appendix:published}.
+This thesis is predominantly based on work that has already been published. I
+present here a brief description of how each chapter relates to these published
+articles, and the extent of my involvement in each case. In all cases, chapters
+were rewritten and modified to varying degrees, using the published articles as
+guides to structure where applicable. To make my contribution to each project
+explicit, throughout this thesis I have used `I' to refer to analyses carried
+out solely by myself, and `we' for those that were carried out in close
+collaboration with others. Where figures have been adapted from published
+material, notes indicating this have been made in the legends. Any papers for
+which I am listed as an author that were released whilst working towards this
+thesis can be found in appendix \ref{appendix:published}.
 \\~\\
 Chapter \ref{chapter:operons} is derived from:
 \begin{quote}
     \fullcite{Wells2016}
 \end{quote}
-This paper has been rewritten, but is largely unchanged in terms of its content and general layout, with the exception of some supplementary figures that have been moved to the main body of text.
+This paper has been rewritten, but is largely unchanged in terms of its content
+and general layout, with the exception of some supplementary figures that have
+been moved to the main body of text.
 \\~\\
 Chapter \ref{chapter:degradation} is based on and heavily adapted from:
 \begin{quote}
     \fullcite{McShane2016}
 \end{quote}
-This was a large collaboration lead primarily by E. McShane and M. Selbach. A detailed description of author contributions can be found in the paper; my own contribution (with J. Marsh) was in the design, implementation and interpretation of dry experiments investigating the relationship between protein complex assembly and the observed patterns of protein degradation. It should be noted that numerous analyses are included here which are not present in the published version.
+This was a large collaboration lead primarily by E. McShane and M. Selbach. A
+detailed description of author contributions can be found in the paper; my own
+contribution (with J. Marsh) was in the design, implementation and
+interpretation of dry experiments investigating the relationship between protein
+complex assembly and the observed patterns of protein degradation. It should be
+noted that numerous analyses are included here which are not present in the
+published version.
 \\~\\
-Finally, chapter \ref{chapter:hawks} is an extended version of the following article:
+Finally, chapter \ref{chapter:hawks} is an extended version of the following
+article:
 \clearpage
 \begin{quote}
     \fullcite{Wells2017}
 \end{quote}
-T. Gligoris initially suggested this project, experiments were designed by J. Marsh and myself, and analyses were carried out by myself. Interpretation of the data was predominantly my own, with contributions from all other authors.
+T. Gligoris initially suggested this project, experiments were designed by J.
+Marsh and myself, and analyses were carried out by myself. Interpretation of the
+data was predominantly my own, with contributions from all other authors.
 
 \chapter*{}
 \setlength{\epigraphwidth}{0.38\textwidth}
-\epigraph{I do things like get in a taxi and say, ``The library, and step on it.''}{\textit{-- David Foster Wallace}}
+\epigraph{I do things like get in a taxi and say, ``The library, and step on
+it.''}{\textit{-- David Foster Wallace}}
 
 \end{document}

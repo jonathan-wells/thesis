@@ -39,11 +39,11 @@ planning/
 examples/
 figs/
 appendices/
-testing/
-pandocfiles/
 .DS_Store
 *.pdf
 *.txt
 *.md
 *.zip
 *.docx
+
+!jnw_thesis.pdf

@@ -16,98 +16,308 @@
 
 \section{Introduction}
 
-Cancer cells are renowned for their high levels of chromosomal instability and unusual, sometimes bizarre karyotypes. The state in which a cell has an abnormal number of chromosomes is known as aneuploidy, and occurs to degrees in all known cancers. However, it is common even in non-cancer cells, and is a pervasive feature in most eukaryotic organisms. Isolates of wild yeast strains for example have been found to harbour a variety of different karyotypes, \cite{Hose2015}. In humans, approximately 0.1\% of the population carries an extra copy of chromosome 21 \cite{Presson2013}, a karyotype that famously results in Down's syndrome. In most cases however, aneuploidies that have been acquired through the germ-line or early in development are lethal - highlighting this, a recent study of spontaneous miscarriages found that approximately 45\% were the result of aneuploidies \cite{Jia2015}, and the true figure is probably higher still, since studies in mice suggest that mosaic aneuploid embryos fail to develop much beyond gastrulation, and thus would often pass clinically undetected \cite{Lightfoot2006}.
+Cancer cells are renowned for their high levels of chromosomal instability and
+unusual, sometimes bizarre karyotypes. The state in which a cell has an abnormal
+number of chromosomes is known as aneuploidy, and occurs to degrees in all known
+cancers. However, it is common even in non-cancer cells, and is a pervasive
+feature in most eukaryotic organisms. Isolates of wild yeast strains for example
+have been found to harbour a variety of different karyotypes, \cite{Hose2015}.
+In humans, approximately 0.1\% of the population carries an extra copy of
+chromosome 21 \cite{Presson2013}, a karyotype that famously results in Down's
+syndrome. In most cases however, aneuploidies that have been acquired through
+the germ-line or early in development are lethal - highlighting this, a recent
+study of spontaneous miscarriages found that approximately 45\% were the result
+of aneuploidies \cite{Jia2015}, and the true figure is probably higher still,
+since studies in mice suggest that mosaic aneuploid embryos fail to develop much
+beyond gastrulation, and thus would often pass clinically undetected
+\cite{Lightfoot2006}.
 
-Mechanistically, aneuploidy is the result of chromosomes failing to separate properly during cell division, either through non-disjunction of sister chromatids or delays in the movement of chromosomes to opposite poles of the cell during anaphase \cite{Compton2011}. For a cell that gains a chromosome, the immediate effect is a doubling of the copy number of all the genes residing on it, thus leading to a significant increase in mRNA and protein production. However, a recurring feature noted in several studies is that a considerable number of these proteins are attenuated compared to their expected abundances. \cite{Stingele2012,Dephoure2014,Goncalves2017}.
+Mechanistically, aneuploidy is the result of chromosomes failing to separate
+properly during cell division, either through non-disjunction of sister
+chromatids or delays in the movement of chromosomes to opposite poles of the
+cell during anaphase \cite{Compton2011}. For a cell that gains a chromosome, the
+immediate effect is a doubling of the copy number of all the genes residing on
+it, thus leading to a significant increase in mRNA and protein production.
+However, a recurring feature noted in several studies is that a considerable
+number of these proteins are attenuated compared to their expected abundances.
+\cite{Stingele2012,Dephoure2014,Goncalves2017}.
 
-This attenuation is generally thought to be caused by post-translational degradation of excess protein complex subunits, since attenuated proteins are enriched in protein complexes, and their mRNA transcript abundances scale correctly with copy number. Strongly supporting this, the model presented in the previous chapter explaining non-exponential degradation of proteins also correctly predicts the attenuation of proteins in aneuploid cells. In this chapter, I will briefly elaborate on this idea and attempt to explain some of the similarities and differences between non-exponential degradation in wild type cells and protein attenuation in aneuploid cells.
+This attenuation is generally thought to be caused by post-translational
+degradation of excess protein complex subunits, since attenuated proteins are
+enriched in protein complexes, and their mRNA transcript abundances scale
+correctly with copy number. Strongly supporting this, the model presented in the
+previous chapter explaining non-exponential degradation of proteins also
+correctly predicts the attenuation of proteins in aneuploid cells. In this
+chapter, I will briefly elaborate on this idea and attempt to explain some of
+the similarities and differences between non-exponential degradation in wild
+type cells and protein attenuation in aneuploid cells.
 
 \clearpage
 
 \section{Results}
-
 \subsection{Attenuation of protein complex subunits is unique to heteromers}
-First, to confirm that attenuation of protein complex subunits is a feature unique to heteromers, I made use of data from Dephoure et al. \cite{Dephoure2014}. This dataset describes the relative fold change in the abundance of 2,581 genes from disomic \textit{S. cerevisiae} strains. Using the same definition given by Dephoure et al., attenuated proteins are those satisfying:
+First, to confirm that attenuation of protein complex subunits is a feature
+unique to heteromers, I made use of data from Dephoure et al.
+\cite{Dephoure2014}. This dataset describes the relative fold change in the
+abundance of 2,581 genes from disomic \textit{S. cerevisiae} strains. Using the
+same definition given by Dephoure et al., attenuated proteins are those
+satisfying:
 \begin{displaymath}
     \log_{2} \left( \frac{disomic}{wildtype} \right) \leq 0.6
 \end{displaymath}
-where $disomic$ and $wildtype$ refer to the abundance of individual proteins in the two different cell populations. This value ensures that the observed SILAC ratio is at least three standard deviations away from the expected mean value of 1.0 (equivalent to doubling abundance). One of the key findings from this paper was that attenuated proteins were enriched in a set of multi-subunit complexes obtained from a dataset of yeast complexes compiled from the experimental literature \cite{Pu2009}. After replicating this finding using the same dataset (figure \ref{suppfigure:aneuploidy_qstype}), I mapped this aneuploidy dataset onto structures from the PDB. This structural dataset confirmed these earlier observations that attenuation of expression is more common for members of multi-subunit protein complexes, and demonstrated that attenuation was restricted to heteromeric subunits (figure \ref{figure:aneuploidy_qstype}).
+where $disomic$ and $wildtype$ refer to the abundance of individual proteins in
+the two different cell populations. This value ensures that the observed SILAC
+ratio is at least three standard deviations away from the expected mean value of
+1.0 (equivalent to doubling abundance). One of the key findings from this paper
+was that attenuated proteins were enriched in a set of multi-subunit complexes
+obtained from a dataset of yeast complexes compiled from the experimental
+literature \cite{Pu2009}. After replicating this finding using the same dataset
+(figure \ref{suppfigure:aneuploidy_qstype}), I mapped this aneuploidy dataset
+onto structures from the PDB. This structural dataset confirmed these earlier
+observations that attenuation of expression is more common for members of
+multi-subunit protein complexes, and demonstrated that attenuation was
+restricted to heteromeric subunits (figure \ref{figure:aneuploidy_qstype}).
 
 \begin{figure}[h]
     \makebox[\textwidth]{\includegraphics[width=\textwidth]{c4_fig_qsdsratio}}
-    \caption[Attenuation of protein complexes is unique to heteromers]{\sffamily \textbf{Attenuation of protein complexes is unique to heteromers} \\ \small Members of protein complexes are significantly more likely to be attenuated upon doubling of gene copy number. However, this effect is almost entirely driven by heteromeric complexes, with disomic ratios that differ significantly from that seen in monomers (median log2 disomic ratios of 0.623 and 0.948 respectively, Wilcoxon rank sum test p-value = 4.315e-22). In contrast, homomers (median 0.942) behave much the same as monomers and the difference between them is not at all significant.}
+    \caption[Attenuation of protein complexes is unique to heteromers]{\sffamily
+    \textbf{Attenuation of protein complexes is unique to heteromers} \\ \small
+    Members of protein complexes are significantly more likely to be attenuated
+    upon doubling of gene copy number. However, this effect is almost entirely
+    driven by heteromeric complexes, with disomic ratios that differ
+    significantly from that seen in monomers (median log2 disomic ratios of
+    0.623 and 0.948 respectively, Wilcoxon rank sum test p-value = 4.315e-22).
+    In contrast, homomers (median 0.942) behave much the same as monomers and
+    the difference between them is not at all significant.}
     \label{figure:aneuploidy_qstype}
 \end{figure}
 
-Importantly, this observation is consistent with the model presented in chapter 4, in which non-exponential degradation is a consequence of excess protein complex subunits being degraded more rapidly than bound ones. Adapted to this situation, disomic ratio is dependent on the ratio of bound to unbound subunits. Duplicating a single subunit in a heteromer increases the unbound, unstable fraction of that protein, which is promptly degraded, leading to a lower disomic ratio. Proteins that are predominantly monomeric should not experience any systematic attenuation, since their degradation rate will not be affected by binding partners and should remain roughly constant. Likewise, subunits of homomeric complexes will not be attenuated since changes in gene copy number will not cause stoichiometric imbalances.
+Importantly, this observation is consistent with the model presented in chapter
+4, in which non-exponential degradation is a consequence of excess protein
+complex subunits being degraded more rapidly than bound ones. Adapted to this
+situation, disomic ratio is dependent on the ratio of bound to unbound subunits.
+Duplicating a single subunit in a heteromer increases the unbound, unstable
+fraction of that protein, which is promptly degraded, leading to a lower disomic
+ratio. Proteins that are predominantly monomeric should not experience any
+systematic attenuation, since their degradation rate will not be affected by
+binding partners and should remain roughly constant. Likewise, subunits of
+homomeric complexes will not be attenuated since changes in gene copy number
+will not cause stoichiometric imbalances.
 
-\subsection{Similarities and differences between wild type subunit degradation and aneuploid attenuation}
-
-Many of the features we see in ED and NED proteins reappear here, suggesting that they are different manifestations of the same underlying biological phenomena. For example, as complex size increases, the average disomic ratio of subunits decreases (figure \ref{figure:aneuploidusubs}), analogous to the enrichment of NED proteins in large complexes. As before, this is probably explained by the fact that larger proteins have a greater proportion of obligate subunits that are protected from degradation once bound.
+\subsection{Similarities and differences between wild type subunit degradation
+and aneuploid attenuation}
+Many of the features we see in ED and NED proteins reappear here, suggesting
+that they are different manifestations of the same underlying biological
+phenomena. For example, as complex size increases, the average disomic ratio of
+subunits decreases (figure \ref{figure:aneuploidusubs}), analogous to the
+enrichment of NED proteins in large complexes. As before, this is probably
+explained by the fact that larger proteins have a greater proportion of obligate
+subunits that are protected from degradation once bound.
 
 \begin{figure}[h]
     \makebox[\textwidth]{
         \includegraphics[width=\textwidth]{c4_fig_usubsdsratio}
         }
-    \caption[Degree of attenuation increases with increasing complex size]{\sffamily \textbf{Degree of attenuation increases with increasing complex size} \\ \small The abundance of monomers and homomeric subunits is largely determined by gene copy number, with log\textsubscript{2} disomic ratios being approximately normally distributed about 1. Heteromeric subunits however become increasingly likely to be attenuated as the increasing number of unique subunits. “Significant” attenuation is defined here by a threshold value of < 0.6, highlighted by the dashed red line. Structural and non-structural datasets have been combined here.}
+    \caption[Degree of attenuation increases with increasing complex
+    size]{\sffamily \textbf{Degree of attenuation increases with increasing
+    complex size} \\ \small The abundance of monomers and homomeric subunits is
+    largely determined by gene copy number, with log\textsubscript{2} disomic
+    ratios being approximately normally distributed about 1. Heteromeric
+    subunits however become increasingly likely to be attenuated as the
+    increasing number of unique subunits. “Significant” attenuation is defined
+    here by a threshold value of < 0.6, highlighted by the dashed red line.
+    Structural and non-structural datasets have been combined here.}
     \label{figure:aneuploidusubs}
 \end{figure}
 
-In contrast, if one imagines a typical heterodimer, the observed attenuation for each subunit will be determined by the degree to which its binding partner buffers that subunit. This in turn is dependent on binding affinities, dissociation rates and starting concentrations. For example, if the starting concentration of A is much higher than B, then even doubling [B] will have little effect on the amount of unbound B, and thus it will appear to be non-attenuated.
+In contrast, if one imagines a typical heterodimer, the observed attenuation for
+each subunit will be determined by the degree to which its binding partner
+buffers that subunit. This in turn is dependent on binding affinities,
+dissociation rates and starting concentrations. For example, if the starting
+concentration of A is much higher than B, then even doubling [B] will have
+little effect on the amount of unbound B, and thus it will appear to be
+non-attenuated.
 
-One observation raised in Dephoure et al. is that almost all complexes have at least one non-attenuated subunit. An interesting idea mooted to explain this is the possibility that complexes require at least some stable subunits to act as a scaffold for the rest of the complex. If this were the case, then we would expect to see non-attenuated proteins being amongst the first to assemble. However, if we compare the disomic ratio of those subunits that assemble first against those that assemble last (figure \ref{figure:aneuploidy_assembly}), we find a clear (albeit weakly significant when controlling for number of unique subunits) tendency for early-assembling subunits to be attenuated. This finding matches the observations showing that NED subunits tend to assemble earlier than ED subunits, and is incompatible with the idea of stable proteins acting as scaffolds for protein complex assembly. Consistent with this, attenuated proteins also tend to form larger interfaces.
+One observation raised in Dephoure et al. is that almost all complexes have at
+least one non-attenuated subunit. An interesting idea mooted to explain this is
+the possibility that complexes require at least some stable subunits to act as a
+scaffold for the rest of the complex. If this were the case, then we would
+expect to see non-attenuated proteins being amongst the first to assemble.
+However, if we compare the disomic ratio of those subunits that assemble first
+against those that assemble last (figure \ref{figure:aneuploidy_assembly}), we
+find a clear (albeit weakly significant when controlling for number of unique
+subunits) tendency for early-assembling subunits to be attenuated. This finding
+matches the observations showing that NED subunits tend to assemble earlier than
+ED subunits, and is incompatible with the idea of stable proteins acting as
+scaffolds for protein complex assembly. Consistent with this, attenuated
+proteins also tend to form larger interfaces.
 
 \begin{figure}[h]
     \makebox[\textwidth]{\includegraphics[width=\textwidth]{c4_fig_assembly}}
-    \caption[Subunits that bind late to the complex are less likely to be attenuated]{\sffamily \textbf{Subunits that bind late to the complex are less likely to be attenuated} \\ \small Red line indicates `attenuated' threshold. P-values are Wilcoxon rank sum tests indicating the difference in disomic ratio between the first and last subunits to assemble. `Mid' subunits are all those that are neither first nor last to assemble. The non-significant values are probably mostly due to the fact that the `first' and `last' subunit numbers are highly limited by the number of available PDB structures, which is relatively low for the larger complexes.}
+    \caption[Subunits that bind late to the complex are less likely to be
+    attenuated]{\sffamily \textbf{Subunits that bind late to the complex are
+    less likely to be attenuated} \\ \small Red line indicates `attenuated'
+    threshold. P-values are Wilcoxon rank sum tests indicating the difference in
+    disomic ratio between the first and last subunits to assemble. `Mid'
+    subunits are all those that are neither first nor last to assemble. The
+    non-significant values are probably mostly due to the fact that the `first'
+    and `last' subunit numbers are highly limited by the number of available PDB
+    structures, which is relatively low for the larger complexes.}
     \label{figure:aneuploidy_assembly}
 \end{figure}
 
-An interesting difference between NED proteins and attenuated proteins is in their abundance. At first glance, one might expect to see a similar case as for the NED proteins, where within complexes NED proteins tend to be more abundant than ED. However, when we look at this for the disomic ratio data there is no significant difference between proteins whose abundance is attenuated and vice versa (figure \ref{suppfigure:aneuploidy_abundance}). On reflection, this makes sense - in wild type cells, the more abundant protein will be degraded non-exponentially, whereas in aneuploid cells, the natural abundance of the protein is rendered insignificant compared to the effect of copy number changes.
+An interesting difference between NED proteins and attenuated proteins is in
+their abundance. At first glance, one might expect to see a similar case as for
+the NED proteins, where within complexes NED proteins tend to be more abundant
+than ED. However, when we look at this for the disomic ratio data there is no
+significant difference between proteins whose abundance is attenuated and vice
+versa (figure \ref{suppfigure:aneuploidy_abundance}). On reflection, this makes
+sense - in wild type cells, the more abundant protein will be degraded
+non-exponentially, whereas in aneuploid cells, the natural abundance of the
+protein is rendered insignificant compared to the effect of copy number changes.
 
-Less easy to explain however is the fact that attenuated proteins appear to show a greater propensity to disorder than non-attenuated (figure \ref{figure:aneuploidy_disorder}). This is in contrast to NED and ED, in which the latter were found to be more disordered \cite{McShane2016}. One possibility that could explain this discrepancy is that in aneuploid cells - in which protein abundance has been drastically increased - disordered proteins are simply aggregating instead of being degraded. Though I have not yet tested this idea formally, there is evidence to suggest that disorder is correlated with aggregation propensity \cite{Carvalho2013}.
+Less easy to explain however is the fact that attenuated proteins appear to show
+a greater propensity to disorder than non-attenuated (figure
+\ref{figure:aneuploidy_disorder}). This is in contrast to NED and ED, in which
+the latter were found to be more disordered \cite{McShane2016}. One possibility
+that could explain this discrepancy is that in aneuploid cells - in which
+protein abundance has been drastically increased - disordered proteins are
+simply aggregating instead of being degraded. Though I have not yet tested this
+idea formally, there is evidence to suggest that disorder is correlated with
+aggregation propensity \cite{Carvalho2013}.
 
-\begin{figure}[h]
-\fcapsideright
-    {\caption[Attenuated proteins show increased disorder]{\sffamily\textbf{Attenuated proteins show increased disorder}\newline \small A single disorder score for each protein in a set of protein complexes was produced by taking the median value from all residues, where per-residue disorder scores were predicted using IUPred \cite{Dosztanyi2005}. Proteins were taken from a set of complexes produced by combining structural data with that from the Pu et al. dataset \cite{Pu2009}. P-value calculated with Wilcoxon rank-sum test.}\label{figure:aneuploidy_disorder}}
-    {\includegraphics[width=0.5\textwidth]{c4_fig_disorder}}
-\end{figure}
+\begin{figure}[h] \fcapsideright {\caption[Attenuated proteins show increased
+    disorder]{\sffamily\textbf{Attenuated proteins show increased
+    disorder}\newline \small A single disorder score for each protein in a set
+    of protein complexes was produced by taking the median value from all
+    residues, where per-residue disorder scores were predicted using IUPred
+    \cite{Dosztanyi2005}. Proteins were taken from a set of complexes produced
+    by combining structural data with that from the Pu et al. dataset
+    \cite{Pu2009}. P-value calculated with Wilcoxon rank-sum
+    test.}\label{figure:aneuploidy_disorder}}
+{\includegraphics[width=0.5\textwidth]{c4_fig_disorder}} \end{figure}
 
 \subsection{Aneuploidy leads to increased heteromeric protein aggregation}
-Protein aggregation is in an important aspect of aneuploidy that has not yet been explored in a high-throughput manner. Beyond the possibility that it could explain this discrepancy between disorder propensity in NED and attenuated proteins, it is also possible that the apparent attenuation of some proteins could be due instead to aggregation. However, measuring this is technically challenging due to the difficulty of isolating and quantifying the aggregated fraction of cells. Nonetheless, a pilot study carried out in collaboration with the Amon lab at MIT has produced some interesting results that merit further exploration in the near future.
+Protein aggregation is in an important aspect of aneuploidy that has not yet
+been explored in a high-throughput manner. Beyond the possibility that it could
+explain this discrepancy between disorder propensity in NED and attenuated
+proteins, it is also possible that the apparent attenuation of some proteins
+could be due instead to aggregation. However, measuring this is technically
+challenging due to the difficulty of isolating and quantifying the aggregated
+fraction of cells. Nonetheless, a pilot study carried out in collaboration with
+the Amon lab at MIT has produced some interesting results that merit further
+exploration in the near future.
 
-The protocol followed for this pilot is essentially the same as that described in Dephoure et al., with the key difference being that instead of carrying out measurements on the whole cell lysate (in 8M urea), the lysate is spun down and the aggregate fraction extracted for further use. Disomic:wild type ratios were calculated in the same manner as before, with proteins being classified as either `aggregating' or `highly aggregating'. The threshold for the latter is set semi-arbitrarily at a disomic ratio $\geq 1.5$, where a value of one would indicate a straightforward doubling of protein abundance in the aggregate fraction.
+The protocol followed for this pilot is essentially the same as that described
+in Dephoure et al., with the key difference being that instead of carrying out
+measurements on the whole cell lysate (in 8M urea), the lysate is spun down and
+the aggregate fraction extracted for further use. Disomic:wild type ratios were
+calculated in the same manner as before, with proteins being classified as
+either `aggregating' or `highly aggregating'. The threshold for the latter is
+set semi-arbitrarily at a disomic ratio $\geq 1.5$, where a value of one would
+indicate a straightforward doubling of protein abundance in the aggregate
+fraction.
 
-At least in aneuploid cells in which chromosome copy numbers have been increased, one would expect to see an increased propensity for aggregation across the cell, and particularly for proteins on affected chromosomes. This is certainly the case, and furthermore, there is an increased tendency for heteromeric proteins to aggregate more than expected upon copy number duplication (odds ratio = 2.392818, p-value = 0.038, comparing heteromeric to monomeric proteins). As was the case for attenuation in whole-cell measurements, there was no significant difference between monomeric and homomeric proteins.
+At least in aneuploid cells in which chromosome copy numbers have been
+increased, one would expect to see an increased propensity for aggregation
+across the cell, and particularly for proteins on affected chromosomes. This is
+certainly the case, and furthermore, there is an increased tendency for
+heteromeric proteins to aggregate more than expected upon copy number
+duplication (odds ratio = 2.392818, p-value = 0.038, comparing heteromeric to
+monomeric proteins). As was the case for attenuation in whole-cell measurements,
+there was no significant difference between monomeric and homomeric proteins.
 
-I then compared those proteins which were found to be highly aggregating with those that are attenuated and found a weak tendency for the different classes to be mutually exclusive (figure \ref{figure:aneuploidy_comparison}). This suggests that proteins are either aggregate extensively, are actively attenuated, or behave neutrally and simply double their abundance in either soluble or insoluble fractions of the cell. Importantly, this tells us that attenuation in aneuploidy is unlikely to be an experimental artefact caused by the aggregated fraction of proteins not being efficiently picked up in whole-cell lysates.
+I then compared those proteins which were found to be highly aggregating with
+those that are attenuated and found a weak tendency for the different classes to
+be mutually exclusive (figure \ref{figure:aneuploidy_comparison}). This suggests
+that proteins are either aggregate extensively, are actively attenuated, or
+behave neutrally and simply double their abundance in either soluble or
+insoluble fractions of the cell. Importantly, this tells us that attenuation in
+aneuploidy is unlikely to be an experimental artefact caused by the aggregated
+fraction of proteins not being efficiently picked up in whole-cell lysates.
 
-\begin{figure}[h]
-\fcapsideright
-    {\caption[Comparison of attenuation and aggregation propensity]{\sffamily\textbf{Comparison of attenuation and aggregation propensity}\newline \small Separating proteins into groups according to whether they are attenuated or highly-aggregating demonstrates that for proteins to be both heavily attenuated and highly aggregated is unusual.}\label{figure:aneuploidy_comparison}}
-    {\includegraphics[width=0.6\textwidth]{c4_fig_comparison}}
-\end{figure}
+\begin{figure}[h] \fcapsideright {\caption[Comparison of attenuation and
+    aggregation propensity]{\sffamily\textbf{Comparison of attenuation and
+    aggregation propensity}\newline \small Separating proteins into groups
+    according to whether they are attenuated or highly-aggregating demonstrates
+    that for proteins to be both heavily attenuated and highly aggregated is
+    unusual.}\label{figure:aneuploidy_comparison}}
+{\includegraphics[width=0.6\textwidth]{c4_fig_comparison}} \end{figure}
 
-Intriguingly, there are no obvious features that suggest why some proteins are rapidly degraded whilst others are prone to excessive aggregation. Like attenuated proteins, highly-aggregating proteins share features with NED proteins and show indications of being core protein complex subunits, as indicated by attributes such large interfaces and being highly coexpressed within complexes (figure \ref{figure:aneuploidy_aggattrs}).
+Intriguingly, there are no obvious features that suggest why some proteins are
+rapidly degraded whilst others are prone to excessive aggregation. Like
+attenuated proteins, highly-aggregating proteins share features with NED
+proteins and show indications of being core protein complex subunits, as
+indicated by attributes such large interfaces and being highly coexpressed
+within complexes (figure \ref{figure:aneuploidy_aggattrs}).
 
-\begin{figure}[h]
-    \includegraphics{c4_fig_aggattrs}
-    \caption[Features of aggregating proteins]{\sffamily \textbf{Features of aggregating proteins} \\ \small (A) Highly aggregation prone proteins form larger interfaces. (B) And are more highly coexpressed with other subunits within complexes. In both cases NA stands for not available, but this does not necessarily mean non-aggregating, since it could include proteins which only form aggregates in either wild type or aneuploid states. P-values calculated with Wilcoxon rank-sum tests.}
-    \label{figure:aneuploidy_aggattrs}
-\end{figure}
+\begin{figure}[h] \includegraphics{c4_fig_aggattrs} \caption[Features of
+    aggregating proteins]{\sffamily \textbf{Features of aggregating proteins} \\
+    \small (A) Highly aggregation prone proteins form larger interfaces. (B) And
+    are more highly coexpressed with other subunits within complexes. In both
+    cases NA stands for not available, but this does not necessarily mean
+    non-aggregating, since it could include proteins which only form aggregates
+    in either wild type or aneuploid states. P-values calculated with Wilcoxon
+    rank-sum tests.} \label{figure:aneuploidy_aggattrs} \end{figure}
 
 
 \section{Discussion}
-Supplementing the finding that NED predicts the response of proteins to aneuploidy, these analyses go further in explaining the connection between attenuation in aneuploid cells and non-exponential degradation in normal cells. Both sets of results suggest that the assembly of a complex is not centred on stable scaffold proteins, but rather on a core set of unstable, highly expressed subunits. The first subunits to assemble tend to be rapidly degraded, with significant stabilisation occurring upon binding, as indicated by the NED data and again here. In contrast, the last subunits to bind tend to be comparatively stable in both bound and unbound states. The take home point from this is that both NED and attenuation behaviour are caused by rapid decay of excess protein complex subunits - this is further supported by a recent study revealing highly consistent observations with CNV proteins from tumour sample \cite{Goncalves2017}.
+Supplementing the finding that NED predicts the response of proteins to
+aneuploidy, these analyses go further in explaining the connection between
+attenuation in aneuploid cells and non-exponential degradation in normal cells.
+Both sets of results suggest that the assembly of a complex is not centred on
+stable scaffold proteins, but rather on a core set of unstable, highly expressed
+subunits. The first subunits to assemble tend to be rapidly degraded, with
+significant stabilisation occurring upon binding, as indicated by the NED data
+and again here. In contrast, the last subunits to bind tend to be comparatively
+stable in both bound and unbound states. The take home point from this is that
+both NED and attenuation behaviour are caused by rapid decay of excess protein
+complex subunits - this is further supported by a recent study revealing highly
+consistent observations with CNV proteins from tumour sample
+\cite{Goncalves2017}.
 
-The clearest difference between attenuation such as that seen in aneuploid cells or tumours, and non-exponential degradation common to all cells, is in the fact that NED is the result of relatively slight differences in protein expression within complexes, whereas attenuation is the result of much larger increases in expression affecting all of the proteins on affected chromosomes. However, there are still important questions to be tackled in understanding the behaviour of aneuploid cells - we have started to address one of these with a preliminary study of changes in aggregation propensity caused by aneuploidy.
+The clearest difference between attenuation such as that seen in aneuploid cells
+or tumours, and non-exponential degradation common to all cells, is in the fact
+that NED is the result of relatively slight differences in protein expression
+within complexes, whereas attenuation is the result of much larger increases in
+expression affecting all of the proteins on affected chromosomes. However, there
+are still important questions to be tackled in understanding the behaviour of
+aneuploid cells - we have started to address one of these with a preliminary
+study of changes in aggregation propensity caused by aneuploidy.
 
-One important point to note is that classifying proteins as `aggregating' or `highly aggregating' does not take into account proteins which simply don't aggregate at all, or proteins which do not aggregate in wild type cells but do in aneuploid. Similarly, whilst the aggregating fraction of proteins is certainly much smaller, with the data we currently have it is not possible to make quantitative comparisons of relative amounts of aggregated vs. non-aggregated proteins.
+One important point to note is that classifying proteins as `aggregating' or
+`highly aggregating' does not take into account proteins which simply don't
+aggregate at all, or proteins which do not aggregate in wild type cells but do
+in aneuploid. Similarly, whilst the aggregating fraction of proteins is
+certainly much smaller, with the data we currently have it is not possible to
+make quantitative comparisons of relative amounts of aggregated vs.
+non-aggregated proteins.
 
-Additionally, there are work-in-progress issues in distinguishing between technical and biological noise in measuring the change in abundance of the aggregating fraction of proteins. As the quantity of protein that can be purified from the aggregating fraction of the cell is very small, there is substantial noise in the measurements. The data from each experiment is therefore normalised by mean-centring (see methods), such that the mean of data points from each experiment is identical.
+Additionally, there are work-in-progress issues in distinguishing between
+technical and biological noise in measuring the change in abundance of the
+aggregating fraction of proteins. As the quantity of protein that can be
+purified from the aggregating fraction of the cell is very small, there is
+substantial noise in the measurements. The data from each experiment is
+therefore normalised by mean-centring (see methods), such that the mean of data
+points from each experiment is identical.
 
-This reduces the variance in measurement of aggregate disomic ratios (supplementary figure \ref{suppfigure:aneuploidy_aggnorm}), but comes at the expense of being able to investigate the relationship between chromosome size and aggregation propensity. For example, it is possible that duplicating larger chromosomes leads to a greater overall increase in aggregation propensity across the cell. Additional replicates of selected chromosomes are being planned to better establish the extent to which noise in the data is attributable to technical differences compared to biological ones.
+This reduces the variance in measurement of aggregate disomic ratios
+(supplementary figure \ref{suppfigure:aneuploidy_aggnorm}), but comes at the
+expense of being able to investigate the relationship between chromosome size
+and aggregation propensity. For example, it is possible that duplicating larger
+chromosomes leads to a greater overall increase in aggregation propensity across
+the cell. Additional replicates of selected chromosomes are being planned to
+better establish the extent to which noise in the data is attributable to
+technical differences compared to biological ones.
 
-The most pressing question that remains from this work is why some proteins are attenuated whilst others aggregate. Work from other groups \cite{Pechmann2009, Yang2012}, has shown that members of protein complexes are aggregation-prone. Our data supports this, since we see that highly aggregating proteins are enriched in heteromeric complexes and many attributes of aggregated proteins are shared by NED and attenuated proteins. The simplest reason that explains why some proteins are aggregated therefore is seems to be simply that they are less efficiently degraded. Testing this hypothesis will be a priority as this study goes forward.
+The most pressing question that remains from this work is why some proteins are
+attenuated whilst others aggregate. Work from other groups \cite{Pechmann2009,
+Yang2012}, has shown that members of protein complexes are aggregation-prone.
+Our data supports this, since we see that highly aggregating proteins are
+enriched in heteromeric complexes and many attributes of aggregated proteins are
+shared by NED and attenuated proteins. The simplest reason that explains why
+some proteins are aggregated therefore is seems to be simply that they are less
+efficiently degraded. Testing this hypothesis will be a priority as this study
+goes forward.
 
 \end{document}

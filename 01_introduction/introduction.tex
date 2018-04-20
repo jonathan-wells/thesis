@@ -18,248 +18,1216 @@
 \chapter{Introduction} \label{chapter:intro}
 
 \section{What are protein complexes?}
-Earth’s biosphere is built around an ancient, universally conserved metabolic network, which channels solar and chemical energy into thermal energy wherever life exists, collectively accounting for a vast energy flux across the face of the planet. The primary catalysts of this network are proteins – large biological macromolecules formed from chains of amino acids. In addition to catalysis, proteins are involved in almost all other biological processes, making them integral to every cell on Earth. Without proteins and the interactions they make with their environment, life would be limited to simple, autocatalytic reactions occurring at the interfaces between water, rocks, and the atmosphere.
+Earth’s biosphere is built around an ancient, universally conserved metabolic
+network, which channels solar and chemical energy into thermal energy wherever
+life exists, collectively accounting for a vast energy flux across the face of
+the planet. The primary catalysts of this network are proteins – large
+biological macromolecules formed from chains of amino acids. In addition to
+catalysis, proteins are involved in almost all other biological processes,
+making them integral to every cell on Earth. Without proteins and the
+interactions they make with their environment, life would be limited to simple,
+autocatalytic reactions occurring at the interfaces between water, rocks, and
+the atmosphere.
 
-Proteins are complex molecules; each one consists of tens to thousands of amino acids linked by covalent peptide bonds between their terminal amine and carboxyl groups. There are 20 amino acids widely used by biological organisms, and thus an N residue sequence can be composed in \(20^{N}\) different ways - for a typical 200 residue protein this is \(1.6 \times 10^{260}\) possible sequence combinations. In addition to its sequence, the function of a protein is critically dependent on its three-dimensional (3D) structure, as defined by bond angles between pairs of residues. As a result of this sequence and structural variability, the theoretical complexity of the protein universe is essentially limitless. Furthermore, sequence space currently appears to be growing randomly, in that common protein functions (if not folds) can exist even whilst sequence similarity approaches that of random sequences \cite{Larson2002,Povolotskaya2010}.
+Proteins are complex molecules; each one consists of tens to thousands of amino
+acids linked by covalent peptide bonds between their terminal amine and carboxyl
+groups. There are 20 amino acids widely used by biological organisms, and thus
+an N residue sequence can be composed in \(20^{N}\) different ways - for a
+typical 200 residue protein this is \(1.6 \times 10^{260}\) possible sequence
+combinations. In addition to its sequence, the function of a protein is
+critically dependent on its three-dimensional (3D) structure, as defined by bond
+angles between pairs of residues. As a result of this sequence and structural
+variability, the theoretical complexity of the protein universe is essentially
+limitless. Furthermore, sequence space currently appears to be growing randomly,
+in that common protein functions (if not folds) can exist even whilst sequence
+similarity approaches that of random sequences
+\cite{Larson2002,Povolotskaya2010}.
 
-However, despite the complexity and specificity inherent in each protein, the diversity of life that we see around us is not a product of individual proteins, but rather of the interactions between them. Indeed, the function of a protein is usually stated in terms of its connections with other biological molecules. In the case of enzymes, interactors are typically small metabolites, but most since proteins are not enzymes, the majority of biologically interesting interactions are simply with other proteins. Most of these protein-protein interactions are fleeting, arising as a result of dense intracellular crowding, and may or may not be functional. Often though they last longer, producing stable protein complexes, the formation of which is generally essential to the proper function of the constituent protein subunits. This thesis is concerned with the assembly of such protein complexes, and asks how and why they form, and what the wider biological implications of these assembly processes are?
+However, despite the complexity and specificity inherent in each protein, the
+diversity of life that we see around us is not a product of individual proteins,
+but rather of the interactions between them. Indeed, the function of a protein
+is usually stated in terms of its connections with other biological molecules.
+In the case of enzymes, interactors are typically small metabolites, but most
+since proteins are not enzymes, the majority of biologically interesting
+interactions are simply with other proteins. Most of these protein-protein
+interactions are fleeting, arising as a result of dense intracellular crowding,
+and may or may not be functional. Often though they last longer, producing
+stable protein complexes, the formation of which is generally essential to the
+proper function of the constituent protein subunits. This thesis is concerned
+with the assembly of such protein complexes, and asks how and why they form, and
+what the wider biological implications of these assembly processes are?
 
-Before we go on, it is helpful to define some terms: with respect to the quaternary structure of a protein, there are three classes that can be used to encompass all possible structures. To start with, a single protein chain that exists without forming stable interactions with other proteins is known as a monomer. More common is the case where interactions occur between identical copies of a single protein species; in this case the resulting complex is known as a homomer. Finally, heteromers are formed from groups of distinct, non-identical proteins. In addition to these three categories, I will also refer to the stoichiometry of complexes - that is, the numbers and ratios of different subunits that make up the whole.
+Before we go on, it is helpful to define some terms: with respect to the
+quaternary structure of a protein, there are three classes that can be used to
+encompass all possible structures. To start with, a single protein chain that
+exists without forming stable interactions with other proteins is known as a
+monomer. More common is the case where interactions occur between identical
+copies of a single protein species; in this case the resulting complex is known
+as a homomer. Finally, heteromers are formed from groups of distinct,
+non-identical proteins. In addition to these three categories, I will also refer
+to the stoichiometry of complexes - that is, the numbers and ratios of different
+subunits that make up the whole.
 
-Stable protein complexes are common, whether homomeric or heteromeric. Given this, an important question is: what evolutionary processes give rise to protein complexes? A major contributor, particularly to homomers, is likely to be genetic drift. This idea was first laid out in an influential paper by Michael Lynch \cite{Lynch2013}. In this work he describes a simple model in which transitions between multimeric states are represented as a Markov process, with transition probabilities being dependent on mutation rate and selection pressure. The implication arising from this work is that, under neutral to modest selection pressure - which is the case for the large majority of eukaryotic genomes - mutations causing homomerisation of a given protein will arise regardless of the direction of selection. Multiple studies have now been published that strongly support this idea \cite{Dayhoff2010,Alexander2017,Garcia-Seisdedos2017}.
+Stable protein complexes are common, whether homomeric or heteromeric. Given
+this, an important question is: what evolutionary processes give rise to protein
+complexes? A major contributor, particularly to homomers, is likely to be
+genetic drift. This idea was first laid out in an influential paper by Michael
+Lynch \cite{Lynch2013}. In this work he describes a simple model in which
+transitions between multimeric states are represented as a Markov process, with
+transition probabilities being dependent on mutation rate and selection
+pressure. The implication arising from this work is that, under neutral to
+modest selection pressure - which is the case for the large majority of
+eukaryotic genomes - mutations causing homomerisation of a given protein will
+arise regardless of the direction of selection. Multiple studies have now been
+published that strongly support this idea
+\cite{Dayhoff2010,Alexander2017,Garcia-Seisdedos2017}.
 
-Genetic drift is a major driver of evolution, particularly in multi-cellular eukaryotes such as ourselves, and non-adaptive evolution must therefore be viewed as an important null hypothesis before turning to adaptive explanations \cite{Gould1979,Koonin2016} for the formation of protein complexes. However, there are numerous benefits provided by a modular system of protein formation. For example, when considering the metabolic cost of synthesising proteins, it may be more effective to split a large protein into parts, so that errors in translation are restricted to smaller units. Since the error rates in gene expression are such that they present a major challenge to the viability of life, this reason seems to be particularly plausible \cite{Gingold2011}. More spectacular examples of modularity in action can be seen with complexes such as ATP synthase, the ribosome, or the cell translation machinery, all of which it is hard to imagine existing in forms other than their present ones.
+Genetic drift is a major driver of evolution, particularly in multi-cellular
+eukaryotes such as ourselves, and non-adaptive evolution must therefore be
+viewed as an important null hypothesis before turning to adaptive explanations
+\cite{Gould1979,Koonin2016} for the formation of protein complexes. However,
+there are numerous benefits provided by a modular system of protein formation.
+For example, when considering the metabolic cost of synthesising proteins, it
+may be more effective to split a large protein into parts, so that errors in
+translation are restricted to smaller units. Since the error rates in gene
+expression are such that they present a major challenge to the viability of
+life, this reason seems to be particularly plausible \cite{Gingold2011}. More
+spectacular examples of modularity in action can be seen with complexes such as
+ATP synthase, the ribosome, or the cell translation machinery, all of which it
+is hard to imagine existing in forms other than their present ones.
 
-Another potentially adaptive and widespread phenomena arising from the formation of protein complexes is that of allostery. The original definition of the term given by Monod, Changeux and Jacob \cite{Monod1963} referred to modulation of protein activity by small molecules binding away from the active site, but this has since been extended to include cooperative effects between proteins. The classic example of allostery is haemoglobin, in which the binding of oxygen to one subunit increases the binding affinity of neighbouring subunits by propagating structural changes through the subunit binding interfaces \cite{Perutz1976}. Intriguingly, whilst one might expect beneficial allosteric mechanisms to be uniformly conserved, it turns out that the opposite is often true; as a case in point, haemoglobin is known to differ mechanistically across species \cite{Kolatkar1988,Royer2005,Bellelli2011}.
+Another potentially adaptive and widespread phenomena arising from the formation
+of protein complexes is that of allostery. The original definition of the term
+given by Monod, Changeux and Jacob \cite{Monod1963} referred to modulation of
+protein activity by small molecules binding away from the active site, but this
+has since been extended to include cooperative effects between proteins. The
+classic example of allostery is haemoglobin, in which the binding of oxygen to
+one subunit increases the binding affinity of neighbouring subunits by
+propagating structural changes through the subunit binding interfaces
+\cite{Perutz1976}. Intriguingly, whilst one might expect beneficial allosteric
+mechanisms to be uniformly conserved, it turns out that the opposite is often
+true; as a case in point, haemoglobin is known to differ mechanistically across
+species \cite{Kolatkar1988,Royer2005,Bellelli2011}.
 
 \section{A brief history of research on protein complexes}
-The tendency of proteins to form complexes and the functional implications of this behaviour has been recognised since the earliest days of molecular biology. Though it is unclear who was the first to explicitly note their existence, it seems likely that interest in protein complexes arose in tandem with investigations into the nature of viruses. In 1935, W. M. Stanley reported the isolation of `a crystalline material which has the properties of tobacco-mosaic virus' (TMV), and demonstrated that this material was predominantly composed of protein \cite{Stanley1935}. However, it is not obvious whether or not he understood the implications of finding such a structure for proteins beyond those comprising the TMV capsid. Either way, this period in time marks a turning point for the field of biology, and over the next few decades much of the groundwork was laid for our current understanding of protein structure.
+The tendency of proteins to form complexes and the functional implications of
+this behaviour has been recognised since the earliest days of molecular biology.
+Though it is unclear who was the first to explicitly note their existence, it
+seems likely that interest in protein complexes arose in tandem with
+investigations into the nature of viruses. In 1935, W. M. Stanley reported the
+isolation of `a crystalline material which has the properties of tobacco-mosaic
+virus' (TMV), and demonstrated that this material was predominantly composed of
+protein \cite{Stanley1935}. However, it is not obvious whether or not he
+understood the implications of finding such a structure for proteins beyond
+those comprising the TMV capsid. Either way, this period in time marks a turning
+point for the field of biology, and over the next few decades much of the
+groundwork was laid for our current understanding of protein structure.
 
-As if to usher in the era, 1944 saw the publication of Erwin Schrödinger's classic book: `What is Life?' \cite{Schrodinger1947}, which inspired a number of scientists, particularly physicists, to try their hand at biology. Amongst these were names such as Francis Crick, James Watson and Maurice Wilkins, who were are best known for their discovery in 1953 of the structure of DNA\footnote{Infamously, Rosalind Franklin was snubbed by Watson and Crick, who did not properly credit her for her essential work in producing the X-ray diffraction patterns that were used to solve the structure. After her experiments on DNA, Franklin was also involved in pioneering work using crystallographic electron microscopy to investigate the structure of viruses. Sadly, she died in 1958 at the age of 37, before achieving the recognition she deserved, but this work later led to her protegé, Aaron Klug, winning the 1982 Nobel Prize for Chemistry. It seems possible that had she lived, Franklin would have been in line for two Nobels, so maybe she gets the last laugh in the eyes of history.}. Also familiar with the book, though not so enamoured with it \cite{Dronamraju1999}, was Max Perutz, who was at the time working on haemoglobin. By this point, it was clear that many proteins were multimeric assemblies, and by 1955 the TMV capsid had been explicitly described as a self-assembling homomer comprised of several thousand identical subunits \cite{Fraenkel-Conrat1955}. All that remained for the study of proteins and their complexes to begin in earnest was the production of the first structural models. This feat was achieved before the end of the decade by John Kendrew and Max Perutz; first with monomeric myoglobin \cite{Kendrew1958}, and shortly thereafter, tetrameric haemoglobin \cite{Perutz1960}. In solving these near-atomic resolution structures, they opened up the door to the new field of structural biology.
+As if to usher in the era, 1944 saw the publication of Erwin Schrödinger's
+classic book: `What is Life?' \cite{Schrodinger1947}, which inspired a number of
+scientists, particularly physicists, to try their hand at biology. Amongst these
+were names such as Francis Crick, James Watson and Maurice Wilkins, who were are
+best known for their discovery in 1953 of the structure of
+DNA\footnote{Infamously, Rosalind Franklin was snubbed by Watson and Crick, who
+did not properly credit her for her essential work in producing the X-ray
+diffraction patterns that were used to solve the structure. After her
+experiments on DNA, Franklin was also involved in pioneering work using
+crystallographic electron microscopy to investigate the structure of viruses.
+Sadly, she died in 1958 at the age of 37, before achieving the recognition she
+deserved, but this work later led to her protegé, Aaron Klug, winning the 1982
+Nobel Prize for Chemistry. It seems possible that had she lived, Franklin would
+have been in line for two Nobels, so maybe she gets the last laugh in the eyes
+of history.}. Also familiar with the book, though not so enamoured with it
+\cite{Dronamraju1999}, was Max Perutz, who was at the time working on
+haemoglobin. By this point, it was clear that many proteins were multimeric
+assemblies, and by 1955 the TMV capsid had been explicitly described as a
+self-assembling homomer comprised of several thousand identical subunits
+\cite{Fraenkel-Conrat1955}. All that remained for the study of proteins and
+their complexes to begin in earnest was the production of the first structural
+models. This feat was achieved before the end of the decade by John Kendrew and
+Max Perutz; first with monomeric myoglobin \cite{Kendrew1958}, and shortly
+thereafter, tetrameric haemoglobin \cite{Perutz1960}. In solving these
+near-atomic resolution structures, they opened up the door to the new field of
+structural biology.
 
-Following the Second World War, technology improved rapidly, and during this period structural biology was one of the most productive fields in all of science; X-ray crystallography in particular deserves special mention, having led to 14 Nobel Prizes since 1914. Of these, uncovering the structure of the ribosome - a huge complex consisting of dozens of protein and rRNA subunits - is perhaps the crowning achievement \cite{Schluenzen2000,Ramakrishnan2000,Ban2000}.
+Following the Second World War, technology improved rapidly, and during this
+period structural biology was one of the most productive fields in all of
+science; X-ray crystallography in particular deserves special mention, having
+led to 14 Nobel Prizes since 1914. Of these, uncovering the structure of the
+ribosome - a huge complex consisting of dozens of protein and rRNA subunits - is
+perhaps the crowning achievement \cite{Schluenzen2000,Ramakrishnan2000,Ban2000}.
 
-However, whilst X-ray crystallography was in its heyday, other fields were not silent. A classic molecular biology technique that appeared in the late 80's was the yeast-2-hybrid assay (Y2H) \cite{Fields1989}, in which two proteins of interest are fused to a DNA binding domain and a transcriptional activator domain, allowing binary interactions (or lack thereof) between the proteins to be detected by the expression of a reporter gene. This assay has been enormously successful, with the original paper having been cited nearly 7000 times since publication; despite its age it is still relevant today, notably through use in a high-throughput manner \cite{Rajagopala2014}. However, though simple and cost-effective, there are inherent limitations to the technique: most obviously, the involvement of bulky reporter domains risks disrupting or preventing subtle interactions between many proteins. As a result, approaches using mass spectrometry have largely superseded Y2H as the method of choice for quantitative studies of the interactome.
+However, whilst X-ray crystallography was in its heyday, other fields were not
+silent. A classic molecular biology technique that appeared in the late 80's was
+the yeast-2-hybrid assay (Y2H) \cite{Fields1989}, in which two proteins of
+interest are fused to a DNA binding domain and a transcriptional activator
+domain, allowing binary interactions (or lack thereof) between the proteins to
+be detected by the expression of a reporter gene. This assay has been enormously
+successful, with the original paper having been cited nearly 7000 times since
+publication; despite its age it is still relevant today, notably through use in
+a high-throughput manner \cite{Rajagopala2014}. However, though simple and
+cost-effective, there are inherent limitations to the technique: most obviously,
+the involvement of bulky reporter domains risks disrupting or preventing subtle
+interactions between many proteins. As a result, approaches using mass
+spectrometry have largely superseded Y2H as the method of choice for
+quantitative studies of the interactome.
 
-Mass spectrometry is at least as old as X-ray crystallography, but its use in the study of protein complexes did not become possible until the development of soft matrix-assisted laser desorption/ionisation (MALDI) and related techniques by Karas, Bachmann, Hillenkamp and Tanaka \cite{Karas1985,Tanaka1988}. A short while after these breakthroughs, electrospray ionisation (ESI) also became available for use with proteins \cite{Fenn1989}. Both MALDI and ESI are now essential tools in biology, and by coupling mass spectrometers with liquid chromatography (LC) and affinity purification it is possible to infer the existence of protein complexes from large scale protein interaction data.
+Mass spectrometry is at least as old as X-ray crystallography, but its use in
+the study of protein complexes did not become possible until the development of
+soft matrix-assisted laser desorption/ionisation (MALDI) and related techniques
+by Karas, Bachmann, Hillenkamp and Tanaka \cite{Karas1985,Tanaka1988}. A short
+while after these breakthroughs, electrospray ionisation (ESI) also became
+available for use with proteins \cite{Fenn1989}. Both MALDI and ESI are now
+essential tools in biology, and by coupling mass spectrometers with liquid
+chromatography (LC) and affinity purification it is possible to infer the
+existence of protein complexes from large scale protein interaction data.
 
-Computational biology was launched in the `60s by the prescient efforts of researchers such as Margaret Dayhoff and Russell Doolittle, and has now developed into a mature field capable of tackling diverse and important problems, including the modelling of protein structure. The first steps in computational biology were predominantly concerned with producing tools and databases for protein sequence analysis (at a time when less than 100 proteins had been sequenced! \cite{Dayhoff1965}), but very quickly work began on force fields for modelling simple chemical structures \cite{Bixon1967}. Michael Levitt began trying to apply these early force fields to the problem of protein structure in 1968 during a stay in John Kendrew's lab at the LMB \cite{Levitt2001}; eventually this work, along with that of others in the community, led to the development of CHARMM \cite{Brooks2009} (Chemistry at HARvard Molecular Mechanics) and AMBER \cite{Salomon-Ferrer2013,Amber2017} (Assisted Model Building and Energy Refinement), both of which are still amongst the most popular force fields in use today.
+Computational biology was launched in the `60s by the prescient efforts of
+researchers such as Margaret Dayhoff and Russell Doolittle, and has now
+developed into a mature field capable of tackling diverse and important
+problems, including the modelling of protein structure. The first steps in
+computational biology were predominantly concerned with producing tools and
+databases for protein sequence analysis (at a time when less than 100 proteins
+had been sequenced! \cite{Dayhoff1965}), but very quickly work began on force
+fields for modelling simple chemical structures \cite{Bixon1967}. Michael Levitt
+began trying to apply these early force fields to the problem of protein
+structure in 1968 during a stay in John Kendrew's lab at the LMB
+\cite{Levitt2001}; eventually this work, along with that of others in the
+community, led to the development of CHARMM \cite{Brooks2009} (Chemistry at
+HARvard Molecular Mechanics) and AMBER \cite{Salomon-Ferrer2013,Amber2017}
+(Assisted Model Building and Energy Refinement), both of which are still amongst
+the most popular force fields in use today.
 
-However, molecular dynamics is computationally intensive, and it has only recently become useful as far as protein complexes are concerned. In contrast, in the early 21st century, when computers were not yet powerful enough to model large proteins, the number of sequences available to researchers was beginning to explode, and this wealth of data made homology modelling possible \cite{Rost1996,Xu1998}. This has had a huge impact on our ability to predict structures, and currently aids a variety of structural methods by providing templates to guide model building.
+However, molecular dynamics is computationally intensive, and it has only
+recently become useful as far as protein complexes are concerned. In contrast,
+in the early 21st century, when computers were not yet powerful enough to model
+large proteins, the number of sequences available to researchers was beginning
+to explode, and this wealth of data made homology modelling possible
+\cite{Rost1996,Xu1998}. This has had a huge impact on our ability to predict
+structures, and currently aids a variety of structural methods by providing
+templates to guide model building.
 
-Protein complexes as distinct entities are important, but the proteome as a whole is a highly dynamic ensemble, and our understanding of either is not complete without considering the processes behind assembly and disassembly of complexes. The following chapters are predominantly concerned with assembly, and as we shall see, the process is of great biological importance. Many phenomena can be better understood by taking assembly into account - for example, the evolution of gene order in bacteria (chapter \ref{chapter:operons}), or the attenuation of protein levels observed in aneuploid cells (chapter \ref{chapter:aneuploidy}). However, it has only been recently that the technical developments highlighted above have reached a level of sophistication where they can be used to investigate these processes. Since the work in this thesis is built upon these techniques, this chapter provides a broad overview of the current state-of-the-art in structural, non-structural, and computational methods for investigating protein complexes.
+Protein complexes as distinct entities are important, but the proteome as a
+whole is a highly dynamic ensemble, and our understanding of either is not
+complete without considering the processes behind assembly and disassembly of
+complexes. The following chapters are predominantly concerned with assembly, and
+as we shall see, the process is of great biological importance. Many phenomena
+can be better understood by taking assembly into account - for example, the
+evolution of gene order in bacteria (chapter \ref{chapter:operons}), or the
+attenuation of protein levels observed in aneuploid cells (chapter
+\ref{chapter:aneuploidy}). However, it has only been recently that the technical
+developments highlighted above have reached a level of sophistication where they
+can be used to investigate these processes. Since the work in this thesis is
+built upon these techniques, this chapter provides a broad overview of the
+current state-of-the-art in structural, non-structural, and computational
+methods for investigating protein complexes.
 
 \section{Structural characterisation of protein complexes}
-Being able to visualise something when we are studying it is an invaluable aid to our understanding, and this is certainly true for proteins. In this regard, the field of structural biology is a satisfying one, as it enables us to picture (however unrealistically) molecules that exist at a scale far below anything in our day-to-day experience. Though the field was given life by X-ray crystallography, cryo-EM and NMR spectroscopy are nowadays equally important, with each technology occupying its own niche in terms of the type of problem it is best-suited to. Together, these technologies are responsible for the solution of many thousands of protein structures, and have together have revolutionised biology, medicine and the pharmaceutical industry.
+Being able to visualise something when we are studying it is an invaluable aid
+to our understanding, and this is certainly true for proteins. In this regard,
+the field of structural biology is a satisfying one, as it enables us to picture
+(however unrealistically) molecules that exist at a scale far below anything in
+our day-to-day experience. Though the field was given life by X-ray
+crystallography, cryo-EM and NMR spectroscopy are nowadays equally important,
+with each technology occupying its own niche in terms of the type of problem it
+is best-suited to. Together, these technologies are responsible for the solution
+of many thousands of protein structures, and have together have revolutionised
+biology, medicine and the pharmaceutical industry.
 
 \subsection{X-ray crystallography}
-X-ray crystallography was the first method to make the field of structural biology a reality, bringing together three separate technologies, each important in its own right. These technologies include: methods for overexpression and purification of proteins, the production of powerful X-ray sources, and computational methods for solving X-ray diffraction patterns. By and large, the ways in which X-ray crystallography can be used to determine protein structure are the same for monomeric proteins and those which form complexes. There are however some important differences and additional difficulties that need considering in the latter case. Although cryo-EM seems poised to overtake X-ray crystallography as the method of choice for the solution of large heteromeric structures, there have been a number of exciting developments in crystallography that look set to ensure its future for many years to come. In the following section I will highlight of some of these advances, and attempt to give a summary of the current state of the field.
+X-ray crystallography was the first method to make the field of structural
+biology a reality, bringing together three separate technologies, each important
+in its own right. These technologies include: methods for overexpression and
+purification of proteins, the production of powerful X-ray sources, and
+computational methods for solving X-ray diffraction patterns. By and large, the
+ways in which X-ray crystallography can be used to determine protein structure
+are the same for monomeric proteins and those which form complexes. There are
+however some important differences and additional difficulties that need
+considering in the latter case. Although cryo-EM seems poised to overtake X-ray
+crystallography as the method of choice for the solution of large heteromeric
+structures, there have been a number of exciting developments in crystallography
+that look set to ensure its future for many years to come. In the following
+section I will highlight of some of these advances, and attempt to give a
+summary of the current state of the field.
 
 \subsubsection{Protein expression, purification, and crystallisation}
-Acquiring samples of purified protein is a requisite first step for almost all of the methods discussed in this chapter, and X-ray crystallography is no exception. Though I will describe the basic principles with the production of crystals in mind, much of what follows is very general and is applicable to many other techniques; for further reading, general reviews on the topic of protein purification can be found in the bibliography \cite{Link2005,Graslund2008,LaCava2016}.
+Acquiring samples of purified protein is a requisite first step for almost all
+of the methods discussed in this chapter, and X-ray crystallography is no
+exception. Though I will describe the basic principles with the production of
+crystals in mind, much of what follows is very general and is applicable to many
+other techniques; for further reading, general reviews on the topic of protein
+purification can be found in the bibliography
+\cite{Link2005,Graslund2008,LaCava2016}.
 
-A typical procedure for the expression of protein for crystallisation involves transforming \textit{E. coli} with a plasmid containing your protein of interest, usually under the control of a strong, inducible promoter \cite{Rosano2014}. For monomeric bacterial proteins this system is simple and easy to use, but expressing heteromeric protein complexes is often considerably more challenging, particularly those of eukaryotes. The key difficulty in the expression of heteromers lies in the production of sufficient quantities of pure sample, as in non-native host systems protein complex assembly is often inefficient or simply incomplete, making purification and subsequent crystallisation challenging. For eukaryotic proteins, this is compounded further by the fact that most undergo alternative splicing and other post-transcriptional or -translational events, the machinery for which is generally lacking in bacteria.
+A typical procedure for the expression of protein for crystallisation involves
+transforming \textit{E. coli} with a plasmid containing your protein of
+interest, usually under the control of a strong, inducible promoter
+\cite{Rosano2014}. For monomeric bacterial proteins this system is simple and
+easy to use, but expressing heteromeric protein complexes is often considerably
+more challenging, particularly those of eukaryotes. The key difficulty in the
+expression of heteromers lies in the production of sufficient quantities of pure
+sample, as in non-native host systems protein complex assembly is often
+inefficient or simply incomplete, making purification and subsequent
+crystallisation challenging. For eukaryotic proteins, this is compounded further
+by the fact that most undergo alternative splicing and other
+post-transcriptional or -translational events, the machinery for which is
+generally lacking in bacteria.
 
-Prior to any bench work, improvements in the cellular yield of bacterial heteromers can be achieved by carefully considering the design of the expression vector in light of the assembly pathway of the protein complex in question. As will be discussed in detail in chapter 3, the order of genes within operons is under selection to match the assembly order of protein complexes \cite{Wells2016}. It has been demonstrated experimentally that taking this fact into account can markedly increase complex assembly efficiency, and that yields of heteromers in their fully-assembled native state can be improved by using the native operon structure in expression vectors \cite{Shieh2015a, Poulsen2010}.
+Prior to any bench work, improvements in the cellular yield of bacterial
+heteromers can be achieved by carefully considering the design of the expression
+vector in light of the assembly pathway of the protein complex in question. As
+will be discussed in detail in chapter 3, the order of genes within operons is
+under selection to match the assembly order of protein complexes
+\cite{Wells2016}. It has been demonstrated experimentally that taking this fact
+into account can markedly increase complex assembly efficiency, and that yields
+of heteromers in their fully-assembled native state can be improved by using the
+native operon structure in expression vectors \cite{Shieh2015a, Poulsen2010}.
 
-When purifying protein complexes there is a tradeoff between obtaining highly pure samples and ensuring that the intermolecular bonds between subunits are not disrupted. Though the diversity of methods for protein purification is bewilderingly high, in practice most methods suitable for protein complexes are variations on affinity purification. Here too, careful experimental design can pay dividends, and when possible it is generally preferable to produce bait proteins that are expressed at endogenous levels\footnote{Somewhat counterintuitively, increasing the abundance of a single subunit may actually decrease the yield of the native complex. To understand this, imagine a trimer, assembled linearly as follows: A-B-C. If the concentration of subunit B were to be doubled, the resulting imbalance in stoichiometry would lead to A and C being preferentially sequestered in the form of A-B and B-C dimers, which are incompatible with the original trimeric structure. The idea that differentially modulating subunit expression within complexes can be deleterious is known as the balance hypothesis \cite{Papp2003}, and will be discussed in more detail in coming chapters.}. Ideally, the number of purification steps would be limited in order to retain as much protein in its native state as possible, but in practice multiple purification steps are often required before the sample is pure enough to crystallise. Methods such as dynamic light scattering \cite{Ni2013} can be used to assess sample purity and readiness for crystallisation.
+When purifying protein complexes there is a tradeoff between obtaining highly
+pure samples and ensuring that the intermolecular bonds between subunits are not
+disrupted. Though the diversity of methods for protein purification is
+bewilderingly high, in practice most methods suitable for protein complexes are
+variations on affinity purification. Here too, careful experimental design can
+pay dividends, and when possible it is generally preferable to produce bait
+proteins that are expressed at endogenous levels\footnote{Somewhat
+counterintuitively, increasing the abundance of a single subunit may actually
+decrease the yield of the native complex. To understand this, imagine a trimer,
+assembled linearly as follows: A-B-C. If the concentration of subunit B were to
+be doubled, the resulting imbalance in stoichiometry would lead to A and C being
+preferentially sequestered in the form of A-B and B-C dimers, which are
+incompatible with the original trimeric structure. The idea that differentially
+modulating subunit expression within complexes can be deleterious is known as
+the balance hypothesis \cite{Papp2003}, and will be discussed in more detail in
+coming chapters.}. Ideally, the number of purification steps would be limited in
+order to retain as much protein in its native state as possible, but in practice
+multiple purification steps are often required before the sample is pure enough
+to crystallise. Methods such as dynamic light scattering \cite{Ni2013} can be
+used to assess sample purity and readiness for crystallisation.
 
-In most cases it will be necessary to tailor the expression and purification process to the protein complex of interest. Depending on the orientation of subunits within the structure for example, different subunits may make better or worse bait proteins, as will N- or C-terminal purification tags. Similarly, some complexes may be disrupted by the presence of metal ions, in which case other beads, e.g. those coated in calmodulin, may be more suitable. Ultimately, though there has been progress towards high-throughput expression and purification pipelines \cite{Jia2016}, much of this work still relies on trial and error informed by the expertise of individual structural biologists and research technicians.
+In most cases it will be necessary to tailor the expression and purification
+process to the protein complex of interest. Depending on the orientation of
+subunits within the structure for example, different subunits may make better or
+worse bait proteins, as will N- or C-terminal purification tags. Similarly, some
+complexes may be disrupted by the presence of metal ions, in which case other
+beads, e.g. those coated in calmodulin, may be more suitable. Ultimately, though
+there has been progress towards high-throughput expression and purification
+pipelines \cite{Jia2016}, much of this work still relies on trial and error
+informed by the expertise of individual structural biologists and research
+technicians.
 
-Surprisingly however, the main bottleneck in X-ray crystallography is crystallisation, despite having been largely automated by the development of screening robots. Having said that, there have been some important methodological developments in the crystallisation of membrane proteins, which will also be useful for many membrane complexes. For example, an exciting new method - X-ray solvent contrast modulation - has recently been used to visualise the interaction between membrane proteins and the phospholipid bilayer \cite{Norimatsu2017}. However, this method does not do away with the requirement for good quality crystals, and these are still largely obtained through trial and error - beyond a few general rules of thumb we still do not have a good understanding of how different proteins will behave under different crystallisation conditions.
+Surprisingly however, the main bottleneck in X-ray crystallography is
+crystallisation, despite having been largely automated by the development of
+screening robots. Having said that, there have been some important
+methodological developments in the crystallisation of membrane proteins, which
+will also be useful for many membrane complexes. For example, an exciting new
+method - X-ray solvent contrast modulation - has recently been used to visualise
+the interaction between membrane proteins and the phospholipid bilayer
+\cite{Norimatsu2017}. However, this method does not do away with the requirement
+for good quality crystals, and these are still largely obtained through trial
+and error - beyond a few general rules of thumb we still do not have a good
+understanding of how different proteins will behave under different
+crystallisation conditions.
 
 \subsubsection{Diffraction pattern acquisition}
-Once suitable crystals have been obtained however, the main hurdle has been hurdled and image acquisition can begin. In contrast to earlier steps, enormous progress has been made in this domain since William L. Bragg first demonstrated X-ray diffraction from sodium chloride crystals in 1913 \cite{Bragg1913}. By far the most important development in the field has been that of synchrotron X-ray sources. Synchrotrons are able to produce X-rays at far higher intensities than traditional sources, and as such greatly reduce the time it takes to produce diffraction patterns. Technical properties of the beamline can also be manipulated, for example narrowing it in order to focus on the best quality region of the crystal, thus improving the quality of the resulting diffraction pattern.
+Once suitable crystals have been obtained however, the main hurdle has been
+hurdled and image acquisition can begin. In contrast to earlier steps, enormous
+progress has been made in this domain since William L. Bragg first demonstrated
+X-ray diffraction from sodium chloride crystals in 1913 \cite{Bragg1913}. By far
+the most important development in the field has been that of synchrotron X-ray
+sources. Synchrotrons are able to produce X-rays at far higher intensities than
+traditional sources, and as such greatly reduce the time it takes to produce
+diffraction patterns. Technical properties of the beamline can also be
+manipulated, for example narrowing it in order to focus on the best quality
+region of the crystal, thus improving the quality of the resulting diffraction
+pattern.
 
-More recently, X-ray free electron lasers (XFELs, figure \ref{figure:xfels}) have begun to make an appearance in structural biology. It is hard to overstate the impact that this technology will have on the field, since XFELs are capable of producing peak beam energies approximately ten orders of magnitude greater than current 3rd generation synchrotrons \cite{Shi2014}, and in doing so enable a radically different approach to crystallography. The principle benefit of all this additional power is that the time needed to generate a diffraction pattern is drastically reduced: from hours to femtoseconds. A crystal in the path of such high-energy photons will be vaporised almost instantaneously, but since the diffraction pattern will be obtained faster than the sample is destroyed, this proves not to be a problem - a fact first noted by Neutze et al.\cite{Neutze2000}, giving rise to the term `diffraction before destruction'. Of course, this generates a need for a great many crystals in order to obtain diffraction patterns of the structure from all angles, but this too is not a major issue, since these crystals only have to be a few nanometres in size. In fact, since nanoscale crystals are far easier to grow, the method also circumvents the tedious trial and error process of producing the larger crystals needed for use with traditional X-ray sources.
+More recently, X-ray free electron lasers (XFELs, figure \ref{figure:xfels})
+have begun to make an appearance in structural biology. It is hard to overstate
+the impact that this technology will have on the field, since XFELs are capable
+of producing peak beam energies approximately ten orders of magnitude greater
+than current 3rd generation synchrotrons \cite{Shi2014}, and in doing so enable
+a radically different approach to crystallography. The principle benefit of all
+this additional power is that the time needed to generate a diffraction pattern
+is drastically reduced: from hours to femtoseconds. A crystal in the path of
+such high-energy photons will be vaporised almost instantaneously, but since the
+diffraction pattern will be obtained faster than the sample is destroyed, this
+proves not to be a problem - a fact first noted by Neutze et
+al.\cite{Neutze2000}, giving rise to the term `diffraction before destruction'.
+Of course, this generates a need for a great many crystals in order to obtain
+diffraction patterns of the structure from all angles, but this too is not a
+major issue, since these crystals only have to be a few nanometres in size. In
+fact, since nanoscale crystals are far easier to grow, the method also
+circumvents the tedious trial and error process of producing the larger crystals
+needed for use with traditional X-ray sources.
 
 \begin{figure}[h]
     \includegraphics{c1_fig_xfel}
-    \caption[X-ray free electron lasers]{\sffamily \textbf{X-ray free electron lasers} \\ \small An XFEL produces high energy X-rays by a process known as self-amplified spontaneous emission (SASE). An electron bunch is accelerated close to the speed of light using superconducting niobium resonators. When this passes through the undulator, the wiggling motion induced by the magnets causes the electrons to emit photons. As these photons are travelling only slightly faster than the electrons, they interact with the electrons as they catch them up at each period in the undulator. Over the length of the undulator, this causes the electrons to bunch into very thin disks, which emit intense, synchronised flashes of X-ray laser light. These femtosecond X-ray pulses are then guided into the experiment cabin, where they encounter a stream of protein nano-crystals, producing diffraction patterns from each one.}
+    \caption[X-ray free electron lasers]{\sffamily \textbf{X-ray free electron
+    lasers} \\ \small An XFEL produces high energy X-rays by a process known as
+    self-amplified spontaneous emission (SASE). An electron bunch is accelerated
+    close to the speed of light using superconducting niobium resonators. When
+    this passes through the undulator, the wiggling motion induced by the
+    magnets causes the electrons to emit photons. As these photons are
+    travelling only slightly faster than the electrons, they interact with the
+    electrons as they catch them up at each period in the undulator. Over the
+    length of the undulator, this causes the electrons to bunch into very thin
+    disks, which emit intense, synchronised flashes of X-ray laser light. These
+    femtosecond X-ray pulses are then guided into the experiment cabin, where
+    they encounter a stream of protein nano-crystals, producing diffraction
+    patterns from each one.}
     \label{figure:xfels}
 \end{figure}
 
 \subsubsection{Structure determination}
-Interpretation of the crystal diffraction pattern required the solution of a long-standing challenge in the early days of X-ray crystallography, namely the phase problem \cite{Taylor2003}. The phase problem exists due to the fact that, whilst diffraction patterns capture the amplitude of diffracted photons from a crystal (seen as the intensity of spots on the photograph), the phase of those photons is lost in the process of image acquisition. Unfortunately, it is the phases of the diffracted photons, rather than their amplitudes, that carry most of the information about the underlying crystal structure. Indeed, it was the eventual solution of this problem by Max Perutz that was the key to his and Kendrew's determination of the first protein structures.
+Interpretation of the crystal diffraction pattern required the solution of a
+long-standing challenge in the early days of X-ray crystallography, namely the
+phase problem \cite{Taylor2003}. The phase problem exists due to the fact that,
+whilst diffraction patterns capture the amplitude of diffracted photons from a
+crystal (seen as the intensity of spots on the photograph), the phase of those
+photons is lost in the process of image acquisition. Unfortunately, it is the
+phases of the diffracted photons, rather than their amplitudes, that carry most
+of the information about the underlying crystal structure. Indeed, it was the
+eventual solution of this problem by Max Perutz that was the key to his and
+Kendrew's determination of the first protein structures.
 
-Perutz's breakthrough came when he realised that a technique previously used for phasing crystals of much smaller molecules could also be applied to proteins. This method, known as isomorphous replacement (IR)  \cite{Robertson1936}, involves soaking the crystal in a solution containing heavy metals. Crucially, the incorporation of heavy metals into the crystal does not significantly alter its structure, and as a result, the position of spots in the diffraction pattern remain almost unchanged, whilst subtle differences in their intensity point to the location of the heavy atoms. This provides an essential reference point for calculation of the missing X-ray phases.
+Perutz's breakthrough came when he realised that a technique previously used for
+phasing crystals of much smaller molecules could also be applied to proteins.
+This method, known as isomorphous replacement (IR)  \cite{Robertson1936},
+involves soaking the crystal in a solution containing heavy metals. Crucially,
+the incorporation of heavy metals into the crystal does not significantly alter
+its structure, and as a result, the position of spots in the diffraction pattern
+remain almost unchanged, whilst subtle differences in their intensity point to
+the location of the heavy atoms. This provides an essential reference point for
+calculation of the missing X-ray phases.
 
-For large protein complexes, polynuclear metal clusters are often used in place of individual heavy atoms because of their particularly electron density and associated isomorphous or anomalous scattering signal \cite{Dauter2005}. This approach has recently been used to good effect in solving the structure of the notoriously difficult mediator complex \cite{Nozawa2017}. However, different methods for solving the phase problem have been established in addition to IR, most notably multiple wavelength anomalous diffraction \cite{Hendrickson1991} (MAD). This method operates on different principles to IR but is popular since it is limited only by the quality of the diffraction pattern provided to it.
+For large protein complexes, polynuclear metal clusters are often used in place
+of individual heavy atoms because of their particularly electron density and
+associated isomorphous or anomalous scattering signal \cite{Dauter2005}. This
+approach has recently been used to good effect in solving the structure of the
+notoriously difficult mediator complex \cite{Nozawa2017}. However, different
+methods for solving the phase problem have been established in addition to IR,
+most notably multiple wavelength anomalous diffraction \cite{Hendrickson1991}
+(MAD). This method operates on different principles to IR but is popular since
+it is limited only by the quality of the diffraction pattern provided to it.
 
-As a consequence of the ever-expanding number of structures in the Protein Data Bank \cite{Berman2000} (PDB) and the widespread availability of sequence data, it is often possible nowadays to avoid de novo phasing altogether. Molecular replacement by homology modelling (discussed later) makes use of the fact that closely related sequences generally have similar folds, and therefore can be used as a template to guide brute-force calculation of diffraction pattern phases. There are currently several programs that automate this process - for example, Phaser \cite{McCoy2007}, which is available within the widely used CCP4 software suite \cite{Winn2011}.
+As a consequence of the ever-expanding number of structures in the Protein Data
+Bank \cite{Berman2000} (PDB) and the widespread availability of sequence data,
+it is often possible nowadays to avoid de novo phasing altogether. Molecular
+replacement by homology modelling (discussed later) makes use of the fact that
+closely related sequences generally have similar folds, and therefore can be
+used as a template to guide brute-force calculation of diffraction pattern
+phases. There are currently several programs that automate this process - for
+example, Phaser \cite{McCoy2007}, which is available within the widely used CCP4
+software suite \cite{Winn2011}.
 
 \subsection{Cryo-electron microscopy}
-X-ray crystallography has been, and will continue to be, an enormously useful too for investigating proteins and protein complexes. However, a recent resurgence in cryo-EM has had a transformative effect on structural biology - particularly on our ability to solve the structures of large protein complexes above 300 kDa in size. Its unique affinity for large complexes is especially convenient since these are often prohibitively difficult to crystallise, in large part due to compositional heterogeneity of the purified samples, which cryo-EM can more easily handle. The two methods are therefore highly complementary, and indeed many structures are solved to good resolution by a combination of the two - cryo-EM for the coarse-grained structure, and X-ray crystallography for atomic resolution detail of individual subunits. Likewise, NMR also has difficulty handling large complexes, and thus can be used effectively in combination with cryo-EM.
+X-ray crystallography has been, and will continue to be, an enormously useful
+too for investigating proteins and protein complexes. However, a recent
+resurgence in cryo-EM has had a transformative effect on structural biology -
+particularly on our ability to solve the structures of large protein complexes
+above 300 kDa in size. Its unique affinity for large complexes is especially
+convenient since these are often prohibitively difficult to crystallise, in
+large part due to compositional heterogeneity of the purified samples, which
+cryo-EM can more easily handle. The two methods are therefore highly
+complementary, and indeed many structures are solved to good resolution by a
+combination of the two - cryo-EM for the coarse-grained structure, and X-ray
+crystallography for atomic resolution detail of individual subunits. Likewise,
+NMR also has difficulty handling large complexes, and thus can be used
+effectively in combination with cryo-EM.
 
-As interest in cryo-EM increases (in March 2017 the Wellcome Trust announced a £20M grant for cryo-EM equipment in several UK laboratories), there are signs that single-particle cryo-EM is making incursions into the size and resolution niche currently occupied by X-ray crystallography. Illustrating this, two important symbolic barriers were recently broken in a 2016 Cell paper describing the structures of two homomeric complexes: isocitrate dehydrogenase and glutamate dehydrogenase \cite{Merk2016}. The former weighs in at just 93 kDa, and is the first single-particle cryo-EM structure of a <100 kDa complex, whilst the latter was resolved to 1.8Å, breaking the <2Å resolution barrier. As we shall see, the remarkable technological achievements displayed in this paper and several others have been driven by dramatic improvements in the two key areas of image acquisition and image processing\cite{Bai2015}.
+As interest in cryo-EM increases (in March 2017 the Wellcome Trust announced a
+£20M grant for cryo-EM equipment in several UK laboratories), there are signs
+that single-particle cryo-EM is making incursions into the size and resolution
+niche currently occupied by X-ray crystallography. Illustrating this, two
+important symbolic barriers were recently broken in a 2016 Cell paper describing
+the structures of two homomeric complexes: isocitrate dehydrogenase and
+glutamate dehydrogenase \cite{Merk2016}. The former weighs in at just 93 kDa,
+and is the first single-particle cryo-EM structure of a <100 kDa complex, whilst
+the latter was resolved to 1.8Å, breaking the <2Å resolution barrier. As we
+shall see, the remarkable technological achievements displayed in this paper and
+several others have been driven by dramatic improvements in the two key areas of
+image acquisition and image processing\cite{Bai2015}.
 
 \subsubsection{Image acquisition in single-particle cryo-EM}
-The first major development behind cryo-EM's current flourishing came with the replacement of photographic film by digital direct electron detectors, specifically monolithic active pixel sensors (MAPS). It was not until relatively recently that digital detectors came into widespread use, and until the arrival of MAPS, film was the medium that achieved the best possible detective quantum efficiencies (DQE) \cite{McMullan2009}. DQE is a measure of the signal to noise ratio that can be achieved relative to an ideal detector \cite{Dainty1975}, and is defined as follows:
+The first major development behind cryo-EM's current flourishing came with the
+replacement of photographic film by digital direct electron detectors,
+specifically monolithic active pixel sensors (MAPS). It was not until relatively
+recently that digital detectors came into widespread use, and until the arrival
+of MAPS, film was the medium that achieved the best possible detective quantum
+efficiencies (DQE) \cite{McMullan2009}. DQE is a measure of the signal to noise
+ratio that can be achieved relative to an ideal detector \cite{Dainty1975}, and
+is defined as follows:
 \begin{displaymath}
     DQE = (S/N_{in})^{2}/(S/N_{out})^{2}
 \end{displaymath}
-Where \begin{math} S/N_{in} \end{math} and \begin{math} S/N_{out} \end{math} are the input and output signal-to-noise ratios respectively; a DQE of 1 would imply that the detector was not responsible for any noise in the image. For reference, film has a DQE of around 0.3, whereas the current state-of-the-art digital detectors achieve roughly twice that.
+Where \begin{math} S/N_{in} \end{math} and \begin{math} S/N_{out} \end{math} are
+the input and output signal-to-noise ratios respectively; a DQE of 1 would imply
+that the detector was not responsible for any noise in the image. For reference,
+film has a DQE of around 0.3, whereas the current state-of-the-art digital
+detectors achieve roughly twice that.
 
-Ultimately, DQE is the most important factor in choosing whether to use film or digital detectors, but now that MAPS have surpassed film in that regard, several other compelling advantages of digital detectors can exploited. From a practical standpoint, they are significantly faster to use than film, since images can be viewed immediately after collection and their acquisition can be automated. They can be used to produce high frame-rate videos, enabling them to be run in counting mode, where instead of integrating the signal produced by each incident electron across all the pixels in which a charge was registered, only the pixel with the highest charge is counted \cite{McMullan2009a}. This is conceptually similar to the way in which certain microscopy techniques achieve super-resolution images, and the company Gatan has recently brought this idea to market a with a dedicated super-resolution mode for their K2 Summit detector.
+Ultimately, DQE is the most important factor in choosing whether to use film or
+digital detectors, but now that MAPS have surpassed film in that regard, several
+other compelling advantages of digital detectors can exploited. From a practical
+standpoint, they are significantly faster to use than film, since images can be
+viewed immediately after collection and their acquisition can be automated. They
+can be used to produce high frame-rate videos, enabling them to be run in
+counting mode, where instead of integrating the signal produced by each incident
+electron across all the pixels in which a charge was registered, only the pixel
+with the highest charge is counted \cite{McMullan2009a}. This is conceptually
+similar to the way in which certain microscopy techniques achieve
+super-resolution images, and the company Gatan has recently brought this idea to
+market a with a dedicated super-resolution mode for their K2 Summit detector.
 
-One exciting new technology which is beginning to make its presence felt is the Volta phase-plate, which can be used to directly modulate phase contrast during image acquisition. In order to be able to correctly distinguish between different particles in the sample it is important to have good contrast in the images. Unfortunately, the method by which this contrast is currently changed relies on defocusing the image slightly and as a result, if greater contrast is required, it comes at the expense of resolution. The Volta phase-plate circumvents this issue by modulating the phase directly, without affecting the focus of the image \cite{Danev2014}. Though the principle has been around for some time, it was not until recently that various practical issues were solved, enabling Bai and colleagues to produce a 3Å structure of the 20S Proteasome, thus matching the resolution achieved by defocus methods \cite{Danev2016}. Most impressively, the same group has just this year published a 3.2Å structure of the 64kDa haemoglobin molecule \cite{Khoshouei2017}.
+One exciting new technology which is beginning to make its presence felt is the
+Volta phase-plate, which can be used to directly modulate phase contrast during
+image acquisition. In order to be able to correctly distinguish between
+different particles in the sample it is important to have good contrast in the
+images. Unfortunately, the method by which this contrast is currently changed
+relies on defocusing the image slightly and as a result, if greater contrast is
+required, it comes at the expense of resolution. The Volta phase-plate
+circumvents this issue by modulating the phase directly, without affecting the
+focus of the image \cite{Danev2014}. Though the principle has been around for
+some time, it was not until recently that various practical issues were solved,
+enabling Bai and colleagues to produce a 3Å structure of the 20S Proteasome,
+thus matching the resolution achieved by defocus methods \cite{Danev2016}. Most
+impressively, the same group has just this year published a 3.2Å structure of
+the 64kDa haemoglobin molecule \cite{Khoshouei2017}.
 
 \subsubsection{Image processing and structure determination}
-A second important factor in cryo-EM's success has been the appearance of better image processing software, which has enabled researchers to get the most out of the concurrent improvements in imaging hardware. In addition to improving resolution, the emergence of electron detectors capable of producing high frame-rate videos in counting mode has a secondary benefit, in that it enables beam-induced motion blurring in the images to be corrected computationally, a feat first achieved by two groups almost simultaneously in 2013 \cite{Bai2013, Li2013}. Since the reduction in signal quality incurred by beam-induced movement is around five-fold if uncorrected \cite{Henderson1985}, this was a major breakthrough at the time, and is now standard protocol that can be carried out with the popular image-processing program RELION \cite{Scheres2012,Scheres2014}.
+A second important factor in cryo-EM's success has been the appearance of better
+image processing software, which has enabled researchers to get the most out of
+the concurrent improvements in imaging hardware. In addition to improving
+resolution, the emergence of electron detectors capable of producing high
+frame-rate videos in counting mode has a secondary benefit, in that it enables
+beam-induced motion blurring in the images to be corrected computationally, a
+feat first achieved by two groups almost simultaneously in 2013 \cite{Bai2013,
+Li2013}. Since the reduction in signal quality incurred by beam-induced movement
+is around five-fold if uncorrected \cite{Henderson1985}, this was a major
+breakthrough at the time, and is now standard protocol that can be carried out
+with the popular image-processing program RELION \cite{Scheres2012,Scheres2014}.
 
-Computational progress has also been essential for image classification (figure \ref{figure:cryoem}). In single-particle cryo-EM, individual protein complexes are fixed in random positions and orientations in the flash-frozen sample - to determine the structure, each particle captured in the imaging process must first be categorised according to its orientation. For symmetrical structures, the number of particles required in the image is usually considerably lower than for asymmetric structures, since multiple axes of symmetry effectively make many of the observed orientations redundant. This has the effect of increasing the effective number of images of symmetric particles, and conversely, ensures that the solution of asymmetric structures is more challenging.
+Computational progress has also been essential for image classification (figure
+\ref{figure:cryoem}). In single-particle cryo-EM, individual protein complexes
+are fixed in random positions and orientations in the flash-frozen sample - to
+determine the structure, each particle captured in the imaging process must
+first be categorised according to its orientation. For symmetrical structures,
+the number of particles required in the image is usually considerably lower than
+for asymmetric structures, since multiple axes of symmetry effectively make many
+of the observed orientations redundant. This has the effect of increasing the
+effective number of images of symmetric particles, and conversely, ensures that
+the solution of asymmetric structures is more challenging.
 
 \begin{figure}
     \includegraphics{c1_fig_cryoem}
-    \caption[Image classification in single-particle cryo-EM]{\sffamily \textbf{Image classification in single-particle cryo-EM.} \\ \small (A) Theoretical electron micrograph of the human 26S proteasome produced by a detector with DQE = 1.0. (B) Image produced by detector with lower DQE, resulting in noise and phase contrast issues. (C) 2D image classification of proteasome particles into categories corresponding to their orientation. (D) Fitted 3.8Å resolution model. Produced using K2 summit detector and processed in RELION; PDB ID: 5T0C, EMDB ID: 8332 \cite{Chen2016}}
+    \caption[Image classification in single-particle cryo-EM]{\sffamily
+    \textbf{Image classification in single-particle cryo-EM.} \\ \small (A)
+    Theoretical electron micrograph of the human 26S proteasome produced by a
+    detector with DQE = 1.0. (B) Image produced by detector with lower DQE,
+    resulting in noise and phase contrast issues. (C) 2D image classification of
+    proteasome particles into categories corresponding to their orientation. (D)
+    Fitted 3.8Å resolution model. Produced using K2 summit detector and
+    processed in RELION; PDB ID: 5T0C, EMDB ID: 8332 \cite{Chen2016}}
     \label{figure:cryoem}
 \end{figure}
 
-Dealing with structural and compositional heterogeneity is a related problem, which arises from imperfect sample purification or the presence of different functional states of the complex. Computational approaches for dealing with this arrived in 1998 with a maximum likelihood method for classifying two-dimensional (2D) images \cite{Sigworth1998}; 3D classification methods, being much more computationally intensive, did not appear till later, but are now an area of active development, since they are currently one of the major bottlenecks in structure determination \cite{Scheres2007,Lyumkis2013,Punjani2017}. In practice, multiple rounds of image classification and refinement are usually carried out, beginning with removal of low quality particles, followed by 2D and 3D image classification and finishing with polishing steps.
+Dealing with structural and compositional heterogeneity is a related problem,
+which arises from imperfect sample purification or the presence of different
+functional states of the complex. Computational approaches for dealing with this
+arrived in 1998 with a maximum likelihood method for classifying two-dimensional
+(2D) images \cite{Sigworth1998}; 3D classification methods, being much more
+computationally intensive, did not appear till later, but are now an area of
+active development, since they are currently one of the major bottlenecks in
+structure determination \cite{Scheres2007,Lyumkis2013,Punjani2017}. In practice,
+multiple rounds of image classification and refinement are usually carried out,
+beginning with removal of low quality particles, followed by 2D and 3D image
+classification and finishing with polishing steps.
 
 \subsubsection{Cryo-electron tomography}
-Although single-particle cryo-EM offers good resolution without the need for crystallisation, it still requires that the protein of interest be purified first, thus ruling out many of the protein complexes present in the cell, including those embedded in the cell membrane. Cryo-electron tomography offers an attractive alternative in these cases, as it allows imaging of protein complexes in their native environment, albeit with a significant reduction in the resolution achievable. By and large, the processes involved in cryo-ET are similar to those of cryo-EM, with the key difference being that one acquires images by rotating the sample through a range of different tilts, rather than relying on the protein naturally being present in many different orientations. As an aside, this tilting method is also used to produce images in electron crystallography \cite{Wisedchaisri2011}.
+Although single-particle cryo-EM offers good resolution without the need for
+crystallisation, it still requires that the protein of interest be purified
+first, thus ruling out many of the protein complexes present in the cell,
+including those embedded in the cell membrane. Cryo-electron tomography offers
+an attractive alternative in these cases, as it allows imaging of protein
+complexes in their native environment, albeit with a significant reduction in
+the resolution achievable. By and large, the processes involved in cryo-ET are
+similar to those of cryo-EM, with the key difference being that one acquires
+images by rotating the sample through a range of different tilts, rather than
+relying on the protein naturally being present in many different orientations.
+As an aside, this tilting method is also used to produce images in electron
+crystallography \cite{Wisedchaisri2011}.
 
-By reconstructing the set of images produced from these different tilts, a tomogram of the structure of interest can be built. Because the exact orientation of the sample is known for each image, confounding factors such as other proteins or biological structures can be removed from the image, which would not be possible if one were to attempt single-particle cryo-EM on a non-purified sample. The downside to this approach is that the sample can only be tilted up to a certain point, as the effective thickness of the sample in the path of the electron beam increases with the angle of the sample. As a result, there is always a `wedge' of data missing from the set of images of a complex, seriously limiting the resolution achievable from a single structure.
+By reconstructing the set of images produced from these different tilts, a
+tomogram of the structure of interest can be built. Because the exact
+orientation of the sample is known for each image, confounding factors such as
+other proteins or biological structures can be removed from the image, which
+would not be possible if one were to attempt single-particle cryo-EM on a
+non-purified sample. The downside to this approach is that the sample can only
+be tilted up to a certain point, as the effective thickness of the sample in the
+path of the electron beam increases with the angle of the sample. As a result,
+there is always a `wedge' of data missing from the set of images of a complex,
+seriously limiting the resolution achievable from a single structure.
 
-However, an important development of cryo-ET is subtomogram averaging, otherwise known as single-particle tomography \cite{Galaz-Montoya2017}. Here, multiple tomograms of different particles in the sample are produced, and then averaged in similar fashion as for images in cryo-EM \cite{Bharat2016}. This averaging process can fill in the missing wedges in the data, provided the proteins in the sample are present in a sufficient variety of orientations \cite{Leschziner2006}. Though the technique is not yet able to reliably achieve atomic resolutions, it is not far off \cite{Schur2016}, and the lure of imaging protein complexes in their natural environment will almost certainly ensure its continued development.
+However, an important development of cryo-ET is subtomogram averaging, otherwise
+known as single-particle tomography \cite{Galaz-Montoya2017}. Here, multiple
+tomograms of different particles in the sample are produced, and then averaged
+in similar fashion as for images in cryo-EM \cite{Bharat2016}. This averaging
+process can fill in the missing wedges in the data, provided the proteins in the
+sample are present in a sufficient variety of orientations
+\cite{Leschziner2006}. Though the technique is not yet able to reliably achieve
+atomic resolutions, it is not far off \cite{Schur2016}, and the lure of imaging
+protein complexes in their natural environment will almost certainly ensure its
+continued development.
 
 \subsection{Nuclear magnetic resonance spectroscopy}
-Many biologically important protein complexes exist in a dynamic ensemble of conformational states, or contain subunits that only interact very weakly with each other. Such complexes do not lend themselves well to characterisation by crystallographic or cryo-EM methods, which can only resolve a single structural conformation at a time. Nuclear magnetic resonance spectroscopy is well suited to investigating these cases as the proteins are visualised in solution, rather than crystallised or frozen. On the other hand, NMR has traditionally struggled to resolve structures beyond 30kDa due to the fact that the relaxation of nuclear spin orientations is very efficient for large, slowly tumbling molecules. This has the effect of broadening the peaks observed in NMR spectra and, coupled with the fact that large molecules naturally produce more complex spectra than smaller ones, ensures that using NMR to study protein complexes is challenging.
+Many biologically important protein complexes exist in a dynamic ensemble of
+conformational states, or contain subunits that only interact very weakly with
+each other. Such complexes do not lend themselves well to characterisation by
+crystallographic or cryo-EM methods, which can only resolve a single structural
+conformation at a time. Nuclear magnetic resonance spectroscopy is well suited
+to investigating these cases as the proteins are visualised in solution, rather
+than crystallised or frozen. On the other hand, NMR has traditionally struggled
+to resolve structures beyond 30kDa due to the fact that the relaxation of
+nuclear spin orientations is very efficient for large, slowly tumbling
+molecules. This has the effect of broadening the peaks observed in NMR spectra
+and, coupled with the fact that large molecules naturally produce more complex
+spectra than smaller ones, ensures that using NMR to study protein complexes is
+challenging.
 
 \subsubsection{Solution NMR spectroscopy of multi-subunit protein complexes}
-An essential tool for investigating large complexes is transverse relaxation-optimized spectroscopy \cite{Pervushin1997} (TROSY), which uses constructive interference between different relaxation effects to improve the resolution of chemical shifts. Equally important is the use of deuterium (\ce{^{2}H}) labelling \cite{Sattler1996}. Like TROSY, this improves resolution by increasing the relaxation time of molecules. A further extension of these concepts is methyl-TROSY, which makes use of isotopically labelled \ce{^{13}C^{1}H_{3}} methyl groups set against a highly deuterated background. Because methyl groups produce especially intense resonances, they are easily identifiable within NMR spectra, and furthermore they are well dispersed within nearly all protein structures \cite{Ollerenshaw2003}. Using this technique it is possible to resolve proteins with molecular weights into the low hundreds of kDa, overlapping slightly with the lower limits achievable by cryo-EM.
+An essential tool for investigating large complexes is transverse
+relaxation-optimized spectroscopy \cite{Pervushin1997} (TROSY), which uses
+constructive interference between different relaxation effects to improve the
+resolution of chemical shifts. Equally important is the use of deuterium
+(\ce{^{2}H}) labelling \cite{Sattler1996}. Like TROSY, this improves resolution
+by increasing the relaxation time of molecules. A further extension of these
+concepts is methyl-TROSY, which makes use of isotopically labelled
+\ce{^{13}C^{1}H_{3}} methyl groups set against a highly deuterated background.
+Because methyl groups produce especially intense resonances, they are easily
+identifiable within NMR spectra, and furthermore they are well dispersed within
+nearly all protein structures \cite{Ollerenshaw2003}. Using this technique it is
+possible to resolve proteins with molecular weights into the low hundreds of
+kDa, overlapping slightly with the lower limits achievable by cryo-EM.
 
-For yet larger protein complexes, or those with more heterogeneous structures, the complexity of the spectra itself becomes the limiting factor, rather than the spin relaxation rates. In these cases, clever use of isotope labelling can often simplify matters considerably (for a nice review, see Zhang and van Ingen \cite{Zhang2016}). Segmental labelling is one such example, in which isotopically labelled regions of the protein are spliced in using inteins or sortases \cite{Liu2009a}. Unsurprisingly, this is fraught with technical difficulties, but despite these the method has been used to great effect in studying large protein structures, from the 0.6MDa ClpB disaggregase chaperone \cite{Rosenzweig2015} to prion protein amyloid fibrils \cite{Frederick2017}.
+For yet larger protein complexes, or those with more heterogeneous structures,
+the complexity of the spectra itself becomes the limiting factor, rather than
+the spin relaxation rates. In these cases, clever use of isotope labelling can
+often simplify matters considerably (for a nice review, see Zhang and van Ingen
+\cite{Zhang2016}). Segmental labelling is one such example, in which
+isotopically labelled regions of the protein are spliced in using inteins or
+sortases \cite{Liu2009a}. Unsurprisingly, this is fraught with technical
+difficulties, but despite these the method has been used to great effect in
+studying large protein structures, from the 0.6MDa ClpB disaggregase chaperone
+\cite{Rosenzweig2015} to prion protein amyloid fibrils \cite{Frederick2017}.
 
 \subsubsection{Solid-state NMR}
-The latter of these studies - characterising amyloid fibrils - made use of solid-state NMR spectroscopy. As the name suggests, this requires sample in a solid state, which is then spun rapidly inside the magnetic field, as opposed to the molecule of interest being free to tumble in solution. This is possible because of a quirk of NMR that leads to the delightfully named `magic angle spinning' technique \cite{Andrew1958,Lowe1959}. When the sample is tilted at the magic angle $\theta_{m}$ relative to the external magnetic field (such that $\cos^{2}\theta_{m} = \frac{1}{3}$), the peaks on the NMR spectra become much sharper, enabling structure to be determined. Magic angle spinning in effect mimics the natural tumbling of molecules in solution, but since the rate of `tumbling' is no longer dictated by the size of the macromolecule being observed, solid-state NMR can be used to probe much larger structures (e.g. amyloid fibrils).
+The latter of these studies - characterising amyloid fibrils - made use of
+solid-state NMR spectroscopy. As the name suggests, this requires sample in a
+solid state, which is then spun rapidly inside the magnetic field, as opposed to
+the molecule of interest being free to tumble in solution. This is possible
+because of a quirk of NMR that leads to the delightfully named `magic angle
+spinning' technique \cite{Andrew1958,Lowe1959}. When the sample is tilted at the
+magic angle $\theta_{m}$ relative to the external magnetic field (such that
+$\cos^{2}\theta_{m} = \frac{1}{3}$), the peaks on the NMR spectra become much
+sharper, enabling structure to be determined. Magic angle spinning in effect
+mimics the natural tumbling of molecules in solution, but since the rate of
+`tumbling' is no longer dictated by the size of the macromolecule being
+observed, solid-state NMR can be used to probe much larger structures (e.g.
+amyloid fibrils).
 
-It is also well suited to studying membrane-embedded protein complexes, as a result of the fact that proteins in lipid bilayers are by default oriented in a single direction. Through careful sample preparation, this natural orientation can be preserved during the course of the NMR experiment, allowing high-resolution spectra to be produced directly from the sample by aligning it at the correct angle to the external magnetic field \cite{Hansen2015}. A number of impressive complexes have recently been solved using both oriented-sample methods and magic angle spinning \cite{Loquet2012,Kaplan2015,Huang2017}.
+It is also well suited to studying membrane-embedded protein complexes, as a
+result of the fact that proteins in lipid bilayers are by default oriented in a
+single direction. Through careful sample preparation, this natural orientation
+can be preserved during the course of the NMR experiment, allowing
+high-resolution spectra to be produced directly from the sample by aligning it
+at the correct angle to the external magnetic field \cite{Hansen2015}. A number
+of impressive complexes have recently been solved using both oriented-sample
+methods and magic angle spinning \cite{Loquet2012,Kaplan2015,Huang2017}.
 
 \subsection{Electron paramagnetic resonance spectroscopy}
-Electron paramagnetic resonance (EPR) spectroscopy is related to NMR spectroscopy, but differs in that it detects species with unpaired electrons, rather than nuclei more generally. This is possible due to the Zeeman effect \cite{Zeeman1897}: In a static magnetic field \ce{B_{0}}, the magnetic moment of the unpaired electron aligns with the field in either a parallel or anti-parallel direction, with an associated energy level for each direction. An electron moving between these two states will emit a photon with energy corresponding to the difference between the two levels, and in this way the species containing the electron can be detected.
+Electron paramagnetic resonance (EPR) spectroscopy is related to NMR
+spectroscopy, but differs in that it detects species with unpaired electrons,
+rather than nuclei more generally. This is possible due to the Zeeman effect
+\cite{Zeeman1897}: In a static magnetic field \ce{B_{0}}, the magnetic moment of
+the unpaired electron aligns with the field in either a parallel or
+anti-parallel direction, with an associated energy level for each direction. An
+electron moving between these two states will emit a photon with energy
+corresponding to the difference between the two levels, and in this way the
+species containing the electron can be detected.
 
-The precise energy of the emitted photon is dependent on several factors, including the strength of \ce{B_{0}} and, more importantly, the local electronic environment of the species in question. In particular, hyperfine coupling leads to characteristic splitting of peaks in the spectra, allowing functional groups such as methyls to be easily identified.
+The precise energy of the emitted photon is dependent on several factors,
+including the strength of \ce{B_{0}} and, more importantly, the local electronic
+environment of the species in question. In particular, hyperfine coupling leads
+to characteristic splitting of peaks in the spectra, allowing functional groups
+such as methyls to be easily identified.
 
-The difficulty in applying EPR spectroscopy to the study of protein structure lies in the relative scarcity of unpaired electrons in biological molecules. Proteins with naturally occurring paramagentic species such as the haem iron in haemoglobin make good candidates, or alternatively the problem can be overcome by site-directed spin labelling \cite{Altenbach1989,Altenbach1990}. These labels can be tailored to the problem in question; for example measuring responses to pH changes, or behaviour under reducing conditions. For a review of the topic see Klare, 2013 \cite{Klare2013}.
+The difficulty in applying EPR spectroscopy to the study of protein structure
+lies in the relative scarcity of unpaired electrons in biological molecules.
+Proteins with naturally occurring paramagentic species such as the haem iron in
+haemoglobin make good candidates, or alternatively the problem can be overcome
+by site-directed spin labelling \cite{Altenbach1989,Altenbach1990}. These labels
+can be tailored to the problem in question; for example measuring responses to
+pH changes, or behaviour under reducing conditions. For a review of the topic
+see Klare, 2013 \cite{Klare2013}.
 
-Combined with site-directed spin labelling, EPR is a powerful tool for investigating complex macromolecular systems and process. One such example is to demonstrate that the partially disordered mitochondrial ATPase inhibitor underergoes pH-dependent conformational changes in its dimeric state \cite{LeBreton2016}. Perhaps more impressively, the PsaC subunit in photosystem I has been monitored through a number of assembly steps, showing several conformational changes corresponding to the binding to the complex of both PsaC and other subunits \cite{Jagannathan2010}.
+Combined with site-directed spin labelling, EPR is a powerful tool for
+investigating complex macromolecular systems and process. One such example is to
+demonstrate that the partially disordered mitochondrial ATPase inhibitor
+underergoes pH-dependent conformational changes in its dimeric state
+\cite{LeBreton2016}. Perhaps more impressively, the PsaC subunit in photosystem
+I has been monitored through a number of assembly steps, showing several
+conformational changes corresponding to the binding to the complex of both PsaC
+and other subunits \cite{Jagannathan2010}.
 
 \section{Non-structural characterisation of protein complexes}
-Structural methods are an essential tool for describing and understanding protein complexes, but by definition they have fairly limited applicability beyond providing structural information. If we wish to have a complete characterisation of a given complex, structural methods alone are insufficient, as there is a great deal of useful information that cannot be determined solely from snapshots of a given conformational state. For example, the pathways by which protein complexes assemble, or the degree to which their subunit composition varies under different conditions.
+Structural methods are an essential tool for describing and understanding
+protein complexes, but by definition they have fairly limited applicability
+beyond providing structural information. If we wish to have a complete
+characterisation of a given complex, structural methods alone are insufficient,
+as there is a great deal of useful information that cannot be determined solely
+from snapshots of a given conformational state. For example, the pathways by
+which protein complexes assemble, or the degree to which their subunit
+composition varies under different conditions.
 
-It is important to try and understand the behaviour of protein complexes within the context of the wider proteome. Many cellular phenomena can be best explained as emergent properties of the complete network of protein-protein interactions, and mass spectrometric techniques have been particularly useful in quantifying the protein interactions that take place within cells. Through technological innovation and clever experimental design, mass-spectrometry has proven to be highly versatile, and has been used for a number of different purposes, including elucidation of protein complex assembly pathways \cite{Levy2008,Marsh2013}, investigations into the evolutionary history of complexes \cite{Wan2015}, and generation of richly detailed interactome datasets \cite{Hein2015}.
+It is important to try and understand the behaviour of protein complexes within
+the context of the wider proteome. Many cellular phenomena can be best explained
+as emergent properties of the complete network of protein-protein interactions,
+and mass spectrometric techniques have been particularly useful in quantifying
+the protein interactions that take place within cells. Through technological
+innovation and clever experimental design, mass-spectrometry has proven to be
+highly versatile, and has been used for a number of different purposes,
+including elucidation of protein complex assembly pathways
+\cite{Levy2008,Marsh2013}, investigations into the evolutionary history of
+complexes \cite{Wan2015}, and generation of richly detailed interactome datasets
+\cite{Hein2015}.
 
 \subsection{Native mass spectrometry}
-The arrival of soft ionisation MS techniques in the `80s was of critical importance for the study of protein complexes, as it allowed delicate non-covalent interactions between proteins to be preserved in the gas phase, making it possible to study intact protein complexes via MS. Combined with the later development of time-of-flight mass analysers, this method became known as native MS. Because native MS does not interfere with the intermolecular bonds between protein complex subunits, it can be used to study properties such as stoichiometry, compositional heterogeneity, and dynamic processes such as assembly or disassembly.
+The arrival of soft ionisation MS techniques in the `80s was of critical
+importance for the study of protein complexes, as it allowed delicate
+non-covalent interactions between proteins to be preserved in the gas phase,
+making it possible to study intact protein complexes via MS. Combined with the
+later development of time-of-flight mass analysers, this method became known as
+native MS. Because native MS does not interfere with the intermolecular bonds
+between protein complex subunits, it can be used to study properties such as
+stoichiometry, compositional heterogeneity, and dynamic processes such as
+assembly or disassembly.
 
 \subsubsection{Electrospray ionisation mass spectrometry}
-The ionisation method of choice for native MS is currently ESI, as MALDI requires the sample of interest to be mixed with a matrix, which is then ionised using lasers. This matrix is usually formed from crystallised organic acids, and as such is generally too harsh for complexes to be maintained in their native state, with a few exceptions \cite{Song2007}. In contrast, ESI uses the sample as is, and ionises it by passing it through a narrow glass capillary to which a high voltage is applied, causing the charged sample to be aerosolised as it leaves the capillary. Through successive Coulomb fission events and evaporation of solvent from the sample, the ions in this mist rapidly enter the gas phase as they move towards the mass analyser.
+The ionisation method of choice for native MS is currently ESI, as MALDI
+requires the sample of interest to be mixed with a matrix, which is then ionised
+using lasers. This matrix is usually formed from crystallised organic acids, and
+as such is generally too harsh for complexes to be maintained in their native
+state, with a few exceptions \cite{Song2007}. In contrast, ESI uses the sample
+as is, and ionises it by passing it through a narrow glass capillary to which a
+high voltage is applied, causing the charged sample to be aerosolised as it
+leaves the capillary. Through successive Coulomb fission events and evaporation
+of solvent from the sample, the ions in this mist rapidly enter the gas phase as
+they move towards the mass analyser.
 
-Another important benefit of ESI over MALDI is that it produces multiply charged protein ions with regularity \cite{Krusemark2009}. This is useful when coupling ESI to tandem MS, where the protein sample is first analysed in its native state, before being fragmented and subject to a second round of mass analysis. Single charge proteins produce little useful information upon fragmentation as only a single peptide fragment will be charged, essentially wasting much of the protein. Having multiple charges per ion also reduces the corresponding m/z ratio. This is important when investigating larger proteins and protein complexes, since (historically at least) the operative range of quadrupole mass analysers has been limited to about 4000 m/z. For this reason, time-of-flight mass analysers have been the mainstay of native MS for many years (reviewed by Radionova et al.\cite{Radionova2016}), since they have good resolving power and sensitivity over a much wider range than traditional quadrupole analysers. In 2005 however, Orbitrap analysers became available \cite{Hu2005}, and subsequent developments since then have pushed the limits of their operative mass range into the tens of thousands m/z.
+Another important benefit of ESI over MALDI is that it produces multiply charged
+protein ions with regularity \cite{Krusemark2009}. This is useful when coupling
+ESI to tandem MS, where the protein sample is first analysed in its native
+state, before being fragmented and subject to a second round of mass analysis.
+Single charge proteins produce little useful information upon fragmentation as
+only a single peptide fragment will be charged, essentially wasting much of the
+protein. Having multiple charges per ion also reduces the corresponding m/z
+ratio. This is important when investigating larger proteins and protein
+complexes, since (historically at least) the operative range of quadrupole mass
+analysers has been limited to about 4000 m/z. For this reason, time-of-flight
+mass analysers have been the mainstay of native MS for many years (reviewed by
+Radionova et al.\cite{Radionova2016}), since they have good resolving power and
+sensitivity over a much wider range than traditional quadrupole analysers. In
+2005 however, Orbitrap analysers became available \cite{Hu2005}, and subsequent
+developments since then have pushed the limits of their operative mass range
+into the tens of thousands m/z.
 
-Another hugely important development in ESI came with the introduction of much narrower capillaries in the electrospray devices, leading to nano-ESI \cite{Wilm1994}. Coupled with lower sample flow rates, this improves ionisation efficiency substantially \cite{El-Faramawy2005}; equally importantly, it greatly reduces the amount of sample required for each experiment. This enables analysis of proteins that are hard to purify in large quantities, or makes it possible to run experiments investigating dynamic processes that take place over the course of seconds to minutes.
+Another hugely important development in ESI came with the introduction of much
+narrower capillaries in the electrospray devices, leading to nano-ESI
+\cite{Wilm1994}. Coupled with lower sample flow rates, this improves ionisation
+efficiency substantially \cite{El-Faramawy2005}; equally importantly, it greatly
+reduces the amount of sample required for each experiment. This enables analysis
+of proteins that are hard to purify in large quantities, or makes it possible to
+run experiments investigating dynamic processes that take place over the course
+of seconds to minutes.
 
 \subsubsection{Applications of native mass spectrometry}
-Due to its low sample requirements and sensitive treatment of the intermolecular interactions, native MS is very versatile. A common and technically straightforward use of the method is simply to determine the constituent parts of a particular protein complex, which can be done via tandem MS \cite{Sobott2002,Hernandez2007}. The weights of individual subunits from the complex are determined in the first round of mass analyses, with identities being inferred from fragmented peptides in the second round. From this starting point, it is then possible to generate interaction maps based on the weights of peaks corresponding to different subunit combinations, as well as getting an idea of relative binding strengths.
+Due to its low sample requirements and sensitive treatment of the intermolecular
+interactions, native MS is very versatile. A common and technically
+straightforward use of the method is simply to determine the constituent parts
+of a particular protein complex, which can be done via tandem MS
+\cite{Sobott2002,Hernandez2007}. The weights of individual subunits from the
+complex are determined in the first round of mass analyses, with identities
+being inferred from fragmented peptides in the second round. From this starting
+point, it is then possible to generate interaction maps based on the weights of
+peaks corresponding to different subunit combinations, as well as getting an
+idea of relative binding strengths.
 
-More interesting is the use of native MS in time-resolved studies, for example: following subunit exchange processes between heat-shock proteins \cite{Sobott2002a}, observing conformational changes of membrane complexes upon ligand binding \cite{Laganowsky2014}, and determining protein complex assembly and disassembly pathways \cite{Levy2008}. This last example, which is of particular importance to the rest of this thesis, can be achieved by adding different chaotropic agents to the solution containing the intact protein complex, then observing the intermediates that are produced across different concentrations.
+More interesting is the use of native MS in time-resolved studies, for example:
+following subunit exchange processes between heat-shock proteins
+\cite{Sobott2002a}, observing conformational changes of membrane complexes upon
+ligand binding \cite{Laganowsky2014}, and determining protein complex assembly
+and disassembly pathways \cite{Levy2008}. This last example, which is of
+particular importance to the rest of this thesis, can be achieved by adding
+different chaotropic agents to the solution containing the intact protein
+complex, then observing the intermediates that are produced across different
+concentrations.
 
 \subsection{Cross-linking mass spectrometry}
-Cross-linking mass spectrometry (XL-MS) uses chemical cross-linkers to provide distance constraints between different residues in a protein complex. These can either be intramolecular or intermolecular, and as such XL-MS be used to produce low-resolution structural information, particularly on the interfaces between different subunits. It is particularly effective when used in combination with more established structural techniques or together with computational modelling, and as such has become an central part of the new, integrative approach to structural biology \cite{Stengel2012,Ward2013,VandenBedem2015}.
+Cross-linking mass spectrometry (XL-MS) uses chemical cross-linkers to provide
+distance constraints between different residues in a protein complex. These can
+either be intramolecular or intermolecular, and as such XL-MS be used to produce
+low-resolution structural information, particularly on the interfaces between
+different subunits. It is particularly effective when used in combination with
+more established structural techniques or together with computational modelling,
+and as such has become an central part of the new, integrative approach to
+structural biology \cite{Stengel2012,Ward2013,VandenBedem2015}.
 
 \subsubsection{Chemical cross-linkers}
-The power of XL-MS comes from the availability of a wide variety of different cross-linkers that impose specific distance constraints on the interactions being probed. These can be tailored to the question at hand, with the selection of cross-linker lengths placing different constraints on the interactions that can be studied. Similarly, the biochemical specificity of these linkers can be used to look at interactions between specific functional groups. Most commonly used are homobifunctional cross-linkers that join primary amines \cite{Leitner2016}, i.e. lysine residues or N-termini, with spacer arm lengths ranging from \textasciitilde 3Å to \textasciitilde 35Å.
+The power of XL-MS comes from the availability of a wide variety of different
+cross-linkers that impose specific distance constraints on the interactions
+being probed. These can be tailored to the question at hand, with the selection
+of cross-linker lengths placing different constraints on the interactions that
+can be studied. Similarly, the biochemical specificity of these linkers can be
+used to look at interactions between specific functional groups. Most commonly
+used are homobifunctional cross-linkers that join primary amines
+\cite{Leitner2016}, i.e. lysine residues or N-termini, with spacer arm lengths
+ranging from \textasciitilde 3Å to \textasciitilde 35Å.
 
-Heterobifunctional linkers (in contrast to homobifunctional ones) allow different groups to be targeted, for example joining amine to carboxyl (aspartate, glutamate, C-termini) groups. More nuanced experiments can be performed by using some of the more exotic linkers that are currently being produced. Heterobifunctional photoreactive cross-linkers such as aryl azides are attractive for in vivo applications since they are inert until photoactivation, at which point they rapidly form non-specific cross-links with chemical moieties in their immediate environment. Photoreactive analogues of some amino acids have also been discovered, enabling incorporation of linkers into the protein sequences themselves \cite{Suchanek2005}.
+Heterobifunctional linkers (in contrast to homobifunctional ones) allow
+different groups to be targeted, for example joining amine to carboxyl
+(aspartate, glutamate, C-termini) groups. More nuanced experiments can be
+performed by using some of the more exotic linkers that are currently being
+produced. Heterobifunctional photoreactive cross-linkers such as aryl azides are
+attractive for in vivo applications since they are inert until photoactivation,
+at which point they rapidly form non-specific cross-links with chemical moieties
+in their immediate environment. Photoreactive analogues of some amino acids have
+also been discovered, enabling incorporation of linkers into the protein
+sequences themselves \cite{Suchanek2005}.
 
-% By virtue of the fact that XL-MS provides information at the level of specific protein interfaces, it is especially well suited to investigating individual protein complexes and interactions. However, the power of mass-spectrometry as a whole is its range: it can be used to probe intimate mechanistic details of specific protein complexes, but also to look at entire proteomes in on a practical timescale. This is something that is beyond most structural techniques, but not affinity purification mass-spectrometry (AP-MS), which can be used to great effect at this larger scale.
+% By virtue of the fact that XL-MS provides information at the level of specific
+% protein interfaces, it is especially well suited to investigating individual
+% protein complexes and interactions. However, the power of mass-spectrometry as
+% a whole is its range: it can be used to probe intimate mechanistic details of
+% specific protein complexes, but also to look at entire proteomes in on a
+% practical timescale. This is something that is beyond most structural
+% techniques, but not affinity purification mass-spectrometry (AP-MS), which can
+% be used to great effect at this larger scale.
 
 \subsubsection{Notable applications of XL-MS}
-XL-MS is well suited to looking at flexible complexes that cannot be observed using cryo-EM or X-ray crystallography. A good example of this is the family of SMC-kleisin complexes that will be discussed in chapter \ref{chapter:hawks}. These complexes are essential for accurate cell division and are formed of heterodimeric, coiled-coil SMC subunits, joined by a disordered kleisin subunit to form a trimeric ring structure that entraps DNA. Several crystal structures of the various the subunit interfaces (minus flexible regions) are available, but thus far XL-MS has been the only method that has had success modelling the topology of the entire complex \cite{Barysz2015}. Interestingly, cross-links between the two SMC arms suggest that when not encircling DNA the SMC arms are collapsed in on themselves.
+XL-MS is well suited to looking at flexible complexes that cannot be observed
+using cryo-EM or X-ray crystallography. A good example of this is the family of
+SMC-kleisin complexes that will be discussed in chapter \ref{chapter:hawks}.
+These complexes are essential for accurate cell division and are formed of
+heterodimeric, coiled-coil SMC subunits, joined by a disordered kleisin subunit
+to form a trimeric ring structure that entraps DNA. Several crystal structures
+of the various the subunit interfaces (minus flexible regions) are available,
+but thus far XL-MS has been the only method that has had success modelling the
+topology of the entire complex \cite{Barysz2015}. Interestingly, cross-links
+between the two SMC arms suggest that when not encircling DNA the SMC arms are
+collapsed in on themselves.
 
-A more formidable test of XL-MS comes from the ongoing effort to understand the structure of the nuclear pore complex (see Beck and Hurt, 2016 \cite{Beck2016}). Due to their enormous size (\textasciitilde 120 MDa in humans, compared to \textasciitilde 3.5 MDa for the ribosome) and high degree of compositional variation between species, it is difficult to distinguish between subunits, many of which are paralogues of each other. In such cases, XL-MS can provide essential information about the specific identity of different subunits and their contacts, allowing the identification of ambiguous subunits within larger cryo-EM electron density maps \cite{Bui2013,Shi2014a}.
+A more formidable test of XL-MS comes from the ongoing effort to understand the
+structure of the nuclear pore complex (see Beck and Hurt, 2016 \cite{Beck2016}).
+Due to their enormous size (\textasciitilde 120 MDa in humans, compared to
+\textasciitilde 3.5 MDa for the ribosome) and high degree of compositional
+variation between species, it is difficult to distinguish between subunits, many
+of which are paralogues of each other. In such cases, XL-MS can provide
+essential information about the specific identity of different subunits and
+their contacts, allowing the identification of ambiguous subunits within larger
+cryo-EM electron density maps \cite{Bui2013,Shi2014a}.
 
 \subsection{Affinity-purification mass spectrometry}
-In its simplest guise, AP-MS enables the identification and quantification of the interaction partners of a given protein. The general principle is as follows: a column containing beads capable of capturing your bait protein is prepared. Native cell extract (though sometimes over-expression of the protein of interest is required) is then washed over the column, leading to the capture both the bait and proteins bound to it via co-immunoprecipitation. The eluent is generally subjected to peptide fractionation, and mass-spectrometry is then used to quantify either the relative or absolute abundances of members of the purified complex. For high-throughput studies, multiple proteins are used as baits, enabling large interaction maps to be generated.
+In its simplest guise, AP-MS enables the identification and quantification of
+the interaction partners of a given protein. The general principle is as
+follows: a column containing beads capable of capturing your bait protein is
+prepared. Native cell extract (though sometimes over-expression of the protein
+of interest is required) is then washed over the column, leading to the capture
+both the bait and proteins bound to it via co-immunoprecipitation. The eluent is
+generally subjected to peptide fractionation, and mass-spectrometry is then used
+to quantify either the relative or absolute abundances of members of the
+purified complex. For high-throughput studies, multiple proteins are used as
+baits, enabling large interaction maps to be generated.
 
-Though conceptually simple, AP-MS is an enormously powerful technique, and one that deserves more attention than it is going to get here. Fortunately, several reviews have been written on the topic, and I therefore direct the reader to these \cite{Oeffinger2012,Morris2014,Aebersold2016}; in particular, that by Morris and colleagues is excellent \cite{Morris2014}. For the sake of brevity, the paragraphs that follow are limited to just the most important variations of a method that has been instrumental in achieving our current understanding of the protein interactome \cite{Malovannaya2011,Hein2015,Huttlin2015,Wan2015}.
+Though conceptually simple, AP-MS is an enormously powerful technique, and one
+that deserves more attention than it is going to get here. Fortunately, several
+reviews have been written on the topic, and I therefore direct the reader to
+these \cite{Oeffinger2012,Morris2014,Aebersold2016}; in particular, that by
+Morris and colleagues is excellent \cite{Morris2014}. For the sake of brevity,
+the paragraphs that follow are limited to just the most important variations of
+a method that has been instrumental in achieving our current understanding of
+the protein interactome \cite{Malovannaya2011,Hein2015,Huttlin2015,Wan2015}.
 
 \subsubsection{Single-step versus tandem affinity purification}
-There are two approaches to affinity purification in widespread use - single-step and tandem affinity purification \cite{Rigaut1999} (TAP, figure \ref{figure:tap}). In the former, the bait protein is either expressed under completely endogenous conditions and captured using antibodies, or expressed with a tag such as green fluorescent protein \cite{Hubner2010} and captured using methods appropriate to the tagging system. In contrast, TAP makes use of a unique TAP-tag, which consists of a protein A domain and a calmodulin binding peptide, linked by a Tobacco etch virus (TEV) protease cleavage site. This tag enables a two-step purification procedure that results in stringent purification of complexes, though sometimes at the expense of weak but specific interactions.
+There are two approaches to affinity purification in widespread use -
+single-step and tandem affinity purification \cite{Rigaut1999} (TAP, figure
+\ref{figure:tap}). In the former, the bait protein is either expressed under
+completely endogenous conditions and captured using antibodies, or expressed
+with a tag such as green fluorescent protein \cite{Hubner2010} and captured
+using methods appropriate to the tagging system. In contrast, TAP makes use of a
+unique TAP-tag, which consists of a protein A domain and a calmodulin binding
+peptide, linked by a Tobacco etch virus (TEV) protease cleavage site. This tag
+enables a two-step purification procedure that results in stringent purification
+of complexes, though sometimes at the expense of weak but specific interactions.
 
 \begin{figure}[h]
 \fcapsideright
-    {\caption[Tandem affinity purification protocol]{\sffamily\textbf{Tandem affinity \newline purification protocol}\newline \small TAP differs from single-step purification procedures in that it requires two distinct washing steps. This is possible due to the TAP tag, which consists of a protein A domain linked to bait protein via a TEV cleavage site and a calmodulin binding peptide. Cell extract is passed through the first IgG column, which captures the bait protein via the protein A domain. By adding TEV protease to the column, the bait protein and it's interactors are released from the column. This eluent is then added to a second column containing calmodulin beads to which the calmodulin  binding peptide attaches. Addition of ethylene glycol tetraacetic acid (EGTA) causes the protein complex to be released from the beads. Due to the fairly intense washing process that the protein complex undergoes, there is a fairly high chance of weak interactors being removed in addition to non-specific contaminants. Single-step procedures are more likely to retain these interactions at the expense of overall sample purity.}\label{figure:tap}}
-    {\includegraphics{c1_fig_tap}}
+    {\caption[Tandem affinity purification protocol]{\sffamily\textbf{Tandem
+    affinity \newline purification protocol}\newline \small TAP differs from
+    single-step purification procedures in that it requires two distinct washing
+    steps. This is possible due to the TAP tag, which consists of a protein A
+    domain linked to bait protein via a TEV cleavage site and a calmodulin
+    binding peptide. Cell extract is passed through the first IgG column, which
+    captures the bait protein via the protein A domain. By adding TEV protease
+    to the column, the bait protein and it's interactors are released from the
+    column. This eluent is then added to a second column containing calmodulin
+    beads to which the calmodulin  binding peptide attaches. Addition of
+    ethylene glycol tetraacetic acid (EGTA) causes the protein complex to be
+    released from the beads. Due to the fairly intense washing process that the
+    protein complex undergoes, there is a fairly high chance of weak interactors
+    being removed in addition to non-specific contaminants. Single-step
+    procedures are more likely to retain these interactions at the expense of
+    overall sample purity.}\label{figure:tap}} {\includegraphics{c1_fig_tap}}
 \end{figure}
 
-TAP necessarily requires tagging of the bait protein, but in the single-step procedure it is possible to avoid this if desired, in which case it is referred to as endogenous purification. The are some straightforward trade-offs to consider when deciding whether to use endogenous or tagged proteins: For non-tagged baits, you have the benefit of capturing the protein in its native state. However, this comes at the substantial cost (both in time and money) of having to raise specific antibodies against the protein in question. Furthermore, there are difficult issues associated with cross-reactivity and specificity when using antibodies, particularly in studies where multiple proteins are being targeted. Though there are methods that attempt to deal with these issues (most notably QUICK \cite{Selbach2006}), in the majority of large-scale studies prior tagging of bait proteins is likely to be more practical.
+TAP necessarily requires tagging of the bait protein, but in the single-step
+procedure it is possible to avoid this if desired, in which case it is referred
+to as endogenous purification. The are some straightforward trade-offs to
+consider when deciding whether to use endogenous or tagged proteins: For
+non-tagged baits, you have the benefit of capturing the protein in its native
+state. However, this comes at the substantial cost (both in time and money) of
+having to raise specific antibodies against the protein in question.
+Furthermore, there are difficult issues associated with cross-reactivity and
+specificity when using antibodies, particularly in studies where multiple
+proteins are being targeted. Though there are methods that attempt to deal with
+these issues (most notably QUICK \cite{Selbach2006}), in the majority of
+large-scale studies prior tagging of bait proteins is likely to be more
+practical.
 
-When using AP-MS to carry out interactome studies there are some fairly compelling advantages to using single-step procedures over TAP. The purpose of TAP is to remove as many contaminants or non-specific interactors as possible from the purified protein complex. This was essential in the early days of mass spectrometry, since it was not possible to quantify protein abundances, and thus contaminants in the sample would be erroneously annotated as members of the protein complex. However, there have been enormous improvements in the sensitivity of mass spectrometers since TAP was first described; with these improvements, particularly in the area of label-free quantification (LFQ), it has become possible to discriminate between proteins present at biologically significant concentrations and background noise. In doing so, the importance of weak, non-obligate interactions between proteins has become more apparent \cite{Perkins2010a,Hein2015}. Since TAP removes these weak interactors, its utility is becoming increasingly restricted to situations where extremely pure protein is required, e.g. for crystallisation. Therefore single-step procedures combined with accurate quantification should be generally be considered preferable to TAP for large-scale studies. Following this reasoning, a promising new technique named affinity-enrichment purification has recently been described that deliberately uses only very mild washing steps \cite{Keilhauer2015}.
+When using AP-MS to carry out interactome studies there are some fairly
+compelling advantages to using single-step procedures over TAP. The purpose of
+TAP is to remove as many contaminants or non-specific interactors as possible
+from the purified protein complex. This was essential in the early days of mass
+spectrometry, since it was not possible to quantify protein abundances, and thus
+contaminants in the sample would be erroneously annotated as members of the
+protein complex. However, there have been enormous improvements in the
+sensitivity of mass spectrometers since TAP was first described; with these
+improvements, particularly in the area of label-free quantification (LFQ), it
+has become possible to discriminate between proteins present at biologically
+significant concentrations and background noise. In doing so, the importance of
+weak, non-obligate interactions between proteins has become more apparent
+\cite{Perkins2010a,Hein2015}. Since TAP removes these weak interactors, its
+utility is becoming increasingly restricted to situations where extremely pure
+protein is required, e.g. for crystallisation. Therefore single-step procedures
+combined with accurate quantification should be generally be considered
+preferable to TAP for large-scale studies. Following this reasoning, a promising
+new technique named affinity-enrichment purification has recently been described
+that deliberately uses only very mild washing steps \cite{Keilhauer2015}.
 
 \subsubsection{Quantification of protein abundances}
-The emergence of quantitative mass spectrometry, via both label-based and label-free methods, has had a transformative effect on the field of proteomics. For our purposes, the principal benefit arising from the ability to quantify protein abundances is that it allows the stoichiometry of protein complexes to be determined. This is essential for distinguishing obligate interactions from transient ones, and more generally for providing a complete characterisation of the complex. The difficulty in using MS as a quantitative tool is that, whilst the location of peaks on the mass spectrum allows identification of peptides, peak intensity alone is not sufficient to determine peptide abundance. Label-based methods such as SILAC \cite{Ong2002a} (stable isotope labelling and culturing) and iTRAQ \cite{Ross2004} (isobaric tag for relative and absolute quantitation) and others \cite{Gygi1999,Thompson2003} allow for either relative or absolute quantification.
+The emergence of quantitative mass spectrometry, via both label-based and
+label-free methods, has had a transformative effect on the field of proteomics.
+For our purposes, the principal benefit arising from the ability to quantify
+protein abundances is that it allows the stoichiometry of protein complexes to
+be determined. This is essential for distinguishing obligate interactions from
+transient ones, and more generally for providing a complete characterisation of
+the complex. The difficulty in using MS as a quantitative tool is that, whilst
+the location of peaks on the mass spectrum allows identification of peptides,
+peak intensity alone is not sufficient to determine peptide abundance.
+Label-based methods such as SILAC \cite{Ong2002a} (stable isotope labelling and
+culturing) and iTRAQ \cite{Ross2004} (isobaric tag for relative and absolute
+quantitation) and others \cite{Gygi1999,Thompson2003} allow for either relative
+or absolute quantification.
 
-A significant drawback to label-based methods is their cost, which can be prohibitive. An alternative approach is LFQ, methods for which are based on either spectral counting \cite{Liu2004,Zybailov2005} or peak intensity-based algorithms. Spectral counting is a conceptually simple, semi-quantitative approach which has been widely used (and possibly abused \cite{Lundgren2010}). Intensity-based algorithms undoubtedly offer more accurate quantification; for the interested reader, comparative analyses and reviews of several available methods are available \cite{Nahnsen2013,Fabre2014}. One recently developed algorithm of note that has been enthusiastically received by the community is MaxLFQ \cite{Cox2014}, which is available as part of the larger MaxQuant software package \cite{Cox2008}.
+A significant drawback to label-based methods is their cost, which can be
+prohibitive. An alternative approach is LFQ, methods for which are based on
+either spectral counting \cite{Liu2004,Zybailov2005} or peak intensity-based
+algorithms. Spectral counting is a conceptually simple, semi-quantitative
+approach which has been widely used (and possibly abused \cite{Lundgren2010}).
+Intensity-based algorithms undoubtedly offer more accurate quantification; for
+the interested reader, comparative analyses and reviews of several available
+methods are available \cite{Nahnsen2013,Fabre2014}. One recently developed
+algorithm of note that has been enthusiastically received by the community is
+MaxLFQ \cite{Cox2014}, which is available as part of the larger MaxQuant
+software package \cite{Cox2008}.
 
 \subsubsection{Inferring protein complexes from interaction data}
-The data returned from high-throughput techniques such as those we have been discussing are typically presented as lists of pairwise interactions and measures of interaction strength, using proxies such as co-fractionation likelihood in place of true binding affinities. From this starting point, the challenge is then to infer the identity and presence of protein complexes, known or otherwise. Since these pairwise interaction data can be represented in graph form, a common approach to identifying complexes is graph clustering. As might be expected given the generalisable nature of the problem, the literature on this topic is substantial - both specific to protein-protein interactions and otherwise. A comprehensive review of the topic covering both theory and application can be found here \cite{Schaeffer2007}.
+The data returned from high-throughput techniques such as those we have been
+discussing are typically presented as lists of pairwise interactions and
+measures of interaction strength, using proxies such as co-fractionation
+likelihood in place of true binding affinities. From this starting point, the
+challenge is then to infer the identity and presence of protein complexes, known
+or otherwise. Since these pairwise interaction data can be represented in graph
+form, a common approach to identifying complexes is graph clustering. As might
+be expected given the generalisable nature of the problem, the literature on
+this topic is substantial - both specific to protein-protein interactions and
+otherwise. A comprehensive review of the topic covering both theory and
+application can be found here \cite{Schaeffer2007}.
 
-One particularly successful example in this category is the Markov Cluster algorithm \cite{VanDongen2000} (MCL), which is based on the principle that if you take a random walk through a graph, the strongest clusters will be those groups of nodes that you tend to stay in for longest. Despite its age, MCL is still competitive \cite{Li2010}, and has been used in a number of excellent interactome papers since its release \cite{Krogan2006,Wan2015}. Other notable mentions include COACH and ClusterOne \cite{Wu2009,Nepusz2012}, the latter of which is one of the few alternatives to compare favourably with MCL. A very different approach that seems promising is Nano Random Forests, which uses machine learning to identify groups of strongly covarying proteins \cite{Montano-Gutierrez2017}. As a supervised learning method, it is well suited to investigating known complexes under different experimental conditions, in contrast to those previously mentioned, which are better placed for discovery of novel complexes.
+One particularly successful example in this category is the Markov Cluster
+algorithm \cite{VanDongen2000} (MCL), which is based on the principle that if
+you take a random walk through a graph, the strongest clusters will be those
+groups of nodes that you tend to stay in for longest. Despite its age, MCL is
+still competitive \cite{Li2010}, and has been used in a number of excellent
+interactome papers since its release \cite{Krogan2006,Wan2015}. Other notable
+mentions include COACH and ClusterOne \cite{Wu2009,Nepusz2012}, the latter of
+which is one of the few alternatives to compare favourably with MCL. A very
+different approach that seems promising is Nano Random Forests, which uses
+machine learning to identify groups of strongly covarying proteins
+\cite{Montano-Gutierrez2017}. As a supervised learning method, it is well suited
+to investigating known complexes under different experimental conditions, in
+contrast to those previously mentioned, which are better placed for discovery of
+novel complexes.
 
 \subsection{Super-resolution microscopy}
-Super-resolution microscopy, so named because it breaks the diffraction limit for light microscopy described by Ernst Abbe \cite{Abbe1873}, revolutionised cell biology when it arrived on the scene, enabling visualisation of sub-200nm structures (e.g. virus particles, microtubules). The resolution achievable has continued to drop since stimulated emission depletion \cite{Hell1994} (STED) and stochastic emission techniques \cite{Rust2006,Hess2006,Betzig2006} became available, and it is now possible to resolve objects well into the nanometre range, thus enabling the study of protein complexes in their natural environment.
+Super-resolution microscopy, so named because it breaks the diffraction limit
+for light microscopy described by Ernst Abbe \cite{Abbe1873}, revolutionised
+cell biology when it arrived on the scene, enabling visualisation of sub-200nm
+structures (e.g. virus particles, microtubules). The resolution achievable has
+continued to drop since stimulated emission depletion \cite{Hell1994} (STED) and
+stochastic emission techniques \cite{Rust2006,Hess2006,Betzig2006} became
+available, and it is now possible to resolve objects well into the nanometre
+range, thus enabling the study of protein complexes in their natural
+environment.
 
 \subsubsection{Single molecule localisation microscopy}
-Though there are now several different ways to beat the diffraction limit, those that are most often used in biology fall under the banner of `single molecule localisation microscopy'\footnote{In 1952, Schrödinger wrote: `we are not experimenting with single particles, any more than we can raise Ichthyosauria in the zoo' \cite{Schrodinger1952}. Which goes to show that Jurassic Park is no laughing matter.} (SMLM). Common to all of these techniques is the use of photoswitchable fluorescent dyes, which are turned on and off in such a way that only a very small number of molecules are turned on at any given time. This allows for a Gaussian point spread function to be fitted to each fluorescence event, enabling the precise localisation of the molecule responsible. Within the larger SMLM category, there are methods that achieve localisation by shaping the light source used to excite molecules, and those that stochastically switch on and off a sparse, well-separated subset of molecules within the field of view. A widely used example of the former is STED microscopy, which typically achieves resolutions in the region of 50nm (see figure \ref{figure:sted}).
+Though there are now several different ways to beat the diffraction limit, those
+that are most often used in biology fall under the banner of `single molecule
+localisation microscopy'\footnote{In 1952, Schrödinger wrote: `we are not
+experimenting with single particles, any more than we can raise Ichthyosauria in
+the zoo' \cite{Schrodinger1952}. Which goes to show that Jurassic Park is no
+laughing matter.} (SMLM). Common to all of these techniques is the use of
+photoswitchable fluorescent dyes, which are turned on and off in such a way that
+only a very small number of molecules are turned on at any given time. This
+allows for a Gaussian point spread function to be fitted to each fluorescence
+event, enabling the precise localisation of the molecule responsible. Within the
+larger SMLM category, there are methods that achieve localisation by shaping the
+light source used to excite molecules, and those that stochastically switch on
+and off a sparse, well-separated subset of molecules within the field of view. A
+widely used example of the former is STED microscopy, which typically achieves
+resolutions in the region of 50nm (see figure \ref{figure:sted}).
 
 \begin{figure}[h]
 \fcapsideright
-    {\caption[Lasers in STED microscopy]{\sffamily\textbf{Lasers in STED microscopy}\newline \small STED microscopy achieves super-resolution images by using two collinear laser beams to excite molecules in a very small area, allowing individual molecules to be illuminated separately. This is achieved with two lasers, one that excites the fluorophores, and another doughnut-shaped de-excitation laser. These are fired in very rapid overlapping pulses, resulting in just those molecules in the doughnut hole being able to fluoresce. Point spread functions are then mapped to the well-discriminated fluorescent events, and these used to precisely determine the location of the fluorescing molecule.}\label{figure:sted}}
+    {\caption[Lasers in STED microscopy]{\sffamily\textbf{Lasers in STED
+    microscopy}\newline \small STED microscopy achieves super-resolution images
+    by using two collinear laser beams to excite molecules in a very small area,
+    allowing individual molecules to be illuminated separately. This is achieved
+    with two lasers, one that excites the fluorophores, and another
+    doughnut-shaped de-excitation laser. These are fired in very rapid
+    overlapping pulses, resulting in just those molecules in the doughnut hole
+    being able to fluoresce. Point spread functions are then mapped to the
+    well-discriminated fluorescent events, and these used to precisely determine
+    the location of the fluorescing molecule.}\label{figure:sted}}
     {\includegraphics{c1_fig_sted}}
 \end{figure}
 
-In contrast, Stochastic Optical Reconstruction Microscopy \cite{Rust2006} (STORM) discriminates between molecules by using a weak light source to excite a random selection of molecules in the sample. Provided each fluorescing molecule is separated by a distance equal to no more than half the required resolution, they can be distinguished accurately from their point spread functions. The beauty of STORM is that, in its original form, only a single red laser is needed to both turn on and turn off the Alexa Fluor dye. This means that a steady application of low intensity light will cause the labelled molecules to continually blink on and off, allowing a picture to be built up gradually over the course of a few minutes. Though not as fast as other super-resolution methods, STORM, PALM (photoactivated localisation microscopy) and others in this category can achieve incredibly good resolutions of just a few nanometres in scale.
+In contrast, Stochastic Optical Reconstruction Microscopy \cite{Rust2006}
+(STORM) discriminates between molecules by using a weak light source to excite a
+random selection of molecules in the sample. Provided each fluorescing molecule
+is separated by a distance equal to no more than half the required resolution,
+they can be distinguished accurately from their point spread functions. The
+beauty of STORM is that, in its original form, only a single red laser is needed
+to both turn on and turn off the Alexa Fluor dye. This means that a steady
+application of low intensity light will cause the labelled molecules to
+continually blink on and off, allowing a picture to be built up gradually over
+the course of a few minutes. Though not as fast as other super-resolution
+methods, STORM, PALM (photoactivated localisation microscopy) and others in this
+category can achieve incredibly good resolutions of just a few nanometres in
+scale.
 
 \subsubsection{Super-resolution protein complexes}
-Most of the complexes studied to date with SMLM have been large and highly abundant, thus lending themselves well to the technique. Ground state depletion microscopy for example (which is related to STED) has been used in particularly attractive work determining the relative location of different Nup subunits in the nuclear pore complex \cite{Szymborska2013}. This was achieved using a system coupling GFP-Nup fusion proteins with fluorescent anti-GFP nanobodies to localise each subunit \cite{Ries2012}. Making use of image classification in a similar fashion to cryo-EM, multiple NPC particles were averaged to generate highly accurate measurements of the diameter of the pore formed by each subunit. They were then able to determine the relative location of each subunit within the larger complex by comparing the diameter of these rings.
+Most of the complexes studied to date with SMLM have been large and highly
+abundant, thus lending themselves well to the technique. Ground state depletion
+microscopy for example (which is related to STED) has been used in particularly
+attractive work determining the relative location of different Nup subunits in
+the nuclear pore complex \cite{Szymborska2013}. This was achieved using a system
+coupling GFP-Nup fusion proteins with fluorescent anti-GFP nanobodies to
+localise each subunit \cite{Ries2012}. Making use of image classification in a
+similar fashion to cryo-EM, multiple NPC particles were averaged to generate
+highly accurate measurements of the diameter of the pore formed by each subunit.
+They were then able to determine the relative location of each subunit within
+the larger complex by comparing the diameter of these rings.
 
 \section{Computational prediction of protein complex structure}
-Frequently, experimental methods for determining protein complex structure are not possible, or tellingly, are simply no longer the best use of a researcher's time and money. Prediction of protein structure from sequence, first prophesied by Anfinsen in 1973\cite{Anfinsen1973}, has been a long-standing challenge that has until recently been impossible in practice, for want of both sequence data and computational power. However, the genomic era has seen exponential increases in both of these areas, along with a similar expansion in the number of experimentally determined protein structures. Accordingly, there has been a concomitant improvement in our ability to predict structures computationally. Unusually for academia, two important and long-running competitions have been instrumental in driving progress in the field. Both competitions - CASP (Critical Assessment of protein Structure Prediction \cite{Moult1995}) and CAPRI (Critical Assessment of PRediction of Interactions \cite{Janin2003}) - are now an integral part of the community, providing much-needed benchmarks and progress reports that enable both users and developers to keep track of the rapidly changing state of the art.
+Frequently, experimental methods for determining protein complex structure are
+not possible, or tellingly, are simply no longer the best use of a researcher's
+time and money. Prediction of protein structure from sequence, first prophesied
+by Anfinsen in 1973\cite{Anfinsen1973}, has been a long-standing challenge that
+has until recently been impossible in practice, for want of both sequence data
+and computational power. However, the genomic era has seen exponential increases
+in both of these areas, along with a similar expansion in the number of
+experimentally determined protein structures. Accordingly, there has been a
+concomitant improvement in our ability to predict structures computationally.
+Unusually for academia, two important and long-running competitions have been
+instrumental in driving progress in the field. Both competitions - CASP
+(Critical Assessment of protein Structure Prediction \cite{Moult1995}) and CAPRI
+(Critical Assessment of PRediction of Interactions \cite{Janin2003}) - are now
+an integral part of the community, providing much-needed benchmarks and progress
+reports that enable both users and developers to keep track of the rapidly
+changing state of the art.
 
-Broadly speaking, the field of protein structure modelling can be divided into two overlapping subgroups, albeit separated mostly by their philosophical stances. Older, and currently more practical, are top-down approaches based on the use of templates for the structures being modelled; these templates are selected based on close sequence similarity with the target protein or complex. In contrast, there is equal interest in prediction of structure from first principles - an approach exemplified by molecular dynamics (MD). Template-based modelling (TBM) and MD represent opposite sides of the protein modelling community, but in practice there is a great degree of overlap between the two, and most of the methods that I will describe below use elements from both.
+Broadly speaking, the field of protein structure modelling can be divided into
+two overlapping subgroups, albeit separated mostly by their philosophical
+stances. Older, and currently more practical, are top-down approaches based on
+the use of templates for the structures being modelled; these templates are
+selected based on close sequence similarity with the target protein or complex.
+In contrast, there is equal interest in prediction of structure from first
+principles - an approach exemplified by molecular dynamics (MD). Template-based
+modelling (TBM) and MD represent opposite sides of the protein modelling
+community, but in practice there is a great degree of overlap between the two,
+and most of the methods that I will describe below use elements from both.
 
 \subsection{Top-down modelling of protein complex structure}
-The extent of the improvement in predictive power is such that, for individual sequences with close sequence similarity (60+\%) to known structures, it is usually possible to produce structures that are within a few ångströms of the experimentally determined version, as measured by root-mean-square-deviation of residue distances and other metrics \cite{Haas2013,Moult2016}. This is the process known as TBM, and nowadays it is routinely used to facilitate experimental structure determination of single protein chains.
+The extent of the improvement in predictive power is such that, for individual
+sequences with close sequence similarity (60+\%) to known structures, it is
+usually possible to produce structures that are within a few ångströms of the
+experimentally determined version, as measured by root-mean-square-deviation of
+residue distances and other metrics \cite{Haas2013,Moult2016}. This is the
+process known as TBM, and nowadays it is routinely used to facilitate
+experimental structure determination of single protein chains.
 
-For protein complexes, regardless of whether the structures of individual subunits are already known, it is often possible to reach a realistic approximation of the correct complex structure by a combination of homology modelling and molecular docking. Though most applicable for investigating protein-ligand interactions, molecular docking combined with homology modelling is becoming increasingly viable for protein-protein interactions, as evidenced by numerous recent studies and the results from the CASP and CAPRI competitions \cite{Jiang2013,Rajapaksha2014,Agostino2016,Lensink2016}.
+For protein complexes, regardless of whether the structures of individual
+subunits are already known, it is often possible to reach a realistic
+approximation of the correct complex structure by a combination of homology
+modelling and molecular docking. Though most applicable for investigating
+protein-ligand interactions, molecular docking combined with homology modelling
+is becoming increasingly viable for protein-protein interactions, as evidenced
+by numerous recent studies and the results from the CASP and CAPRI competitions
+\cite{Jiang2013,Rajapaksha2014,Agostino2016,Lensink2016}.
 
 \subsubsection{Template-based modelling}
-TBM is based on the principle that the degree of sequence divergence in homologous proteins is closely related to their structural similarity \cite{Chothia1986}. Once a suitable template is found - realistically with at least 40\% sequence identity with the target protein - the sequences are aligned and conserved regions are used to map fragments of the target onto the template structure. This is followed by replacement of the loop regions and final model refinement.
+TBM is based on the principle that the degree of sequence divergence in
+homologous proteins is closely related to their structural similarity
+\cite{Chothia1986}. Once a suitable template is found - realistically with at
+least 40\% sequence identity with the target protein - the sequences are aligned
+and conserved regions are used to map fragments of the target onto the template
+structure. This is followed by replacement of the loop regions and final model
+refinement.
 
-There are numerous methods based on extensions of this basic protocol that enable modelling of complete protein complexes, in addition to individual subunits \cite{Chen2008,Tuncbag2011,Guerler2013}. One important and widely used strategy for template identification is threading, or dimeric threading, in the case of modelling complexes \cite{Bowie1991,Lu2002}. Threading differs slightly from approaches based solely on sequence homology, in that it relies more on fold recognition than sequence similarity - this is assessed by a scoring function - the template that is eventually selected is the one which minimises this function. As a general rule, threading is used when the target sequence has particularly low sequence similarity with other known proteins, but in practice, most modern software takes these decisions out of the hands of the user. For a broad overview of the currently available software and experimental strategies for TBM, readers should see the recent review on the topic by Szilagyi and Zhang \cite{Szilagyi2014}.
+There are numerous methods based on extensions of this basic protocol that
+enable modelling of complete protein complexes, in addition to individual
+subunits \cite{Chen2008,Tuncbag2011,Guerler2013}. One important and widely used
+strategy for template identification is threading, or dimeric threading, in the
+case of modelling complexes \cite{Bowie1991,Lu2002}. Threading differs slightly
+from approaches based solely on sequence homology, in that it relies more on
+fold recognition than sequence similarity - this is assessed by a scoring
+function - the template that is eventually selected is the one which minimises
+this function. As a general rule, threading is used when the target sequence has
+particularly low sequence similarity with other known proteins, but in practice,
+most modern software takes these decisions out of the hands of the user. For a
+broad overview of the currently available software and experimental strategies
+for TBM, readers should see the recent review on the topic by Szilagyi and Zhang
+\cite{Szilagyi2014}.
 
 \subsubsection{Prediction of protein-protein interfaces}
-Template-based methods work by mapping the sequence of the target proteins of interest onto a template of the protein complex, without explicitly modelling the interface until later refinement steps. In contrast, `molecular docking' begins with subunits in their monomeric form, and models the interface directly by attempting to minimise the potential energy landscape of the bound proteins. This is achieved by sampling the conformational space of the two proteins with respect to each other and scoring the different interfaces that can be formed between them \cite{Huang2014}.
+Template-based methods work by mapping the sequence of the target proteins of
+interest onto a template of the protein complex, without explicitly modelling
+the interface until later refinement steps. In contrast, `molecular docking'
+begins with subunits in their monomeric form, and models the interface directly
+by attempting to minimise the potential energy landscape of the bound proteins.
+This is achieved by sampling the conformational space of the two proteins with
+respect to each other and scoring the different interfaces that can be formed
+between them \cite{Huang2014}.
 
-These two steps (sampling and scoring) can be handled in a number of ways. Conformational sampling is computationally very intensive, since two chains moving in three dimensions produces six degrees of freedom from the get-go, and allowing side-chain and backbone movements increases this number drastically. Thus, at least initially, almost all docking methods assume the proteins of interest to be rigid bodies, and fix the orientation of one protein with respect to the other. This reduces the complexity of the sampling problem greatly. Fast Fourier transforms \cite{Katchalski-Katzir1992} were the first method to make molecular docking possible, but other approaches have subsequently been developed too. These include Monte Carlo search \cite{Hart1992} and normal mode analysis \cite{Zacharias2005}, the former of which is of note because of its use in RosettaDock \cite{Lyskov2008,Zhang2015} - one of the most popular and successful docking programs. A second popular program is HADDOCK \cite{Dominguez2003,VanZundert2016}, which uses a gradient-based search method.
+These two steps (sampling and scoring) can be handled in a number of ways.
+Conformational sampling is computationally very intensive, since two chains
+moving in three dimensions produces six degrees of freedom from the get-go, and
+allowing side-chain and backbone movements increases this number drastically.
+Thus, at least initially, almost all docking methods assume the proteins of
+interest to be rigid bodies, and fix the orientation of one protein with respect
+to the other. This reduces the complexity of the sampling problem greatly. Fast
+Fourier transforms \cite{Katchalski-Katzir1992} were the first method to make
+molecular docking possible, but other approaches have subsequently been
+developed too. These include Monte Carlo search \cite{Hart1992} and normal mode
+analysis \cite{Zacharias2005}, the former of which is of note because of its use
+in RosettaDock \cite{Lyskov2008,Zhang2015} - one of the most popular and
+successful docking programs. A second popular program is HADDOCK
+\cite{Dominguez2003,VanZundert2016}, which uses a gradient-based search method.
 
-Scoring of interfaces is another non-trivial problem. As in the wider field of structure modelling (which encompasses docking) solutions to this problem tend to take the form of either physical or empirical, knowledge-based methods. In the former camp, force field scoring functions \cite{Kynast2016} are used to model the energy of the system in a given conformation, and typically involve a large number of parameters relating to attributes such as Van der Waals interactions and intramolecular strain energies. The latter consists of conceptually simpler techniques including counting of intermolecular contacts and scoring based on prior knowledge of statistically likely interactions gleaned from sources such as the PDB \cite{Bohm1998,Sasse2017}.
+Scoring of interfaces is another non-trivial problem. As in the wider field of
+structure modelling (which encompasses docking) solutions to this problem tend
+to take the form of either physical or empirical, knowledge-based methods. In
+the former camp, force field scoring functions \cite{Kynast2016} are used to
+model the energy of the system in a given conformation, and typically involve a
+large number of parameters relating to attributes such as Van der Waals
+interactions and intramolecular strain energies. The latter consists of
+conceptually simpler techniques including counting of intermolecular contacts
+and scoring based on prior knowledge of statistically likely interactions
+gleaned from sources such as the PDB \cite{Bohm1998,Sasse2017}.
 
 \subsection{De novo structure prediction}
-The docking methods described above are contingent on having structures available for the proteins whose interactions you are trying to model. However, it is often the case that there is no solved structure or suitable template available for use with homology modelling. In the past, this would have meant that the best one could do would be to try and predict secondary structure regions and likely interfaces or infer the presence of binding domains from homologous sequences using tools such as JPred4 \cite{Drozdetskiy2015} or databases such as PFAM and UniProt \cite{Finn2016,Consortium2017}. With this in mind, researchers have begun to make inroads into de novo structure prediction, as well as looking at ways in which the difficulties of true de novo prediction can be circumvented using sequence information alone.
+The docking methods described above are contingent on having structures
+available for the proteins whose interactions you are trying to model. However,
+it is often the case that there is no solved structure or suitable template
+available for use with homology modelling. In the past, this would have meant
+that the best one could do would be to try and predict secondary structure
+regions and likely interfaces or infer the presence of binding domains from
+homologous sequences using tools such as JPred4 \cite{Drozdetskiy2015} or
+databases such as PFAM and UniProt \cite{Finn2016,Consortium2017}. With this in
+mind, researchers have begun to make inroads into de novo structure prediction,
+as well as looking at ways in which the difficulties of true de novo prediction
+can be circumvented using sequence information alone.
 
 \subsubsection{Using protein coevolution to infer intermolecular contacts}
-Using the evolutionary sequence record to inform structure prediction is an idea that has been around for at least 20 years \cite{Altschuh1987}, but has been held back by the fact that it is very challenging to distinguish coevolving sites that indicate direct amino acid contacts from transitive ones. For example: if residues A and B are in contact, and residues B and C are in contact, then A and C may also show a strong coevolutionary signal, despite interacting via an intermediary residue. Over the entire protein sequence, this blurring of coevolutionary signal is sufficient to prevent meaningful structure prediction. The major breakthrough in tackling this problem was achieved with the development of an algorithm named Direct Coupling Analysis \cite{Weigt2009,Lunt2010}, which extends Shannon's concept of mutual information \cite{Shannon1948} and enables direct and indirect residue contacts to be distinguished from each other. Deborah Marks and her colleagues have now implemented this algorithm in a more generally applicable and user-friendly format, enabling the method’s widespread use in the structure-prediction community \cite{Marks2011,Marks2012,Hopf2014}.
+Using the evolutionary sequence record to inform structure prediction is an idea
+that has been around for at least 20 years \cite{Altschuh1987}, but has been
+held back by the fact that it is very challenging to distinguish coevolving
+sites that indicate direct amino acid contacts from transitive ones. For
+example: if residues A and B are in contact, and residues B and C are in
+contact, then A and C may also show a strong coevolutionary signal, despite
+interacting via an intermediary residue. Over the entire protein sequence, this
+blurring of coevolutionary signal is sufficient to prevent meaningful structure
+prediction. The major breakthrough in tackling this problem was achieved with
+the development of an algorithm named Direct Coupling Analysis
+\cite{Weigt2009,Lunt2010}, which extends Shannon's concept of mutual information
+\cite{Shannon1948} and enables direct and indirect residue contacts to be
+distinguished from each other. Deborah Marks and her colleagues have now
+implemented this algorithm in a more generally applicable and user-friendly
+format, enabling the method’s widespread use in the structure-prediction
+community \cite{Marks2011,Marks2012,Hopf2014}.
 
-Though originally used for single protein structures, this method is equally applicable to protein complexes, as intermolecular contacts are subject to many of the same coevolutionary pressures as intramolecular ones. EVcouplings (from the Marks group) has recently been applied to protein complexes \cite{Hopf2014}. Out of a set of 82 protein complexes with unsolved structures, 32 had a sufficiently good sequence record as to be able to predict the entire complex de novo, whereas others were sufficient to predict intermolecular contacts, but not the entire structure. Unfortunately, a limitation of this technique is identification of homomeric contacts, since without additional information these cannot be distinguished  from intramolecular interactions. A related issue is that many nominally heteromeric interactions arise from homomeric interactions between genes that have undergone duplication and subsequent genetic drift \cite{Wagner2001,Wagner2003,Fokkens2012}. In such cases, it may not be possible to acquire a sufficient number of sequences for structure/interaction prediction, particularly if the proteins in question have diverged recently.
+Though originally used for single protein structures, this method is equally
+applicable to protein complexes, as intermolecular contacts are subject to many
+of the same coevolutionary pressures as intramolecular ones. EVcouplings (from
+the Marks group) has recently been applied to protein complexes \cite{Hopf2014}.
+Out of a set of 82 protein complexes with unsolved structures, 32 had a
+sufficiently good sequence record as to be able to predict the entire complex de
+novo, whereas others were sufficient to predict intermolecular contacts, but not
+the entire structure. Unfortunately, a limitation of this technique is
+identification of homomeric contacts, since without additional information these
+cannot be distinguished  from intramolecular interactions. A related issue is
+that many nominally heteromeric interactions arise from homomeric interactions
+between genes that have undergone duplication and subsequent genetic drift
+\cite{Wagner2001,Wagner2003,Fokkens2012}. In such cases, it may not be possible
+to acquire a sufficient number of sequences for structure/interaction
+prediction, particularly if the proteins in question have diverged recently.
 
 \subsubsection{Molecular Dynamics}
-At present, we are still a long way from saturation of structure and sequence space, as is clear from recent studies sampling viral and prokaryotic genomes \cite{Brum2016,Shi2016,Mukherjee2017}. As such, a substantial proportion of the protein universe is beyond the reach of either TBM or EVCouplings. Molecular dynamics is a simulation method that models the behaviour of all the atoms or molecules in a dynamical system. This is typically achieved, as for the force field method introduced earlier, by numerically solving Newton's equations of motion for the entire system of particles. Being rooted in basic physical principles, and unlike most of the other techniques we have discussed, MD is enormously versatile, and is used widely in other fields outside of biology \cite{Hu2013,Rapaport2014,Shao2015}. From our perspective, much of its power lies in its ability to span multiple cellular scales - it has been used to study processes ranging from the molecular details of ligand binding to the assembly of virus capsids \cite{Buch2011,Zhao2013}.
+At present, we are still a long way from saturation of structure and sequence
+space, as is clear from recent studies sampling viral and prokaryotic genomes
+\cite{Brum2016,Shi2016,Mukherjee2017}. As such, a substantial proportion of the
+protein universe is beyond the reach of either TBM or EVCouplings. Molecular
+dynamics is a simulation method that models the behaviour of all the atoms or
+molecules in a dynamical system. This is typically achieved, as for the force
+field method introduced earlier, by numerically solving Newton's equations of
+motion for the entire system of particles. Being rooted in basic physical
+principles, and unlike most of the other techniques we have discussed, MD is
+enormously versatile, and is used widely in other fields outside of biology
+\cite{Hu2013,Rapaport2014,Shao2015}. From our perspective, much of its power
+lies in its ability to span multiple cellular scales - it has been used to study
+processes ranging from the molecular details of ligand binding to the assembly
+of virus capsids \cite{Buch2011,Zhao2013}.
 
-Though ab initio MD methods exist that explicitly include the electronic configurations of all atoms as parameters in the model, these are not practical for systems beyond a few atoms in size and across timescales of more than a few picoseconds. For biological macromolecules on the scale of protein complexes, empirical force fields are used instead. These describe an approximation of the potential energy of the system through a function with the general form $ U(R) $, where $ R = \{r_{1}, ..., r_{n}\} $ describes the coordinates of the atoms in the system. It is this same potential energy function that is minimised in molecular docking simulations. In slightly more detail, $ U(R) $ can be described as follows:
+Though ab initio MD methods exist that explicitly include the electronic
+configurations of all atoms as parameters in the model, these are not practical
+for systems beyond a few atoms in size and across timescales of more than a few
+picoseconds. For biological macromolecules on the scale of protein complexes,
+empirical force fields are used instead. These describe an approximation of the
+potential energy of the system through a function with the general form $ U(R)
+$, where $ R = \{r_{1}, ..., r_{n}\} $ describes the coordinates of the atoms in
+the system. It is this same potential energy function that is minimised in
+molecular docking simulations. In slightly more detail, $ U(R) $ can be
+described as follows:
 
 \begin{align*}
     U &= E_{bonding} + E_{non-bonding}\\
@@ -267,17 +1235,53 @@ Though ab initio MD methods exist that explicitly include the electronic configu
     E_{non-bonding} &= E_{electrostatic} + E_{Van\ der\ Waals}
 \end{align*}
 
-Each of the energy terms in the above equations are themselves functions of the atom coordinates and empirically determined constraints such as bond strength, molecular weight and so on. Though computationally more efficient for ignoring the electronic degrees of freedom, a drawback of force field methods is that large changes such as the making or breaking of covalent bonds cannot be modelled. However, in the case of protein complexes this is rarely a problem. Many different force fields have been tailored to different purposes, but for studying protein-protein interactions AMBER \cite{Salomon-Ferrer2013,Amber2017} and CHARMM \cite{Brooks2009} are particularly relevant. The dedicated structure prediction software FoldX \cite{Schymkowitz2005} uses a proprietary force field, though with similar construction to the general one described above.
+Each of the energy terms in the above equations are themselves functions of the
+atom coordinates and empirically determined constraints such as bond strength,
+molecular weight and so on. Though computationally more efficient for ignoring
+the electronic degrees of freedom, a drawback of force field methods is that
+large changes such as the making or breaking of covalent bonds cannot be
+modelled. However, in the case of protein complexes this is rarely a problem.
+Many different force fields have been tailored to different purposes, but for
+studying protein-protein interactions AMBER \cite{Salomon-Ferrer2013,Amber2017}
+and CHARMM \cite{Brooks2009} are particularly relevant. The dedicated structure
+prediction software FoldX \cite{Schymkowitz2005} uses a proprietary force field,
+though with similar construction to the general one described above.
 
-At present, computational power is only just beginning to reach the level at which the assembly of protein complexes can be modelled from scratch. The two major obstacles barring further progress are the size of proteins, and the timescales on which assembly takes place. Currently, only small proteins or protomers can be modelled, and even then only across very short timescales. This is unfortunate, since folding and protein complex assembly takes place over timescales of microseconds to minutes. However, a recent exciting study by Plattner and colleagues \cite{Plattner2017} has had some success using hidden Markov models in combination with thousands of MD simulations starting from different points, selected so as to maximise the efficiency of conformational space exploration. This enabled them to model the bacterial ribonuclease barnase in complex with its inhibitor barstar with impressive accuracy. Associated, dissociated and transition states were observed across 2 milliseconds of modelling time, and predicted thermodynamic parameters were in strong agreement with those obtained from independent experimental results.
+At present, computational power is only just beginning to reach the level at
+which the assembly of protein complexes can be modelled from scratch. The two
+major obstacles barring further progress are the size of proteins, and the
+timescales on which assembly takes place. Currently, only small proteins or
+protomers can be modelled, and even then only across very short timescales. This
+is unfortunate, since folding and protein complex assembly takes place over
+timescales of microseconds to minutes. However, a recent exciting study by
+Plattner and colleagues \cite{Plattner2017} has had some success using hidden
+Markov models in combination with thousands of MD simulations starting from
+different points, selected so as to maximise the efficiency of conformational
+space exploration. This enabled them to model the bacterial ribonuclease barnase
+in complex with its inhibitor barstar with impressive accuracy. Associated,
+dissociated and transition states were observed across 2 milliseconds of
+modelling time, and predicted thermodynamic parameters were in strong agreement
+with those obtained from independent experimental results.
 
 % possibly add in pairwise interactions?
 \subsection{Protein complex databases and repositories}
-Since the first print-format directories of protein sequences were produced by Margaret Dayhoff \cite{Dayhoff1965}, protein sequence and structure databases have become an integral part of the research infrastructure in biology. These databases range in size from manually curated lists of proteins or protein complexes involved in specific cellular processes, to vast data repositories such as UniProt or the PDB. The benefit of these larger repositories is clear, since without them the task of collating data from different experiments would be impossible for any single researcher. However, smaller datasets from individual papers are often extremely useful too, as they offer nuance and context that can't be obtained from data compiled from multiple sources. A selection of useful databases and repositories of protein complexes or interactions are summarised in table \ref{table:databases} below.
+Since the first print-format directories of protein sequences were produced by
+Margaret Dayhoff \cite{Dayhoff1965}, protein sequence and structure databases
+have become an integral part of the research infrastructure in biology. These
+databases range in size from manually curated lists of proteins or protein
+complexes involved in specific cellular processes, to vast data repositories
+such as UniProt or the PDB. The benefit of these larger repositories is clear,
+since without them the task of collating data from different experiments would
+be impossible for any single researcher. However, smaller datasets from
+individual papers are often extremely useful too, as they offer nuance and
+context that can't be obtained from data compiled from multiple sources. A
+selection of useful databases and repositories of protein complexes or
+interactions are summarised in table \ref{table:databases} below.
 
 \begin{table}[h]
     \captionsetup{width=0.85\linewidth}
-    \caption[Useful repositories for research on protein complexes]{\sffamily \textbf{Useful repositories for research on protein complexes} \\ \small }
+    \caption[Useful repositories for research on protein complexes]{\sffamily
+    \textbf{Useful repositories for research on protein complexes} \\ \small }
     \centering
     \onehalfspacing
     \small
@@ -285,13 +1289,26 @@ Since the first print-format directories of protein sequences were produced by M
     \hline
     Name  & Description &   References\\[0.1cm]
     \hline
-Protein Data Bank   &   Very large repository of structural information on proteins and protein complexes.  &   \cite{Berman2000}\\
-IntAct  & IntAct Molecular Interaction Database. Manually curated database of protein-protein interactions compiled from literature sources and direct user submissions.   &   \cite{Orchard2014}\\
-Complex portal  &   Manually curated list of protein complexes from a selection of model organisms. Related to IntAct.  &   \cite{Meldal2015}\\
-hu.MAP  &   Human Protein Complex Map. Generated by integrating three previously released datasets using machine learning. &   \cite{Drew2017,Wan2015,Hein2015,Huttlin2015}\\
-CORUM   &   The comprehensive resource of mammalian protein complexes. Starting to show its age somewhat, but still widely used as a gold standard set of experimentally validated mammalian protein complexes.  &   \cite{Ruepp2009}\\
-Complex census  &   A Census of Human Soluble Protein Complexes. This is an important paper that was released in 2012, covering ~3000 human soluble complexes. Data was obtained by biochemical fractionation and MS.   &   \cite{Havugimana2012}\\
-BioPlex 2.0 &   AP-MS study of the human interactome, covering some 25\% of the human proteome. &   \cite{Huttlin2015,Huttlin2017}\\
+Protein Data Bank   &   Very large repository of structural information on
+        proteins and protein complexes.  &   \cite{Berman2000}\\
+IntAct  & IntAct Molecular Interaction Database. Manually curated database of
+        protein-protein interactions compiled from literature sources and direct
+        user submissions.   &   \cite{Orchard2014}\\
+Complex portal  &   Manually curated list of protein complexes from a selection
+        of model organisms. Related to IntAct.  &   \cite{Meldal2015}\\
+hu.MAP  &   Human Protein Complex Map. Generated by integrating three previously
+        released datasets using machine learning. &
+        \cite{Drew2017,Wan2015,Hein2015,Huttlin2015}\\
+CORUM   &   The comprehensive resource of mammalian protein complexes. Starting
+        to show its age somewhat, but still widely used as a gold standard set
+        of experimentally validated mammalian protein complexes.  &
+        \cite{Ruepp2009}\\
+Complex census  &   A Census of Human Soluble Protein Complexes. This is an
+        important paper that was released in 2012, covering ~3000 human soluble
+        complexes. Data was obtained by biochemical fractionation and MS.   &
+        \cite{Havugimana2012}\\
+BioPlex 2.0 &   AP-MS study of the human interactome, covering some 25\% of the
+        human proteome. &   \cite{Huttlin2015,Huttlin2017}\\
 [0.1cm]
     \hline
     \end{tabular}
@@ -299,46 +1316,205 @@ BioPlex 2.0 &   AP-MS study of the human interactome, covering some 25\% of the 
 \end{table}
 
 \section{Answering questions about the properties of protein complexes}
-Armed with the methods covered in the preceding pages, there are numerous biological questions we can attempt to answer about the cell and the behaviour of protein complexes within it. Most obviously, the question of what proteins look like is enabled by structural methods such as X-ray crystallography and cryo-EM. This is useful beyond simple curiosity, as understanding the mechanistic details of a protein or protein complex's action enables us to make better decisions about the design of future experiments or drug development. More broadly, we can also investigate how the cell maintains protein stoichiometry, and how these mechanisms interact with and facilitate the assembly of individual complexes. These two questions are the primary focus of this thesis.
+Armed with the methods covered in the preceding pages, there are numerous
+biological questions we can attempt to answer about the cell and the behaviour
+of protein complexes within it. Most obviously, the question of what proteins
+look like is enabled by structural methods such as X-ray crystallography and
+cryo-EM. This is useful beyond simple curiosity, as understanding the
+mechanistic details of a protein or protein complex's action enables us to make
+better decisions about the design of future experiments or drug development.
+More broadly, we can also investigate how the cell maintains protein
+stoichiometry, and how these mechanisms interact with and facilitate the
+assembly of individual complexes. These two questions are the primary focus of
+this thesis.
 
 \subsection{Maintenance of cellular stoichiometry}
-A typical cell contains thousands of different protein species - less in most bacteria and archaea, and more in most eukaryotes, particularly multicellular ones such as ourselves. Imbalances in the expression of proteins are usually deleterious, and a variety of aberrant behaviours can be attributed to them; cancer, for example, can be caused by changes in the expression of various oncogenes or tumour suppressors.
+A typical cell contains thousands of different protein species - less in most
+bacteria and archaea, and more in most eukaryotes, particularly multicellular
+ones such as ourselves. Imbalances in the expression of proteins are usually
+deleterious, and a variety of aberrant behaviours can be attributed to them;
+cancer, for example, can be caused by changes in the expression of various
+oncogenes or tumour suppressors.
 
-More generally, members of heteromeric protein complexes are particularly sensitive to changes in expression, as they impact not just on the protein in question, but also those that it interacts with. Strong evidence for this comes from observations that yeast strains that are heterozygous for single gene knockouts tend be particularly unfit when those genes are members of complexes \cite{Papp2003}; similarly, mass spectrometric studies \cite{Lam2007,Sung2016} (using iBAQ and SILAC, respectively) have shown that ribosomal subunits produced in excess are rapidly degraded by the ubiquitin proteasome system. This is telling, since it implies that there are significant fitness costs to having unbound subunits free in solution indefinitely. There are many reasons why this might be, including the need to avoid protein mis-interactions, which imposes considerable constraints on the evolution of protein surfaces \cite{Yang2012}.
+More generally, members of heteromeric protein complexes are particularly
+sensitive to changes in expression, as they impact not just on the protein in
+question, but also those that it interacts with. Strong evidence for this comes
+from observations that yeast strains that are heterozygous for single gene
+knockouts tend be particularly unfit when those genes are members of complexes
+\cite{Papp2003}; similarly, mass spectrometric studies \cite{Lam2007,Sung2016}
+(using iBAQ and SILAC, respectively) have shown that ribosomal subunits produced
+in excess are rapidly degraded by the ubiquitin proteasome system. This is
+telling, since it implies that there are significant fitness costs to having
+unbound subunits free in solution indefinitely. There are many reasons why this
+might be, including the need to avoid protein mis-interactions, which imposes
+considerable constraints on the evolution of protein surfaces \cite{Yang2012}.
 
-Surprisingly however, early pulse-chase studies on the assembly of alpha and beta spectrin in birds and mammals showed that these subunits were not being synthesised in stoichiometric proportions, but rather in highly unequal ratios, with excess protein being degraded later \cite{Blikstad1983,Hanspal1987,Lehnert1988}. From an anthropomorphic design perspective this is unexpected, since it would presumably be more efficient to avoid imbalances in the first place.
+Surprisingly however, early pulse-chase studies on the assembly of alpha and
+beta spectrin in birds and mammals showed that these subunits were not being
+synthesised in stoichiometric proportions, but rather in highly unequal ratios,
+with excess protein being degraded later
+\cite{Blikstad1983,Hanspal1987,Lehnert1988}. From an anthropomorphic design
+perspective this is unexpected, since it would presumably be more efficient to
+avoid imbalances in the first place.
 
-To what extent can the relative synthesis rates of subunits be controlled? Is spectrin a special case or is unequal synthesis and degradation the norm? One would naïvely expect the most efficient approach to be production of subunits precisely in accordance with their stoichiometry, but measuring this accurately is challenging. This is because of the different ways in which gene expression can be controlled, namely synthesis and degradation rates at both mRNA and protein levels. Mass-spectrometric analyses of whole-cell protein extracts give an idea of steady state protein abundances, but it is difficult to deconvolve the relative contributions of synthesis and degradation rates. Metabolic pulse-chase experiments such as those used for spectrin have had more recent successes when used in combination with SILAC MS \cite{Schwanhausser2011}, but these are still not perfect due to the lag times incurred by the labelling process.
+To what extent can the relative synthesis rates of subunits be controlled? Is
+spectrin a special case or is unequal synthesis and degradation the norm? One
+would naïvely expect the most efficient approach to be production of subunits
+precisely in accordance with their stoichiometry, but measuring this accurately
+is challenging. This is because of the different ways in which gene expression
+can be controlled, namely synthesis and degradation rates at both mRNA and
+protein levels. Mass-spectrometric analyses of whole-cell protein extracts give
+an idea of steady state protein abundances, but it is difficult to deconvolve
+the relative contributions of synthesis and degradation rates. Metabolic
+pulse-chase experiments such as those used for spectrin have had more recent
+successes when used in combination with SILAC MS \cite{Schwanhausser2011}, but
+these are still not perfect due to the lag times incurred by the labelling
+process.
 
-An elegant method for measuring translation rates directly exists in the form of ribosome footprint profiling \cite{Ingolia2009,Ingolia2016}. This method works by deep sequencing ribosome-protected mRNA fragments and counting the number of fragments associated with each gene. The assumption underlying this being that every ribosome bound to an mRNA will produce one protein, and therefore that the number of ribosome-protected fragments is a good indicator of translation rate.
+An elegant method for measuring translation rates directly exists in the form of
+ribosome footprint profiling \cite{Ingolia2009,Ingolia2016}. This method works
+by deep sequencing ribosome-protected mRNA fragments and counting the number of
+fragments associated with each gene. The assumption underlying this being that
+every ribosome bound to an mRNA will produce one protein, and therefore that the
+number of ribosome-protected fragments is a good indicator of translation rate.
 
-Ribosome profiling has been used to demonstrate that, in \textit{E. coli} at least, stoichiometric synthesis is far more common than unequal synthesis \cite{Li2014b}. This is less surprising than would be the case in eukaryotes, since many protein complexes are encoded within operons, which likely removes much of the potential variance in expression due to transcription. However, even for complexes such as \ce{F_{0}F_{1}} ATP synthase, in which some subunits are present in many copies, subunits are translated in the correct proportions, with significant differences in ribosome density for different genes within the polycistronic mRNA.
+Ribosome profiling has been used to demonstrate that, in \textit{E. coli} at
+least, stoichiometric synthesis is far more common than unequal synthesis
+\cite{Li2014b}. This is less surprising than would be the case in eukaryotes,
+since many protein complexes are encoded within operons, which likely removes
+much of the potential variance in expression due to transcription. However, even
+for complexes such as \ce{F_{0}F_{1}} ATP synthase, in which some subunits are
+present in many copies, subunits are translated in the correct proportions, with
+significant differences in ribosome density for different genes within the
+polycistronic mRNA.
 
-Less clear is whether proportional synthesis is also the norm in eukaryotes. Limited ribosome profiling data from \textit{S. cereviasae} suggests that some complexes at least are synthesised stoichiometrically \cite{Brandman2012}, but the majority of studies (including the work described in chapter \ref{chapter:degradation}) suggests that most eukaryotes do not show the same tight control of synthesis seen in bacteria.
+Less clear is whether proportional synthesis is also the norm in eukaryotes.
+Limited ribosome profiling data from \textit{S. cereviasae} suggests that some
+complexes at least are synthesised stoichiometrically \cite{Brandman2012}, but
+the majority of studies (including the work described in chapter
+\ref{chapter:degradation}) suggests that most eukaryotes do not show the same
+tight control of synthesis seen in bacteria.
 
 \subsection{Assembly of protein complexes}
-Another theme running throughout this thesis is the importance of ordered assembly of protein complexes. A method pioneered by Carol Robinson's group in Oxford was nano-ESI MS, which allowed dynamic processes such as the assembly or disassembly of protein complexes to be observed in real-time \cite{Hernandez2007}. The first paper to make use of this method explicitly to study the assembly order of protein complexes focused on homomers \cite{Levy2008}, and demonstrated that both assembly order and the evolutionary trajectory of subunit gain could be predicted well by interface size.
+Another theme running throughout this thesis is the importance of ordered
+assembly of protein complexes. A method pioneered by Carol Robinson's group in
+Oxford was nano-ESI MS, which allowed dynamic processes such as the assembly or
+disassembly of protein complexes to be observed in real-time
+\cite{Hernandez2007}. The first paper to make use of this method explicitly to
+study the assembly order of protein complexes focused on homomers
+\cite{Levy2008}, and demonstrated that both assembly order and the evolutionary
+trajectory of subunit gain could be predicted well by interface size.
 
-This work was subsequently extended to heteromers, showing that, like homomers, assembly pathways of heteromers can also be predicted by a hierarchy of interface sizes \cite{Marsh2013}. These are also evolutionarily conserved, with gene fusions being significantly more likely to occur in cases in which assembly order is preserved. More recently, it has also been shown that the number of coevolving residues between two proteins is a similarly good predictor of assembly order \cite{Mallik2017}.
+This work was subsequently extended to heteromers, showing that, like homomers,
+assembly pathways of heteromers can also be predicted by a hierarchy of
+interface sizes \cite{Marsh2013}. These are also evolutionarily conserved, with
+gene fusions being significantly more likely to occur in cases in which assembly
+order is preserved. More recently, it has also been shown that the number of
+coevolving residues between two proteins is a similarly good predictor of
+assembly order \cite{Mallik2017}.
 
-The natural question arising from the ability to determine assembly pathways in vitro is how much they matter in vivo? Evidence of evolutionary conservation is a good indicator of biological importance, but to what degree does efficient assembly matter to eukaryotes compared to prokaryotes? One way in which ordered assembly could be facilitated is through co-translational assembly of protein complexes. In prokaryotes, there is direct evidence for this from a study on the assembly of luciferase, which made use of fluorescence resonance energy transfer to show that the molecule was assembled most efficiently co-translationally from subunits encoded on the same operon \cite{Shieh2015a}. In eukaryotes, despite the very different genomic organisation and scale on which assembly takes place, there is nonetheless good evidence for co-translational assembly being common \cite{Duncan2011}, further supporting the idea that efficient assembly is universally important and therefore worth continued investigation.
+The natural question arising from the ability to determine assembly pathways in
+vitro is how much they matter in vivo? Evidence of evolutionary conservation is
+a good indicator of biological importance, but to what degree does efficient
+assembly matter to eukaryotes compared to prokaryotes? One way in which ordered
+assembly could be facilitated is through co-translational assembly of protein
+complexes. In prokaryotes, there is direct evidence for this from a study on the
+assembly of luciferase, which made use of fluorescence resonance energy transfer
+to show that the molecule was assembled most efficiently co-translationally from
+subunits encoded on the same operon \cite{Shieh2015a}. In eukaryotes, despite
+the very different genomic organisation and scale on which assembly takes place,
+there is nonetheless good evidence for co-translational assembly being common
+\cite{Duncan2011}, further supporting the idea that efficient assembly is
+universally important and therefore worth continued investigation.
 
 \section{Discussion}
-The study of protein complexes is currently undergoing a sea-change, brought about by the recent breakthroughs in structural biology, the emergence of mass spectrometry as a quantitative tool, and ongoing developments in computational techniques. The methods presented here offer a broad selection of those that can be used to study the physical characteristics and behaviour of protein complexes, but unavoidably there are some omissions, such as small-angle X-ray scattering \cite{Mertens2010} and hydrogen-deuterium exchange MS \cite{Zhang2015b}.
+The study of protein complexes is currently undergoing a sea-change, brought
+about by the recent breakthroughs in structural biology, the emergence of mass
+spectrometry as a quantitative tool, and ongoing developments in computational
+techniques. The methods presented here offer a broad selection of those that can
+be used to study the physical characteristics and behaviour of protein
+complexes, but unavoidably there are some omissions, such as small-angle X-ray
+scattering \cite{Mertens2010} and hydrogen-deuterium exchange MS
+\cite{Zhang2015b}.
 
-A common theme that I have tried to highlight in this review is the overlap between the many different fields concerned with characterising protein complexes. Most of these overlaps have had a synergistic effect on the technologies involved; this has been particularly obvious in cryo-EM, where hardware improvements have directly driven the development of new image processing software, but many other examples exist across structural biology and further afield. To point out a few explicitly: homology modelling has enabled much faster processing of diffraction patterns and electron density maps, improvements in purification techniques benefit essentially all of the non-computational techniques we have discussed, and many of the advances in imaging in cryo-EM will likely be transferable to XFELs.
+A common theme that I have tried to highlight in this review is the overlap
+between the many different fields concerned with characterising protein
+complexes. Most of these overlaps have had a synergistic effect on the
+technologies involved; this has been particularly obvious in cryo-EM, where
+hardware improvements have directly driven the development of new image
+processing software, but many other examples exist across structural biology and
+further afield. To point out a few explicitly: homology modelling has enabled
+much faster processing of diffraction patterns and electron density maps,
+improvements in purification techniques benefit essentially all of the
+non-computational techniques we have discussed, and many of the advances in
+imaging in cryo-EM will likely be transferable to XFELs.
 
-This leaking of technologies across fields has facilitated the rise of integrative structural biology, which is becoming the most powerful approach to investigations on protein complexes. Many of the most impressive structures published in the past couple of years have been the product of combinations of methods, for example: the transcribing mammalian PolII complex \cite{Bernecky2016}, the nuclear pore complex mRNA export platform \cite{Fernandez-Martinez2016}, and the Mediator complex \cite{Tsai2017}. A second common feature of all of these papers is their focus on mechanistic descriptions of function or assembly, demonstrating a welcome move away from purely descriptive studies. Given the direction the field is moving in, early-career structural biologists should not to be content with specialising in one method or the other \cite{Shi2014,Cassiday2014}, but should endeavour to be at least familiar with most of the topics covered here.
+This leaking of technologies across fields has facilitated the rise of
+integrative structural biology, which is becoming the most powerful approach to
+investigations on protein complexes. Many of the most impressive structures
+published in the past couple of years have been the product of combinations of
+methods, for example: the transcribing mammalian PolII complex
+\cite{Bernecky2016}, the nuclear pore complex mRNA export platform
+\cite{Fernandez-Martinez2016}, and the Mediator complex \cite{Tsai2017}. A
+second common feature of all of these papers is their focus on mechanistic
+descriptions of function or assembly, demonstrating a welcome move away from
+purely descriptive studies. Given the direction the field is moving in,
+early-career structural biologists should not to be content with specialising in
+one method or the other \cite{Shi2014,Cassiday2014}, but should endeavour to be
+at least familiar with most of the topics covered here.
 
-The shift from purely descriptive studies to mechanistic ones emphasises the fact that there is more to proteins and protein complexes than simple descriptions of structure. Of particular importance for the rest of this thesis, there is much to be gained from understanding the assembly process of protein complexes. Indeed, thanks to native MS studies, it is now well established that this occurs along ordered, thermodynamically favourable pathways, and papers on the topic have been published continually since this fact was first demonstrated \cite{Levy2008,Marsh2013,Appolaire2014,Macek2017,Mallik2017}.
+The shift from purely descriptive studies to mechanistic ones emphasises the
+fact that there is more to proteins and protein complexes than simple
+descriptions of structure. Of particular importance for the rest of this thesis,
+there is much to be gained from understanding the assembly process of protein
+complexes. Indeed, thanks to native MS studies, it is now well established that
+this occurs along ordered, thermodynamically favourable pathways, and papers on
+the topic have been published continually since this fact was first demonstrated
+\cite{Levy2008,Marsh2013,Appolaire2014,Macek2017,Mallik2017}.
 
-On a larger scale, inventive use of mass spectrometry is enabling rapid improvement in our understanding of how individual protein complexes fit into the wider proteome. In a standout study from the group of Matthias Mann \cite{Hein2015}, the proteome of HeLa cells was quantified in such a way as to accurately capture interaction stoichiometries and global cellular abundances. Although not unexpected, the results from this work clearly demonstrate that the large majority of interactions, though important, are fairly weak. In contrast, stable complexes formed from interactions with stoichiometric ratios on the order of 1:1 are significantly rarer, but nonetheless highly connected through these weaker interactions.
+On a larger scale, inventive use of mass spectrometry is enabling rapid
+improvement in our understanding of how individual protein complexes fit into
+the wider proteome. In a standout study from the group of Matthias Mann
+\cite{Hein2015}, the proteome of HeLa cells was quantified in such a way as to
+accurately capture interaction stoichiometries and global cellular abundances.
+Although not unexpected, the results from this work clearly demonstrate that the
+large majority of interactions, though important, are fairly weak. In contrast,
+stable complexes formed from interactions with stoichiometric ratios on the
+order of 1:1 are significantly rarer, but nonetheless highly connected through
+these weaker interactions.
 
-The long-term objective of the techniques we have discussed in this review is to give a complete and unified understanding of the cellular proteome, in both its constituent parts and its behaviour at scale. The progress we have made towards this aim would scarcely have been imaginable to the researchers who first began studying proteins in the 1950s, there is no reason to suspect that the next 50 years will not see even greater progress. In many of the fields I have discussed there are novel technologies that will be revolutionary in years to come - nowhere more so than with the development of XFELs and serial femtosecond X-ray crystallography; it will be fascinating to see the new studies that this technology enables. Alternatively, perhaps cryo-EM will be able to continue along its current trajectory to overtake crystallography as the go-to method in structural biology?
+The long-term objective of the techniques we have discussed in this review is to
+give a complete and unified understanding of the cellular proteome, in both its
+constituent parts and its behaviour at scale. The progress we have made towards
+this aim would scarcely have been imaginable to the researchers who first began
+studying proteins in the 1950s, there is no reason to suspect that the next 50
+years will not see even greater progress. In many of the fields I have discussed
+there are novel technologies that will be revolutionary in years to come -
+nowhere more so than with the development of XFELs and serial femtosecond X-ray
+crystallography; it will be fascinating to see the new studies that this
+technology enables. Alternatively, perhaps cryo-EM will be able to continue
+along its current trajectory to overtake crystallography as the go-to method in
+structural biology?
 
-In the field of mass spectrometry, although there are no obviously disruptive technologies on the horizon, continuing improvements in the sensitivity and accuracy of detectors are assured. Algorithmic development in MS is another area in which improvements are needed. Currently, there are seemingly intractable issues with peptide discrimination and quantification that need addressing, as evidenced by our first serious attempts to map the human proteome \cite{Kim2014,Wilhelm2014,Ezkurdia2014}. Nonetheless, the inherent versatility of the method across different cellular scales ensures the field's relevance in the decades to come, particularly as we move towards single-cell biology \cite{Macaulay2017}.
+In the field of mass spectrometry, although there are no obviously disruptive
+technologies on the horizon, continuing improvements in the sensitivity and
+accuracy of detectors are assured. Algorithmic development in MS is another area
+in which improvements are needed. Currently, there are seemingly intractable
+issues with peptide discrimination and quantification that need addressing, as
+evidenced by our first serious attempts to map the human proteome
+\cite{Kim2014,Wilhelm2014,Ezkurdia2014}. Nonetheless, the inherent versatility
+of the method across different cellular scales ensures the field's relevance in
+the decades to come, particularly as we move towards single-cell biology
+\cite{Macaulay2017}.
 
-Last, but by no means least, computational modelling of proteins continues to go from strength to strength. Though not a panacea for the difficult challenges we still face in structural biology, as the diversity of sequences and structures increases, so too will our ability to leverage computational power to fill in the gaps through homology modelling. Molecular dynamics too is finally approaching a point at which we can use it to study real-time processes of complex assembly, and with tantalising hints of progress in the world of quantum computing, the future looks bright for the study of protein complexes.
+Last, but by no means least, computational modelling of proteins continues to go
+from strength to strength. Though not a panacea for the difficult challenges we
+still face in structural biology, as the diversity of sequences and structures
+increases, so too will our ability to leverage computational power to fill in
+the gaps through homology modelling. Molecular dynamics too is finally
+approaching a point at which we can use it to study real-time processes of
+complex assembly, and with tantalising hints of progress in the world of quantum
+computing, the future looks bright for the study of protein complexes.
 
 % \printbibliography
 

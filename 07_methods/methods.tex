@@ -15,98 +15,341 @@
 \chapter{Methods}\label{chapter:methods}
 
 \section{Introduction}
-The methods provided in this chapter relate to work performed either exclusively by myself or in direct collaboration with others. Except where strictly necessary, any details relating to work that I was not closely involved with have not been included - these can instead be found in the online versions of the published papers included in appendix \ref{appendix:published}. For the sake of accuracy I have only made minimal changes to descriptions as they appear in the published documents. Unless indicated otherwise, most of the sections that follow should therefore be considered as quotes from the published versions, edited for clarity. In these cases, I have obtained permission for reuse where required. Additional code relating to this work can be found at: https://github.com/jonwells90.
+The methods provided in this chapter relate to work performed either exclusively
+by myself or in direct collaboration with others. Except where strictly
+necessary, any details relating to work that I was not closely involved with
+have not been included - these can instead be found in the online versions of
+the published papers included in appendix \ref{appendix:published}. For the sake
+of accuracy I have only made minimal changes to descriptions as they appear in
+the published documents. Unless indicated otherwise, most of the sections that
+follow should therefore be considered as quotes from the published versions,
+edited for clarity. In these cases, I have obtained permission for reuse where
+required. Additional code relating to this work can be found at:
+https://github.com/jonwells90.
 
 \section{Methods}
 
 \subsection{Chapter \ref*{chapter:operons}: Operon gene order is optimised for ordered assembly of protein complexes}
 
 \subsubsection{Protein structural datasets}
-We started with the full set of prokaryotic X-ray and electron microscopy structures in the PDB on June 12, 2014. We considered all heteromeric pairs of subunits from the same complex, defined as having at least two different protein chains of at least 30 residues each and mapping to different UniProt sequences from a single species. Complexes with known quaternary structure assignment errors \cite{Levy2007} were excluded. Very large complexes with more than 24 subunits were excluded, because we have not shown that the assembly of these can be predicted accurately from their structures. Heteromeric subunit pairs were filtered for redundancy at the level of 50\% sequence identity.
+We started with the full set of prokaryotic X-ray and electron microscopy
+structures in the PDB on June 12, 2014. We considered all heteromeric pairs of
+subunits from the same complex, defined as having at least two different protein
+chains of at least 30 residues each and mapping to different UniProt sequences
+from a single species. Complexes with known quaternary structure assignment
+errors \cite{Levy2007} were excluded. Very large complexes with more than 24
+subunits were excluded, because we have not shown that the assembly of these can
+be predicted accurately from their structures. Heteromeric subunit pairs were
+filtered for redundancy at the level of 50\% sequence identity.
 
 \subsubsection{Mapping subunit pairs to operons}
-Operon datasets were downloaded from the DOOR2 database \cite{Mao2014}. Relevant datasets were identified based on the species and strain of each gene pair. After converting GI numbers to UniProt accession identifiers in each dataset, the set of gene pairs was mapped to the operon data. Operons encoding both members of a pair were added to a reference dictionary, with the locus and directionality of each gene being used to arrange constituent genes in order of expression. In rare cases where the copy number of a gene within an operon was found to be greater than one, the position of the gene in the operon was taken to be that of the first copy to be encountered, reading in the 5' to 3' direction. The set was then filtered to remove redundant operons (i.e. identical operons from similar strains or species). In total, 368 gene pairs (220 adjacent) were mapped to 192 unique operons, with the remaining 711 pairs being expressed in different transcriptional units. Similarly, we also mapped a set of 2,562 binary protein-protein interactions (IM-22059) \cite{Rajagopala2014} to the E. coli K-12 W3110 operons for the analysis displayed in figure \ref{figure:intervening}C.
+Operon datasets were downloaded from the DOOR2 database \cite{Mao2014}. Relevant
+datasets were identified based on the species and strain of each gene pair.
+After converting GI numbers to UniProt accession identifiers in each dataset,
+the set of gene pairs was mapped to the operon data. Operons encoding both
+members of a pair were added to a reference dictionary, with the locus and
+directionality of each gene being used to arrange constituent genes in order of
+expression. In rare cases where the copy number of a gene within an operon was
+found to be greater than one, the position of the gene in the operon was taken
+to be that of the first copy to be encountered, reading in the 5' to 3'
+direction. The set was then filtered to remove redundant operons (i.e. identical
+operons from similar strains or species). In total, 368 gene pairs (220
+adjacent) were mapped to 192 unique operons, with the remaining 711 pairs being
+expressed in different transcriptional units. Similarly, we also mapped a set of
+2,562 binary protein-protein interactions (IM-22059) \cite{Rajagopala2014} to
+the E. coli K-12 W3110 operons for the analysis displayed in figure
+\ref{figure:intervening}C.
 
-To assess whether the gene order of a pair was evolutionary conserved, we used the STRING v9.1 database \cite{Franceschini2013}. For each pair, we manually assessed, using the STRING online interface, whether all occurrences of a given gene pair shared the same gene order within their local evolutionary group as defined in STRING. This is at the level of phylum (e.g. Firmicutes or Euryarchaeota) or class for proteobacteria. Gene pairs present across only a very limited evolutionary range (less than three genera) were not considered to be evolutionarily conserved. Gene pairs associated with evolutionary gene fusion events were identified as those sharing >40\% sequence identity with a gene pair with evidence for fusion in STRING, similar to what has been done previously \cite{Marsh2013}.
+To assess whether the gene order of a pair was evolutionary conserved, we used
+the STRING v9.1 database \cite{Franceschini2013}. For each pair, we manually
+assessed, using the STRING online interface, whether all occurrences of a given
+gene pair shared the same gene order within their local evolutionary group as
+defined in STRING. This is at the level of phylum (e.g. Firmicutes or
+Euryarchaeota) or class for proteobacteria. Gene pairs present across only a
+very limited evolutionary range (less than three genera) were not considered to
+be evolutionarily conserved. Gene pairs associated with evolutionary gene fusion
+events were identified as those sharing >40\% sequence identity with a gene pair
+with evidence for fusion in STRING, similar to what has been done previously
+\cite{Marsh2013}.
 
 \subsubsection{Abundance measurements}
-We mapped all protein complex subunits in our dataset against the sequences of prokaryotic proteins from PaxDB v4.0 \cite{Wang2015}, selecting abundance measurements from proteins with >90\% sequence identity to a subunit. The results in figures \ref{figure:operonabundance} and \ref{suppfigure:operonexpression} only use abundance measurements from \textit{E. coli}, but the analyses in table \ref{table:abundgeneorder} and figures \ref{suppfigure:operoncomparison}, \ref{suppfigure:geneorder}, and \ref{suppfigure:operonexpression} are repeated using combined measurements from all available prokaryotes and also using protein synthesis rates derived from ribosomal profiling \cite{Li2014b}.
+We mapped all protein complex subunits in our dataset against the sequences of
+prokaryotic proteins from PaxDB v4.0 \cite{Wang2015}, selecting abundance
+measurements from proteins with >90\% sequence identity to a subunit. The
+results in figures \ref{figure:operonabundance} and
+\ref{suppfigure:operonexpression} only use abundance measurements from
+\textit{E. coli}, but the analyses in table \ref{table:abundgeneorder} and
+figures \ref{suppfigure:operoncomparison}, \ref{suppfigure:geneorder}, and
+\ref{suppfigure:operonexpression} are repeated using combined measurements from
+all available prokaryotes and also using protein synthesis rates derived from
+ribosomal profiling \cite{Li2014b}.
 
 \subsubsection{Prediction of assembly pathways}
-Ordered protein complex assembly pathways were predicted in a manner very similar to what has been done previously \cite{Marsh2013}. First, the complex is considered in terms of its constituent subunits and the sizes of the interfaces that can be formed between any pair of subunits are calculated with AREAIMOL \cite{Winn2011}. Our model assumes that assembly will proceed via formation of the largest possible interface. The process is then repeated by calculating all possible interfaces that could form between subunits and subcomplexes until the full complex is assembled. To define which of a pair of subunits assembles first and which assembles later, we consider the first step of assembly that brings the two subunits together within the same (sub)complex. Whichever subunit was part of a larger subcomplex prior to this step is defined as assembling first. For example, in the blue pathway in figure \ref{figure:operonassembly}A, the blue subunit homodimerizes first and then interacts sequentially with the free red subunits, so the blue subunit is defined as assembling first. If, alternatively, the first step of assembly had been a heterodimerization between the blue and red subunits, then both subunits would be classified as assembling simultaneously. The source code for predicting assembly pathways from protein complex structures is available at https://github.com/marshlab/assembly-prediction.
+Ordered protein complex assembly pathways were predicted in a manner very
+similar to what has been done previously \cite{Marsh2013}. First, the complex is
+considered in terms of its constituent subunits and the sizes of the interfaces
+that can be formed between any pair of subunits are calculated with AREAIMOL
+\cite{Winn2011}. Our model assumes that assembly will proceed via formation of
+the largest possible interface. The process is then repeated by calculating all
+possible interfaces that could form between subunits and subcomplexes until the
+full complex is assembled. To define which of a pair of subunits assembles first
+and which assembles later, we consider the first step of assembly that brings
+the two subunits together within the same (sub)complex. Whichever subunit was
+part of a larger subcomplex prior to this step is defined as assembling first.
+For example, in the blue pathway in figure \ref{figure:operonassembly}A, the
+blue subunit homodimerizes first and then interacts sequentially with the free
+red subunits, so the blue subunit is defined as assembling first. If,
+alternatively, the first step of assembly had been a heterodimerization between
+the blue and red subunits, then both subunits would be classified as assembling
+simultaneously. The source code for predicting assembly pathways from protein
+complex structures is available at
+https://github.com/marshlab/assembly-prediction.
 
 \clearpage
-\subsection{Chapter \ref*{chapter:degradation}: Degradation kinetics of proteins are explained by assembly of protein complexes}
+\subsection{Chapter \ref*{chapter:degradation}: Degradation kinetics of proteins
+are explained by assembly of protein complexes}
 
 \subsubsection{Protein structural dataset}
-Starting from the entire set of protein structures in the Protein Data Bank on 2016-02-24, we searched for all polypeptide chains with >70\% sequence identity to a human or mouse gene. For genes that map to multiple chains, we selected a single chain sorting by sequence identity, then number of unique subunits in the complex, and then the number of atoms present in the chain. Pairwise interfaces were calculated between all pairs of subunits using AREAIMOL \cite{Winn2011}. The normalised assembly order was calculated for all complexes, excluding those containing nucleic acid chains, by first predicting the (dis)assembly pathway as previously described using all the pairwise interfaces from each heteromeric complex \cite{Marsh2013} and implemented in the assembly-prediction package \cite{Wells2016}. For subunits with multiple copies within a single complex, the average assembly order of each subunit type was considered. The normalised assembly order was defined so that the first subunit to assemble has a value of 0, the last has a value of 1, and the average value for all unique subunits in a complex is equal to 0.5.
+Starting from the entire set of protein structures in the Protein Data Bank on
+2016-02-24, we searched for all polypeptide chains with >70\% sequence identity
+to a human or mouse gene. For genes that map to multiple chains, we selected a
+single chain sorting by sequence identity, then number of unique subunits in the
+complex, and then the number of atoms present in the chain. Pairwise interfaces
+were calculated between all pairs of subunits using AREAIMOL \cite{Winn2011}.
+The normalised assembly order was calculated for all complexes, excluding those
+containing nucleic acid chains, by first predicting the (dis)assembly pathway as
+previously described using all the pairwise interfaces from each heteromeric
+complex \cite{Marsh2013} and implemented in the assembly-prediction package
+\cite{Wells2016}. For subunits with multiple copies within a single complex, the
+average assembly order of each subunit type was considered. The normalised
+assembly order was defined so that the first subunit to assemble has a value of
+0, the last has a value of 1, and the average value for all unique subunits in a
+complex is equal to 0.5.
 
 \subsubsection{Non-structural dataset}
-To complement the analysis of protein complexes of known structure, we also performed coexpression analyses on the non-redundant `core' set of mammalian complexes from CORUM \cite{Ruepp2009} (downloaded 2015-10-20). As CORUM preferentially uses human complexes in its non-redundant set, homologous mouse versions of each complex were generated by replacing each subunit/gene with its mouse counterpart, provided sequence identity was at least 70\%. Sequence identities were calculated by collecting all mouse sequences for which NED/ED classifications were available and running BLAST on these against all genes in the CORUM core set. In cases where the identity of a subunit was ambiguous (as defined by CORUM), the first possible subunit for which homology data were available was selected.
+To complement the analysis of protein complexes of known structure, we also
+performed coexpression analyses on the non-redundant `core' set of mammalian
+complexes from CORUM \cite{Ruepp2009} (downloaded 2015-10-20). As CORUM
+preferentially uses human complexes in its non-redundant set, homologous mouse
+versions of each complex were generated by replacing each subunit/gene with its
+mouse counterpart, provided sequence identity was at least 70\%. Sequence
+identities were calculated by collecting all mouse sequences for which NED/ED
+classifications were available and running BLAST on these against all genes in
+the CORUM core set. In cases where the identity of a subunit was ambiguous (as
+defined by CORUM), the first possible subunit for which homology data were
+available was selected.
 
-For further validation of the tendency of NED proteins to be `core' subunits, processed mass spectrometric data was acquired from the dataset published by Hein et al. \cite{Hein2015}. Their definition of core stoichiometry signature was used, specifically those proteins matching the criteria of residing in the circle with radius: 1 (in $log{10}$ units), centred at: -0.5, 0 (abundance stoichiometry to interaction stoichiometry, see figure 3B\cite{Hein2015}).
+For further validation of the tendency of NED proteins to be `core' subunits,
+processed mass spectrometric data was acquired from the dataset published by
+Hein et al. \cite{Hein2015}. Their definition of core stoichiometry signature
+was used, specifically those proteins matching the criteria of residing in the
+circle with radius: 1 (in $log{10}$ units), centred at: -0.5, 0 (abundance
+stoichiometry to interaction stoichiometry, see figure 3B\cite{Hein2015}).
 
 \subsubsection{Coexpression analyses}
-Coexpression data were downloaded from COXPRESdb \cite{Okamura2014} (mouse dataset: Mmu.v13-01.G20959-S31479; human dataset: Hsa.v13-01.G20280-S73083). For each complex, the mean coexpression of each available subunit was calculated, using pairwise correlations with all other available subunits in the complex. Cases where fewer than three unique subunits were present in the complex were discarded, due to calculations of average coexpression for each protein being superficially identical.
+Coexpression data were downloaded from COXPRESdb \cite{Okamura2014} (mouse
+dataset: Mmu.v13-01.G20959-S31479; human dataset: Hsa.v13-01.G20280-S73083). For
+each complex, the mean coexpression of each available subunit was calculated,
+using pairwise correlations with all other available subunits in the complex.
+Cases where fewer than three unique subunits were present in the complex were
+discarded, due to calculations of average coexpression for each protein being
+superficially identical.
 
 \subsubsection{eQTL analyses}
-Human protein complexes were downloaded from the PDB (2016-11-24) using a minimum sequence identity of 90\% for all chains in order to exclude structures such as human-viral complexes. eQTL data for 53 tissues was acquired from GTEx (v6p release) and then mapped to the human complexes. In order to maximise the available data, tissue datasets were selected by using whichever tissue maximised the number of available eQTLs for each complex.
+Human protein complexes were downloaded from the PDB (2016-11-24) using a
+minimum sequence identity of 90\% for all chains in order to exclude structures
+such as human-viral complexes. eQTL data for 53 tissues was acquired from GTEx
+(v6p release) and then mapped to the human complexes. In order to maximise the
+available data, tissue datasets were selected by using whichever tissue
+maximised the number of available eQTLs for each complex.
 
-\subsection{Chapter \ref*{chapter:aneuploidy}: Autosomal dosage compensation in aneuploid cells}
+\subsection{Chapter \ref*{chapter:aneuploidy}: Autosomal dosage compensation in
+aneuploid cells}
 \subsubsection{Protein structural dataset}
-A large collection of \textit{S. cerevisiae} complexes was compiled from the PDB by mapping any structures containing chains that mapped with at least 90\% sequence identity to yeast proteins. Where overlapping subcomplexes existed, those with the greatest number of unique subunits were retained. Genes from these complexes were then mapped to the yeast aneuploidy dataset provided in Dephoure et al. \cite{Dephoure2014}. Wherever genes mapped to multiple PDB structures, structures were selected on the basis of highest sequence identity. Assembly order predictions were calculated using the same assembly-prediction package as previously described \cite{Wells2016}.
+A large collection of \textit{S. cerevisiae} complexes was compiled from the PDB
+by mapping any structures containing chains that mapped with at least 90\%
+sequence identity to yeast proteins. Where overlapping subcomplexes existed,
+those with the greatest number of unique subunits were retained. Genes from
+these complexes were then mapped to the yeast aneuploidy dataset provided in
+Dephoure et al. \cite{Dephoure2014}. Wherever genes mapped to multiple PDB
+structures, structures were selected on the basis of highest sequence identity.
+Assembly order predictions were calculated using the same assembly-prediction
+package as previously described \cite{Wells2016}.
 
 
 \subsubsection{Aggregation dataset}
-To briefly summarise, the experimental protocol for acquiring SILAC aggregation data is essentially the same as that described in Dephoure et al. \cite{Dephoure2014}, with the exception being that the whole cell lysate is centrifuged to extract the aggregated fraction separately. The data from the aggregate fraction in each experiment are initially normalised (by our collaborators) by subtracting the average of all $log{2}$ disomic ratios from single-copy genes (which should theoretically be zero) from each protein in the aggregate.
+To briefly summarise, the experimental protocol for acquiring SILAC aggregation
+data is essentially the same as that described in Dephoure et al.
+\cite{Dephoure2014}, with the exception being that the whole cell lysate is
+centrifuged to extract the aggregated fraction separately. The data from the
+aggregate fraction in each experiment are initially normalised (by our
+collaborators) by subtracting the average of all $log{2}$ disomic ratios from
+single-copy genes (which should theoretically be zero) from each protein in the
+aggregate.
 
-Further normalisation is carried out using mean centring. Specifically, each data point is rescaled such that the mean of all data points in each experiment (i.e. each disomic yeast strain) is equal to the overall mean disomic ratio of all experiments combined. This has the effect of reducing the variance attributable to batch effects - see figure \ref{suppfigure:aneuploidy_aggnorm}.
+Further normalisation is carried out using mean centring. Specifically, each
+data point is rescaled such that the mean of all data points in each experiment
+(i.e. each disomic yeast strain) is equal to the overall mean disomic ratio of
+all experiments combined. This has the effect of reducing the variance
+attributable to batch effects - see figure \ref{suppfigure:aneuploidy_aggnorm}.
 
 \subsubsection{Normalised abundance calculations}
-Protein abundance data for yeast was acquired from PaxDB v4.0 \cite{Wang2015} and mapped to each gene in the structural dataset. These values were then normalised as follows:
+Protein abundance data for yeast was acquired from PaxDB v4.0 \cite{Wang2015}
+and mapped to each gene in the structural dataset. These values were then
+normalised as follows:
 
 \begin{displaymath}
     f(x) = \log_2 x - \log_2 m
 \end{displaymath}
 
-Where $m$ is the median abundance of subunits within each complex. This normalisation procedure allows abundance differences to be measured in terms of $log_{2}$ fold-change.
+Where $m$ is the median abundance of subunits within each complex. This
+normalisation procedure allows abundance differences to be measured in terms of
+$log_{2}$ fold-change.
 
 \subsubsection{Disorder predictions}
-Disorder predictions for the complete set of protein sequences from \textit{S. cerevisiae} were generated using the command line version of IUPred Version 1.0 \cite{Dosztanyi2005a,Dosztanyi2005}, with the output being a disorder score for each residue in the sequences. An overall score for each protein was given my taking the mean disorder score across all residues.
+Disorder predictions for the complete set of protein sequences from \textit{S.
+cerevisiae} were generated using the command line version of IUPred Version 1.0
+\cite{Dosztanyi2005a,Dosztanyi2005}, with the output being a disorder score for
+each residue in the sequences. An overall score for each protein was given my
+taking the mean disorder score across all residues.
 
-\subsection{Chapter \ref*{chapter:hawks}: Hawk proteins: A paralogous family of eukaryotic SMC-kleisin regulators}\label{subsection:hawkmethods}
+\subsection{Chapter \ref*{chapter:hawks}: Hawk proteins: A paralogous family of
+eukaryotic SMC-kleisin regulators}\label{subsection:hawkmethods}
 
 \subsubsection{Construction of homology networks}
-Proteome fasta files for \textit{S. cerevisiae}, \textit{S. pombe} and \textit{H. sapiens} were downloaded from the UniProt reference proteomes databank \cite{Consortium2017} (2016-04) and HHSuite v.3.0.0 was compiled from source \cite{Soding2005,Remmert2011}. HHsuite databases were constructed as per the protocol described in the HH-suite manual (available at http://www.mpibpc.mpg.de/soeding or https://github.com/soedinglab/hh-suite), using the clustered uniprot20\_2016\_02 database. It should be noted that due to the fact that HHsuite databases are generated from large multiple sequence alignments for each protein, the resulting species databases are not independent. Orthologous proteins in each species will, by virtue of that fact, produce profile HMMs with significant overlap.
+Proteome fasta files for \textit{S. cerevisiae}, \textit{S. pombe} and
+\textit{H. sapiens} were downloaded from the UniProt reference proteomes
+databank \cite{Consortium2017} (2016-04) and HHSuite v.3.0.0 was compiled from
+source \cite{Soding2005,Remmert2011}. HHsuite databases were constructed as per
+the protocol described in the HH-suite manual (available at
+http://www.mpibpc.mpg.de/soeding or https://github.com/soedinglab/hh-suite),
+using the clustered uniprot20\_2016\_02 database. It should be noted that due to
+the fact that HHsuite databases are generated from large multiple sequence
+alignments for each protein, the resulting species databases are not
+independent. Orthologous proteins in each species will, by virtue of that fact,
+produce profile HMMs with significant overlap.
 
-Seed sequences for putative members of the Hawk family were selected semi-arbitrarily for each species. Each seed was searched against the uniprot20 database using HHblits \cite{Remmert2011} (local alignment, two iterations). Predicted secondary structure was added to each MSA/profile HMM using PSIPRED \cite{Jones1999}. The resulting profile HMMs were then searched against the relevant species-specific database using HHsearch (local alignment, single iteration, no pre-filter) to generate a list of at most 500 putative paralogues from each seed. In turn, each one of these sequences was subjected to the same procedure, producing a large set of nodes and edges, with nodes representing proteins and edges representing alignments between them, weighted by the rank of the alignment.
+Seed sequences for putative members of the Hawk family were selected
+semi-arbitrarily for each species. Each seed was searched against the uniprot20
+database using HHblits \cite{Remmert2011} (local alignment, two iterations).
+Predicted secondary structure was added to each MSA/profile HMM using PSIPRED
+\cite{Jones1999}. The resulting profile HMMs were then searched against the
+relevant species-specific database using HHsearch (local alignment, single
+iteration, no pre-filter) to generate a list of at most 500 putative paralogues
+from each seed. In turn, each one of these sequences was subjected to the same
+procedure, producing a large set of nodes and edges, with nodes representing
+proteins and edges representing alignments between them, weighted by the rank of
+the alignment.
 
-The resulting graph was filtered by removing edges arising from alignments with a length of less than 100 columns (accounting for the length of ~2 HEAT repeats), an expect-value of greater than 0.01 (thus controlling the false-discovery rate) or a true positive probability of less than 15\%. Edge weights were then normalised according to the following formula, such that the normalised rank $f(r)$ lies between 0.01 and 1.0, with 1.0 being the best possible mean rank and 0.01 the worst.
+The resulting graph was filtered by removing edges arising from alignments with
+a length of less than 100 columns (accounting for the length of ~2 HEAT
+repeats), an expect-value of greater than 0.01 (thus controlling the
+false-discovery rate) or a true positive probability of less than 15\%. Edge
+weights were then normalised according to the following formula, such that the
+normalised rank $f(r)$ lies between 0.01 and 1.0, with 1.0 being the best
+possible mean rank and 0.01 the worst.
 
 \begin{displaymath}
-    f(r) = \frac{1}{1 + \frac{99(r – r_{min} )}{r_{max} - r_{min}}}, 1 \leq r \leq 500
+    f(r) = \frac{1}{1 + \frac{99(r – r_{min} )}{r_{max} - r_{min}}}, 1 \leq r
+    \leq 500
 \end{displaymath}
 
-At this stage, each edge has a direction, pointing from the protein used as a query sequence to the returned paralogous protein. As such, a given pair of nodes can be connected by either one edge or two - the former only being possible if a protein appeared exclusively in the second round of searches and was therefore not queried itself. In order to make the graph undirected, all nodes with a degree of less than 2 were discarded and the remaining edges between each pair of nodes combined and weighted by the geometric mean of normalised alignment ranks. Since the geometric mean is always lower than the arithmetic mean, this avoids giving too much weight to results from proteins with very few significant alignments.
+At this stage, each edge has a direction, pointing from the protein used as a
+query sequence to the returned paralogous protein. As such, a given pair of
+nodes can be connected by either one edge or two - the former only being
+possible if a protein appeared exclusively in the second round of searches and
+was therefore not queried itself. In order to make the graph undirected, all
+nodes with a degree of less than 2 were discarded and the remaining edges
+between each pair of nodes combined and weighted by the geometric mean of
+normalised alignment ranks. Since the geometric mean is always lower than the
+arithmetic mean, this avoids giving too much weight to results from proteins
+with very few significant alignments.
 
-Finally, clustering was carried out using the mcl algorithm with an inflation parameter I = 2.5 for all networks \cite{VanDongen2000}. Initial network construction and parameter setting was performed on a fully-labelled \textit{S. cerevisiae} network, but \textit{S. pombe} and \textit{H. sapiens} replicates were performed on blinded graphs, with genes in each cluster only being revealed after all filtering and cluster parameters had been fixed. GO term enrichment analysis was carried out using the Cytoscape BiNGO app, with GO `Biological Process' annotations \cite{Maere2005}. P-values were generated using the hypergeometric test and corrected for false discovery rate using the Benjamini-Hochberg method \cite{Benjamini1995,Maere2005}.
+Finally, clustering was carried out using the mcl algorithm with an inflation
+parameter I = 2.5 for all networks \cite{VanDongen2000}. Initial network
+construction and parameter setting was performed on a fully-labelled \textit{S.
+cerevisiae} network, but \textit{S. pombe} and \textit{H. sapiens} replicates
+were performed on blinded graphs, with genes in each cluster only being revealed
+after all filtering and cluster parameters had been fixed. GO term enrichment
+analysis was carried out using the Cytoscape BiNGO app, with GO `Biological
+Process' annotations \cite{Maere2005}. P-values were generated using the
+hypergeometric test and corrected for false discovery rate using the
+Benjamini-Hochberg method \cite{Benjamini1995,Maere2005}.
 
 \subsubsection{Homology network permutation tests}
-Assuming a null hypothesis under which alignment ranks contain no information about the relative likelihood of two proteins being related, a single control network was constructed for each species. This was generated from the observed network by randomising the edge weights between each pair of nodes. This was achieved by pre-filtering alignments as usual, but randomly assigning ranks. These were then normalised and averaged as for the observed network. Each random network was then clustered and each cluster tested for membership of Hawk proteins; specifically we ask: does there exist a cluster in the random graph containing exclusively those proteins from the largest Hawk cluster in the observed graph? This process was repeated 106 times for each species, and the resulting p-value calculated as the number of times the complete Hawk cluster was seen, divided by the number of trials.
+Assuming a null hypothesis under which alignment ranks contain no information
+about the relative likelihood of two proteins being related, a single control
+network was constructed for each species. This was generated from the observed
+network by randomising the edge weights between each pair of nodes. This was
+achieved by pre-filtering alignments as usual, but randomly assigning ranks.
+These were then normalised and averaged as for the observed network. Each random
+network was then clustered and each cluster tested for membership of Hawk
+proteins; specifically we ask: does there exist a cluster in the random graph
+containing exclusively those proteins from the largest Hawk cluster in the
+observed graph? This process was repeated 106 times for each species, and the
+resulting p-value calculated as the number of times the complete Hawk cluster
+was seen, divided by the number of trials.
 
 \subsubsection{Searching for lokiarchaeota HEAT repeat sequences}
-13 Lokiarchaeota proteins containing HEAT repeats were downloaded from the UniProt database; 9 on the basis of UniProt sequence annotations and an additional 4 proteins, including 2 fragments, on the basis of HHsuite searches and manual inspection. These sequences were searched against our human HHsuite database, and the resulting human sequences searched back against the lokiarchaeota database. A sub-graph was built using the same parameters as for the main eukaryote networks, leaving exactly 10 archaeal proteins remaining after quality control. The resulting set of edges was concatenated onto the human network and re-clustered.
+13 Lokiarchaeota proteins containing HEAT repeats were downloaded from the
+UniProt database; 9 on the basis of UniProt sequence annotations and an
+additional 4 proteins, including 2 fragments, on the basis of HHsuite searches
+and manual inspection. These sequences were searched against our human HHsuite
+database, and the resulting human sequences searched back against the
+lokiarchaeota database. A sub-graph was built using the same parameters as for
+the main eukaryote networks, leaving exactly 10 archaeal proteins remaining
+after quality control. The resulting set of edges was concatenated onto the
+human network and re-clustered.
 
 \subsubsection{Mapping of repeat domain boundaries}
-Sequences from \textit{S. cerevisiae} hawks and clathrin adaptors were used to generate multiple sequence alignments with HHblits. Multiple sequence alignments were generated with the uniprot20\_2016\_02 database. These alignments were subsequently passed to the HHRepID web server \newline (https://toolkit.tuebingen.mpg.de/hhrepid). The threshold p-value for assigning repeat domain families was kept at 0.01, and the threshold for suboptimal self-alignments was set to 0.1, also the default. The number of HHblits iterations was set to 0 since we had produced our own MSAs in the preceding step. Repeat predictions were collected from the HHRepID results with alignment stringencies between 0.0 and 0.3, depending on which value produced highest confidence predictions.
+Sequences from \textit{S. cerevisiae} hawks and clathrin adaptors were used to
+generate multiple sequence alignments with HHblits. Multiple sequence alignments
+were generated with the uniprot20\_2016\_02 database. These alignments were
+subsequently passed to the HHRepID web server \newline
+(https://toolkit.tuebingen.mpg.de/hhrepid). The threshold p-value for assigning
+repeat domain families was kept at 0.01, and the threshold for suboptimal
+self-alignments was set to 0.1, also the default. The number of HHblits
+iterations was set to 0 since we had produced our own MSAs in the preceding
+step. Repeat predictions were collected from the HHRepID results with alignment
+stringencies between 0.0 and 0.3, depending on which value produced highest
+confidence predictions.
 
 \subsubsection{Structural alignments and conservation mapping}
-Structures for human Pds5B and SA-2 were downloaded from the PDB (5HDT \cite{Ouyang2016} and 4PJU \cite{Hara2014} respectively, 28.04.2016). Structures were aligned in PyMol using TM-align \cite{PyMol2016,Zhang2005}, both globally and locally by splitting SA-2 and Pds5B at residues L436 and Y462 respectively and realigning each half. Conservation mapping was performed using multiple sequence alignments generated as follows: For Pds5B and SA-2, 1000 metazoan sequences for each were retrieved from the NCBI non-redundant sequence database using blastp, then clustered to 90\% sequence identity with usearch \cite{Altschul1990,Edgar2010}. The remaining sequences were then aligned in forward and reverse directions with MAFFT, MUSCLE and GlProbs, with a final composite MSA being generated with MergeAlign \cite{Katoh2002,Edgar2004,Ye2015,Collingridge2012}. Finally, these were mapped onto the PDB structures in Chimera \cite{Pettersen2004}.
+Structures for human Pds5B and SA-2 were downloaded from the PDB (5HDT
+\cite{Ouyang2016} and 4PJU \cite{Hara2014} respectively, 28.04.2016). Structures
+were aligned in PyMol using TM-align \cite{PyMol2016,Zhang2005}, both globally
+and locally by splitting SA-2 and Pds5B at residues L436 and Y462 respectively
+and realigning each half. Conservation mapping was performed using multiple
+sequence alignments generated as follows: For Pds5B and SA-2, 1000 metazoan
+sequences for each were retrieved from the NCBI non-redundant sequence database
+using blastp, then clustered to 90\% sequence identity with usearch
+\cite{Altschul1990,Edgar2010}. The remaining sequences were then aligned in
+forward and reverse directions with MAFFT, MUSCLE and GlProbs, with a final
+composite MSA being generated with MergeAlign
+\cite{Katoh2002,Edgar2004,Ye2015,Collingridge2012}. Finally, these were mapped
+onto the PDB structures in Chimera \cite{Pettersen2004}.
 
 \subsubsection{Analysis of putative Nse5 and Nse6 HEATS}
-Specific searches for HEAT-containing Nse5 and Nse6 homologues were carried out with the same parameters as for the main network – HHblits with 2 iterations to generate profile HMMs, followed by HHsearch to find significant alignments in the three main species datasets. Kre29 was used in place of Nse6 for S. cerevisiae, and Slf2 for Human. Subsequent searches using HHblits/HHsearch were carried out with more iterations for the HHblits step – this increases sensitivity but at the cost of accuracy in determining relative rank of alignments. Additional searches were performed in a wider variety of species using the proteome datasets available on the HHSuite webserver. Next, HHRepID \cite{Biegert2008} was used to try and detect repeats within Nse5-6 themselves (as opposed to HEAT containing homologues). As before, human Slf2 was also checked, as was Kre29. Iterations ranging from 3-8 were used to generate the profile HMMs, thus spanning a wide range of sensitivities.
+Specific searches for HEAT-containing Nse5 and Nse6 homologues were carried out
+with the same parameters as for the main network – HHblits with 2 iterations to
+generate profile HMMs, followed by HHsearch to find significant alignments in
+the three main species datasets. Kre29 was used in place of Nse6 for S.
+cerevisiae, and Slf2 for Human. Subsequent searches using HHblits/HHsearch were
+carried out with more iterations for the HHblits step – this increases
+sensitivity but at the cost of accuracy in determining relative rank of
+alignments. Additional searches were performed in a wider variety of species
+using the proteome datasets available on the HHSuite webserver. Next, HHRepID
+\cite{Biegert2008} was used to try and detect repeats within Nse5-6 themselves
+(as opposed to HEAT containing homologues). As before, human Slf2 was also
+checked, as was Kre29. Iterations ranging from 3-8 were used to generate the
+profile HMMs, thus spanning a wide range of sensitivities.
 
-Finally, a literature search was performed to try and identify the published evidence for the Nse5-6 HEAT annotations. On the basis of evidence for HEATs in Nse6 presented by Pebernard et al. \cite{Pebernard2006}, we attempted to replicate their finding using the structural prediction server 3D-PSSM, which is now obsolete \cite{Kelley2000}. Following this, we used the Phyre2 web server \cite{Kelley2015} with the Nse6 sequence (UniProt id - O13688) using default settings.
-
+Finally, a literature search was performed to try and identify the published
+evidence for the Nse5-6 HEAT annotations. On the basis of evidence for HEATs in
+Nse6 presented by Pebernard et al. \cite{Pebernard2006}, we attempted to
+replicate their finding using the structural prediction server 3D-PSSM, which is
+now obsolete \cite{Kelley2000}. Following this, we used the Phyre2 web server
+\cite{Kelley2015} with the Nse6 sequence (UniProt id - O13688) using default
+settings.
 
 \end{document}
