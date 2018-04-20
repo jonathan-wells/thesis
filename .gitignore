@@ -47,3 +47,4 @@ appendices/
 *.docx
 
 !jnw_thesis.pdf
+!README.md
