@@ -1,0 +1,257 @@
+\documentclass[a4paper,11pt,twoside,openright]{scrbook}
+
+\usepackage{../jnwthesis} \usepackage{amsmath} \usepackage{lipsum}
+\usepackage{pdfpages} \includepdfset{offset=1cm 0cm} \usepackage{standalone}
+\standalonetrue
+
+\bibliography{/Users/jonwells/Documents/bibtex/Thesis} \graphicspath{{../figs/}}
+
+\begin{document}
+
+\appendix \chapter{Appendices} \section{Supplementary information}
+
+\subsection{Chapter \ref*{chapter:operons}: Operon gene order is optimised for
+ordered assembly of protein complexes}
+
+\begin{figure}[hb] \includegraphics{c2_suppfig_comparison} \caption[Additional
+    comparisons of subunits pairs encoded in the same vs. different
+    transcriptional units]{\sffamily \textbf{Additional comparisons of subunits
+    pairs encoded in the same vs. different transcriptional units} \\ \small (A)
+    This figure shows the results from the same analysis as figure
+    \ref{figure:operonabundance} B-C but using PaxDB abundance data for all
+    organisms. The correlations between those pairs encoded in different
+    transcriptional units is significant (p-value = 0.004), and calculated as
+    figure \ref{figure:operonabundance} (B) Same as figure
+    \ref{figure:operonabundance}B-C but using protein synthesis rates from
+    ribosomal profiling data \cite{Li2014b}. P-value < \(10^{-5}\). Adapted from
+    figure S1, Wells et al. \cite{Wells2016}}
+\label{suppfigure:operoncomparison} \end{figure}
+
+\begin{figure} \includegraphics[width=\textwidth]{c2_suppfig_nqooperon}
+    \caption[Relationship between gene pair proximity and likelihood of physical
+    interaction, controlling for \textit{nqo} operon]{\sffamily
+    \textbf{Relationship between gene pair proximity and likelihood of physical
+    interaction, controlling for \textit{nqo} operon} \\ \small Panels (A) and
+    (B) relate to the \textit{nqo} operon from \textit{Thermus thermophilus},
+    which encodes respiratory chain complex 1. Due to its size (17 genes), it
+    accounts for more than half of non-adjacent gene pairs in our dataset
+    (78/148). Within both the dataset when excluding it this operon and within
+    the operon by itself (B), the observed number of interacting genes is higher
+    than expected by chance. P-values calculated as for figure
+    \ref{figure:interveningcontrol}. Adapted from figure S2, Wells et al.
+    \cite{Wells2016}} \label{suppfigure:nqooperon} \end{figure}
+
+\begin{figure} \includegraphics{c2_suppfig_fusion} \caption[Gene fusion events
+    conserve assembly order in adjacent gene pairs]{\sffamily \textbf{Gene
+    fusion events conserve assembly order in adjacent gene pairs} \\ \small
+    Error bars represent Wilson 68\% binomial confidence intervals and p-values
+    were calculated with Fisher's exact test. Adapted from figure S3, Wells et
+    al. \cite{Wells2016}} \label{suppfigure:fusion} \end{figure}
+
+\begin{figure} \includegraphics{c2_suppfig_nonadjcomparison} \caption[Comparison
+    of gene order, assembly order and interface size for adjacent and
+    non-adjacent gene pairs]{\sffamily \textbf{Comparison of gene order,
+    assembly order and interface size for adjacent and non-adjacent gene pairs}
+    \\ \small Plots on the left describe the percentage of gene pairs for which
+    assembly order matches gene order, split into adjacent pairs, those
+    separated by a single intervening gene, and those separated by more than 1
+    gene (only genes with evolutionarily conserved order are shown.) Error bars
+    are 68\% Wilson binomial confidence intervals. On the right, plots show the
+    distribution of interface sizes for interacting pairs where gene order
+    matches or doesn't match assembly order. P-values calculated with Wilcoxon
+    rank-sum tests. Adapted from figure S4, Wells et al. \cite{Wells2016}}
+\label{suppfigure:nonadjcomparison} \end{figure}
+
+\begin{figure} \includegraphics{c2_suppfig_geneorder} \caption[Gene order is a
+    better predictor of assembly order than protein abundance]{\sffamily
+    \textbf{Gene order is a better predictor of assembly order than protein
+    abundance} \\ \small All gene pairs are those where gene order is conserved,
+    error bars are 68\% Wilson binomial confidence intervals and p-values are
+    Fisher's exact test. Adapted from figure S5, Wells et al. \cite{Wells2016}}
+\label{suppfigure:geneorder} \end{figure}
+
+\begin{figure} \includegraphics{c2_suppfig_operongo} \caption[Enrichment
+    analysis of gene ontology terms for gene pairs in which assembly order does
+    not match gene order]{\sffamily \textbf{Enrichment analysis of gene ontology
+    terms for gene pairs in which assembly order does not match gene order} \\
+    \small Top five significant, non-redundant GO term enrichments for gene
+    pairs in our dataset. In the above plots, `Other' refers to cases where gene
+    order is not conserved or where there is no well-defined assembly order.GO
+    terms were filtered for redundancy, with terms appearing together in more
+    than 50\% of proteins in the GOA database, then only the most significant
+    term was included in the non-redundant set. Error bars are 68\% Wilson
+    binomial confidence intervals and p-values were calculated using
+    approximations of Fisher's exact test, based on \(2 \times 10^{6}\) Monte
+    Carlo iterations. The apparent enrichment for `organelle' stems from just
+    three complexes, and is thus probably not meaningful. Adapted from figure
+    S6, Wells et al. \cite{Wells2016}} \label{suppfigure:operongo} \end{figure}
+
+\begin{figure} \includegraphics{c2_suppfig_operonexpression} \caption[Additional
+    comparisons of protein abundance for pairs where gene order matches assembly
+    order and vice versa]{\sffamily \textbf{Additional comparisons of protein
+    abundance for pairs where gene order matches assembly order and vice versa}
+    \\ \small These plots are the same as the analysis in figure
+    \ref{figure:operonexpression}, but using abundance data from all organisms
+    or absolute protein synthesis rates. Adapted from figure S7, Wells et al.
+    \cite{Wells2016}} \label{suppfigure:operonexpression} \end{figure}
+
+\clearpage
+
+\subsection{Chapter \ref*{chapter:degradation}: Degradation kinetics of proteins
+are explained by assembly of protein complexes}
+
+\begin{figure}[h] \includegraphics{c3_suppfig_ribocontrol} \caption[Enrichment
+    of NED proteins in heteromers is independent of the presence of
+    ribosomes]{\sffamily \textbf{Enrichment of NED proteins in heteromers is
+    independent of the presence of ribosomes} \\ \small Since ribosomal subunits
+    are prevalent in our dataset and are known to be degraded rapidly when in
+    excess \cite{Warner1999,Sung2016}, I repeated the analyses in figure
+    \ref{figure:nedcomplex}A-B, again finding highly significant differences.}
+\label{suppfigure:ribocontrol} \end{figure}
+
+\begin{figure}
+    \makebox[\textwidth]{\includegraphics[width=\textwidth]{c3_suppfig_human}}
+    \caption[Non-exponentially degraded proteins are common - human]{\sffamily
+    \textbf{Non-exponentially degraded proteins are common - human} \\ \small
+    Replicated version of figure \ref{figure:nedcomplex}A-D using human data
+    generated from RPE1 cells.} \label{suppfigure:human} \end{figure}
+
+\begin{figure} \includegraphics[width=\textwidth]{c3_suppfig_humancorum}
+    \caption[Increased NED protein coexpression is not unique to structural data
+    - human]{\sffamily \textbf{Increased NED protein coexpression is not unique
+    to structural data - human} \\ \small Replicated version of figure
+    \ref{figure:corum} using human data generated from RPE1 cells.}
+\label{figure:humancorum} \end{figure}
+
+\clearpage
+
+\subsection{Chapter \ref*{chapter:aneuploidy}: Autosomal dosage compensation in
+aneuploid cells}
+
+\vspace{55mm}
+
+\begin{figure}[h] \makebox[\textwidth]{%
+        \includegraphics[width=\textwidth]{c4_suppfig_qsdsratio}}
+        \caption[Replicate of fig. 5A-B, Dephoure et al.]{\sffamily
+        \textbf{Replicate of fig. 5A-B, Dephoure et al.} \\ \small Those
+        proteins not found in the Pu et al. \cite{Pu2009} dataset are
+        approximately normally distributed around 1, i.e. are not attenuated at
+        all upon gene duplication, with a median disomic ratio of 0.96. In
+        contrast, proteins that are found in complexes are significantly
+        attenuated, with a median of 0.68. 7 outliers with values < -3 or > 3
+        have been removed.} \label{suppfigure:aneuploidy_qstype} \end{figure}
+
+\begin{figure}[h] \fcapsideright {\caption[Log2 fold-change in subunit abundance
+    vs. median subunit abundance]{\sffamily\textbf{Log2 fold-change in subunit
+    abundance vs. median subunit abundance}\newline \small When calculating the
+    fold change of subunit abundance relative to the median subunit abundance
+    within a complex, there is no significant difference between attenuated and
+    non-attenuated proteins. This is in contrast to NED vs. ED, in which the
+    former tend to be relatively more abundant. Fold change was calculated as
+    log2 (subunit abundance/median
+    abundance).}\label{suppfigure:aneuploidy_abundance}}
+{\includegraphics[width=0.5\textwidth]{c4_suppfig_abundance}} \end{figure}
+
+
+\begin{figure}[h] \makebox[\textwidth]{%
+        \includegraphics[width=\textwidth]{c4_suppfig_aggnorm}} \caption[Pre-
+        and post-normalisation of aggregation data]{\sffamily \textbf{Pre- and
+        post-normalisation of aggregation data} \\ \small Pilot aggregation data
+        pre- (A) and post-normalisation (B). Chromosomes are arranged ordered by
+        size, from smallest to largest, as measured by number of genes.
+        `Non-disomic average' refers to all proteins on non-duplicated
+        chromosomes, averaged across all experiments in which they are detected.
+        Normalisation carried out by...} \label{suppfigure:aneuploidy_aggnorm}
+\end{figure}
+
+
+\clearpage
+
+\subsection{Chapter \ref*{chapter:hawks}: Hawk proteins: A paralogous family of
+eukaryotic SMC-kleisin regulators}
+
+\vspace{35mm}
+
+\begin{figure}[hb] \includegraphics{c5_suppfig_clusters} \caption[Clustered
+    yeast network with inter-cluster edges]{\sffamily \textbf{Clustered yeast
+    network with inter-cluster edges} \\ \small  \textit{Saccharomyces
+    cerevisiae} network with inter-cluster edges retained. Only edges with
+    HHsearch true positive probability greater than 99.5\% are shown for the
+    sake of clarity. Related to figure \ref{figure:clustering}. Clathrin
+    adaptors are shown with white labels. Adapted from figure 1, Wells et al.
+    \cite{Wells2017}} \label{suppfigure:yeastnetwork} \end{figure}
+
+\begin{figure}[h]
+    \makebox[\textwidth]{\includegraphics[width=\textwidth]{c5_suppfig_network}}
+    \caption[Homology networks from human and fission yeast]{\sffamily
+    \textbf{Homology networks from human and fission yeast} \\ \small Clustered
+    networks from \textit{H. sapiens} (A), \textit{S. cerevisiae} (B), and
+    \textit{S.pombe} (C), with inter-cluster edges removed. Hawk clusters are
+    shown within dashed rings. Adapted from figure S1, Wells et al.
+    \cite{Wells2017}} \label{suppfigure:rawnetwork} \end{figure}
+
+\begin{figure}[h] \fcapsideright {\caption[Pds5 indel from three
+    species]{\sffamily\textbf{Pds5 indel from three species}\newline \small
+    Structural alignment of the indel region from Pds5/B in H. sapiens (teal),
+    S. cerevisiae (green) and L. thermatolerans (orange, 5HDT, 5FRR and 5F0N
+    respectively, marked with asterisk in figure \ref{figure:smcstruc}). Whilst
+    there is no clear sequence conservation, the extended alpha-helix (centre)
+    is apparently a defining feature of the region. Adapted from figure S2,
+    Wells et al. \cite{Wells2017}}\label{suppfigure:indel}}
+{\includegraphics[width=0.5\textwidth]{c5_suppfig_indel}} \end{figure}
+
+\begin{figure}[h] \fcapsideright {\caption[Lokiarchaeal HEAT repeat proteins
+    integrated into human network]{\sffamily\textbf{Lokiarchaeal HEAT repeat
+    proteins integrated into human network}\newline \small Lokiarchaeal
+    HEAT-like proteins (larger circles, red edges) show no indication of being
+    directly related to the hawks, but do show highly significant similarity to
+    one subgroup of the clathrin adaptor proteins, supporting recent evidence of
+    an archaeal origin for these proteins
+    \cite{Zaremba-Niedzwiedzka2017}}\label{suppfigure:lokiheats}}
+{\includegraphics[width=0.5\textwidth]{c5_suppfig_lokiheats}} \end{figure}
+
+\begin{figure}[h] \includegraphics{c5_suppfig_adaptin} \caption[Structural
+    similarity between hawks and clathrin adaptors]{\sffamily \textbf{Structural
+    similarity between hawks and clathrin adaptors} \\ \small Structural
+    alignment of \textit{L. thermatolerans} Pds5 (5F0O, teal) and human AP2B
+    (2XA7, orange). The TM-score of 0.46 indicates that the similarity is
+    unlikely to be due to chance alone; having said that, care should be taken
+    not to over-interpret the similarity as it is relatively to achieve good
+    structural alignments of repeat proteins such as these.}
+\label{suppfigure:adaptin} \end{figure}
+
+\begin{table}[h]
+    \includegraphics[width=\textwidth,page=1]{c5_supptable_hawkclusters}
+    \end{table} \begin{table}[h]
+\includegraphics[width=\textwidth,page=2]{c5_supptable_hawkclusters} \end{table}
+\begin{table}[h] \caption[Complete list of hawk clusters]{\sffamily
+    \textbf{Complete list of hawk clusters} \newline}
+\label{supptable:hawkclusters}
+\includegraphics[width=\textwidth,page=3]{c5_supptable_hawkclusters} \end{table}
+
+
+\clearpage
+
+\section{Published papers}\label{appendix:published} This appendix includes all
+papers published during the course of my PhD studies. The first three are novel
+research publications that form the basis of the material in chapters 2-5
+respectively, whereas the last two are reviews on the topic of co-translational
+assembly. These reviews are not used in this thesis other than as citations, and
+can be considered as supporting papers. In order of appearance, the papers
+included here are as follows:
+
+\begin{enumerate} \item{\fullcite{Wells2016}} \item{\fullcite{McShane2016}}
+\item{\fullcite{Wells2017}} \item{\fullcite{Wells2015}}
+\item{\fullcite{Natan2017}} \end{enumerate}
+
+\newpage\null\thispagestyle{empty}\newpage
+\includepdf[scale=0.87,pages={-}]{../papers/Wells2016.pdf}
+\newpage\null\thispagestyle{empty}\newpage
+\includepdf[scale=0.87,pages={-}]{../papers/McShane2016.pdf}
+\newpage\null\thispagestyle{empty}\newpage
+\includepdf[scale=0.87,pages={-}]{../papers/Wells2017.pdf}
+\includepdf[scale=0.9,pages={-}]{../papers/Wells2015.pdf}
+\newpage\null\thispagestyle{empty}\newpage
+\includepdf[scale=0.9,pages={-}]{../papers/Natan2017.pdf}
+
+\end{document}
